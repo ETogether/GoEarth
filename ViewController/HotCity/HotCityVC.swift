@@ -44,6 +44,8 @@ class HotCityVC: GEBaseVC {
                 self.cityArr.addObjectsFromArray(hotCityArr!)
                 self.collectionView.reloadData()
                 
+                
+                
             }else{
                 print(err)
                 //发生网络错误时弹出警告框

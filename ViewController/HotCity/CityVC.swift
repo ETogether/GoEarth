@@ -43,6 +43,13 @@ class CityVC: UIViewController {
         
         coverImage.sd_setImageWithURL(NSURL.init(string: hotCityModel.cover))
         
+//        //创建毛玻璃
+//        let blurView = UIVisualEffectView.init(effect: UIBlurEffect.init(style: .Light))
+//        blurView.frame = CGRectMake(0, 0, SCREEN_W, SCREEN_H)
+//        blurView.alpha = 0.6
+//        coverImage.addSubview(blurView)
+        
+        
         
         //创建八个按钮
         self.createBtn(self.btnArr)
