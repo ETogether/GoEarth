@@ -13,6 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+//        let url = "http://www.koubeilvxing.com/countrys"
+//        BaseRequest.getWithURL(url, para: nil) { (data, error) in
+//            if error == nil{
+//                print(NSString.init(data: data!, encoding: NSUTF8StringEncoding)!)
+//            }else{
+//                print(error)
+//            }
+//        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
