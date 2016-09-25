@@ -7,6 +7,10 @@
 //
 
 import UIKit
+/*声明按钮点击时需要通知其他视图设置偏移量*/
+protocol ListViewDelegate: class {
+    func didSeletedIndexContentOffsetFor(idx: NSInteger)
+}
 
 class ListView: UIView {
     
@@ -17,6 +21,12 @@ class ListView: UIView {
     
     var btnW:CGFloat = 0
     var btnH: CGFloat = 0
+    
+    //默认selectedIndex
+    var selectedIndex = 0
+    var trends: NSTimeInterval = 0.25
+    
+    weak var delegate: ListViewDelegate!
 
     init(frame: CGRect, tittles: [String]) {
         super.init(frame: frame)
@@ -26,43 +36,65 @@ class ListView: UIView {
         index = tittles.count
         //与视图同宽
         btnW = frame.width
-        btnH = 0.8 * btnW
+        btnH = 0.6 * btnW
         
         var i = 0
         for title in tittles{
             
             
-            let btn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * btnH + 5, btnW, btnH))
+            let btn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * (btnH + 5), btnW, btnH))
             self.addSubview(btn)
             
             btn.setTitle(title, forState: .Normal)
-            btn.setTitleColor(WHITECOLOR, forState: .Normal)
+            btn.setTitleColor(hexColor(hexStr: "ffffff"), forState: .Normal)
             btn.setTitle(title, forState: .Highlighted)
-            btn.setTitleColor(WHITECOLOR, forState: .Highlighted)
-            btn.backgroundColor = UIColor.orangeColor()
+            btn.setTitleColor(hexColor(hexStr: "14ea24"), forState: .Highlighted)
+            btn.setTitle(title, forState: .Selected)
+            btn.setTitleColor(hexColor(hexStr: "14ea24"), forState: .Selected)
+            btn.backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
+            btn.titleLabel?.font = UIFont.systemFontOfSize(18)
+            
+            btn.layer.cornerRadius = 5
+            btn.layer.borderWidth = 2
+            btn.layer.borderColor = WHITECOLOR.CGColor
             
             btn.tag = i + 100
             btn.addTarget(self, action: #selector(self.btnClick(_:)), forControlEvents: .TouchUpInside)
             btns.append(btn)
+            if i == 0{
+                btn.selected = true
+            }
             
             i += 1
         }
-        pinchBtn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * btnH, btnW, btnW))
+        pinchBtn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * (btnH + 5), btnW, btnW))
         self.addSubview(pinchBtn)
         
         pinchBtn.setImage(UIImage.init(named: "向上"), forState: .Normal)
         pinchBtn.addTarget(self, action: #selector(self.pinchBtnClick(_:)), forControlEvents: .TouchUpInside)
         
     }
+    //按钮的点击事件
     func btnClick(sender: UIButton){
-        print(sender.tag)
+        self.updateIndex(sender.tag - 100)
+        //遵守该协议的视图的偏移量发生偏转
+        self.delegate.didSeletedIndexContentOffsetFor(sender.tag - 100)
+    }
+    func updateIndex(idx: NSInteger){
+        
+        let preBtn = self.viewWithTag(selectedIndex + 100) as! UIButton
+        preBtn.selected = false
+        
+        let currentBtn = self.viewWithTag(idx + 100) as! UIButton
+        currentBtn.selected = true
+        selectedIndex = idx
     }
     
     func pinchBtnClick(sender: UIButton){
         
         self.isPinch = !self.isPinch
         if self.isPinch {
-            UIView.animateWithDuration(0.25 * NSTimeInterval(index), animations: {
+            UIView.animateWithDuration(trends * NSTimeInterval(index), animations: {
                 //向上移动
                 self.pinchBtn.frame.origin.y = 0
                 //父视图也收缩
@@ -76,7 +108,7 @@ class ListView: UIView {
             
         }else{
             
-            UIView.animateWithDuration(0.25 * NSTimeInterval(index), animations: {
+            UIView.animateWithDuration(trends * NSTimeInterval(index), animations: {
                 self.pinchBtn.frame.origin.y = CGFloat(self.index) * self.btnH
                 self.mj_h = self.pinchBtn.mj_h + self.pinchBtn.mj_y
                 }, completion: { (true) in
@@ -90,9 +122,10 @@ class ListView: UIView {
     //隐藏
     func hiddenBtns(btn: UIButton, i: Int){
         var idx = i
-        UIView.animateWithDuration(0.25, animations: { 
+        UIView.animateWithDuration(trends, animations: {
             btn.mj_h = 0
             }) { (true) in
+                btn.hidden = true
                 idx -= 1
                 if idx < 0{
                     return
@@ -104,7 +137,8 @@ class ListView: UIView {
     //显示
     func showBtns(btn: UIButton, i: Int) -> Void {
         var idx = i
-        UIView.animateWithDuration(0.25, animations: {
+        btn.hidden = false
+        UIView.animateWithDuration(trends, animations: {
             btn.mj_h = self.btnH
         }) { (true) in
             idx += 1

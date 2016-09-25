@@ -9,6 +9,8 @@
 import UIKit
 
 class GEBaseVC: BaseVC {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,8 +11,8 @@ import Foundation
 extension HotCityModel{
 //    六大洲国家continents 及 热门城市recommendplaces
 //    http://www.koubeilvxing.com/countrys?lang=zh
-    static func requestHotCityData(str: String, callBack:(countryArr: [AnyObject]? , hotCityArr: [AnyObject]?, err: NSError?) -> Void){
-        BaseRequest.getWithURL(HOME_URL + str, para: nil) { (data, error) in
+    static func requestHotCityData(callBack:(countryArr: [AnyObject]? , hotCityArr: [AnyObject]?, err: NSError?) -> Void){
+        BaseRequest.getWithURL(HOME_URL + "countrys", para: nil) { (data, error) in
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 //推荐城市(热门城市)

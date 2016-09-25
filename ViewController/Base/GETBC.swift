@@ -30,6 +30,7 @@ class GETBC: UITabBarController {
         var i = 0
         for vc in vcArr{
             let nc = UINavigationController.init(rootViewController: vc)
+            nc.navigationBar.barTintColor = WHITECOLOR
             //图标 及 title（文字）
             let image = UIImage.init(named: titleArr[i] + "A")?.imageWithRenderingMode(.AlwaysOriginal)
             let selImage = UIImage.init(named: titleArr[i] + "B")?.imageWithRenderingMode(.AlwaysOriginal)

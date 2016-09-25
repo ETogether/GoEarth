@@ -59,6 +59,8 @@
 		BC371C421D913460009E50E2 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BC371C0F1D913460009E50E2 /* UIImageView+HighlightedWebCache.m */; };
 		BC371C431D913460009E50E2 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BC371C111D913460009E50E2 /* UIImageView+WebCache.m */; };
 		BC371C441D913460009E50E2 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC371C131D913460009E50E2 /* UIView+WebCacheOperation.m */; };
+		BC3BE4D71D97AE8900BD3A6A /* ContinentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BE4D61D97AE8900BD3A6A /* ContinentCell.swift */; };
+		BC3BE4DD1D97C0EC00BD3A6A /* ContinentNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3BE4DC1D97C0EC00BD3A6A /* ContinentNetworkManager.swift */; };
 		BC576D351D9373E10084ECB2 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = BC576D341D9373E10084ECB2 /* UIImage+FEBoxBlur.m */; };
 		BC576D3C1D9380350084ECB2 /* CityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC576D3A1D9380350084ECB2 /* CityVC.swift */; };
 		BC576D3D1D9380350084ECB2 /* CityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC576D3B1D9380350084ECB2 /* CityVC.xib */; };
@@ -88,6 +90,11 @@
 		BCB2D7A51D9186E6005D887C /* 热门城市B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D7A31D9186E6005D887C /* 热门城市B@2x.png */; };
 		BCB2D7A81D918AD0005D887C /* EarthA@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D7A61D918AD0005D887C /* EarthA@3x.png */; };
 		BCB2D7A91D918AD0005D887C /* EarthB@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D7A71D918AD0005D887C /* EarthB@3x.png */; };
+		BCE2F5781D97F34F00411A79 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F5761D97F34F00411A79 /* CountryCell.swift */; };
+		BCE2F5791D97F34F00411A79 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE2F5771D97F34F00411A79 /* CountryCell.xib */; };
+		BCE2F57B1D97F39600411A79 /* CountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F57A1D97F39600411A79 /* CountryVC.swift */; };
+		BCE2F5821D97F97500411A79 /* CitysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F5801D97F97500411A79 /* CitysCell.swift */; };
+		BCE2F5831D97F97500411A79 /* CitysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE2F5811D97F97500411A79 /* CitysCell.xib */; };
 		BCEB6A4B1D954219005B146D /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB6A4A1D954219005B146D /* ListView.swift */; };
 		BCEB6A501D95502D005B146D /* 向上@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEB6A4C1D95502D005B146D /* 向上@2x.png */; };
 		BCEB6A511D95502D005B146D /* 向上@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEB6A4D1D95502D005B146D /* 向上@3x.png */; };
@@ -220,6 +227,8 @@
 		BC371C111D913460009E50E2 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BC371C121D913460009E50E2 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BC371C131D913460009E50E2 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		BC3BE4D61D97AE8900BD3A6A /* ContinentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinentCell.swift; sourceTree = "<group>"; };
+		BC3BE4DC1D97C0EC00BD3A6A /* ContinentNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinentNetworkManager.swift; sourceTree = "<group>"; };
 		BC576D331D9373E10084ECB2 /* UIImage+FEBoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FEBoxBlur.h"; sourceTree = "<group>"; };
 		BC576D341D9373E10084ECB2 /* UIImage+FEBoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FEBoxBlur.m"; sourceTree = "<group>"; };
 		BC576D3A1D9380350084ECB2 /* CityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityVC.swift; sourceTree = "<group>"; };
@@ -251,6 +260,11 @@
 		BCB2D7A31D9186E6005D887C /* 热门城市B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门城市B@2x.png"; sourceTree = "<group>"; };
 		BCB2D7A61D918AD0005D887C /* EarthA@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EarthA@3x.png"; sourceTree = "<group>"; };
 		BCB2D7A71D918AD0005D887C /* EarthB@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EarthB@3x.png"; sourceTree = "<group>"; };
+		BCE2F5761D97F34F00411A79 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		BCE2F5771D97F34F00411A79 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		BCE2F57A1D97F39600411A79 /* CountryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryVC.swift; sourceTree = "<group>"; };
+		BCE2F5801D97F97500411A79 /* CitysCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitysCell.swift; sourceTree = "<group>"; };
+		BCE2F5811D97F97500411A79 /* CitysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitysCell.xib; sourceTree = "<group>"; };
 		BCEB6A4A1D954219005B146D /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		BCEB6A4C1D95502D005B146D /* 向上@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "向上@2x.png"; sourceTree = "<group>"; };
 		BCEB6A4D1D95502D005B146D /* 向上@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "向上@3x.png"; sourceTree = "<group>"; };
@@ -602,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				BC7FACC11D92C0310036A963 /* CountrysModels.swift */,
+				BC3BE4DC1D97C0EC00BD3A6A /* ContinentNetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -627,6 +642,7 @@
 				BC7FACBD1D92BFA40036A963 /* Model */,
 				BCEB6A491D954205005B146D /* View */,
 				BCB2D78F1D917EDE005D887C /* EarthVC.swift */,
+				BCE2F57A1D97F39600411A79 /* CountryVC.swift */,
 			);
 			path = Earth;
 			sourceTree = "<group>";
@@ -688,10 +704,23 @@
 			path = tabbar;
 			sourceTree = "<group>";
 		};
+		BCE2F5751D97F34F00411A79 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCE2F5761D97F34F00411A79 /* CountryCell.swift */,
+				BCE2F5771D97F34F00411A79 /* CountryCell.xib */,
+				BCE2F5801D97F97500411A79 /* CitysCell.swift */,
+				BCE2F5811D97F97500411A79 /* CitysCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		BCEB6A491D954205005B146D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCE2F5751D97F34F00411A79 /* cell */,
 				BCEB6A4A1D954219005B146D /* ListView.swift */,
+				BC3BE4D61D97AE8900BD3A6A /* ContinentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -792,6 +821,7 @@
 				BC86A93D1D94B39C00E00C4A /* pinch@3x.png in Resources */,
 				BCB2D7A51D9186E6005D887C /* 热门城市B@2x.png in Resources */,
 				BC371B961D913448009E50E2 /* Assets.xcassets in Resources */,
+				BCE2F5831D97F97500411A79 /* CitysCell.xib in Resources */,
 				BCB2D7A91D918AD0005D887C /* EarthB@3x.png in Resources */,
 				BCFE4F121D940EDA00FAD80D /* 购物@2x.png in Resources */,
 				BCFE4F131D940EDA00FAD80D /* 购物@3x.png in Resources */,
@@ -820,6 +850,7 @@
 				BCFE4F151D940EDA00FAD80D /* 酒店@3x.png in Resources */,
 				BCFE4F181D940EDA00FAD80D /* back@2x.png in Resources */,
 				BCB2D7A81D918AD0005D887C /* EarthA@3x.png in Resources */,
+				BCE2F5791D97F34F00411A79 /* CountryCell.xib in Resources */,
 				BCB2D7A41D9186E6005D887C /* 热门城市A.png in Resources */,
 				BCFE4F0C1D940EDA00FAD80D /* 活动@2x.png in Resources */,
 				BC576D3D1D9380350084ECB2 /* CityVC.xib in Resources */,
@@ -865,6 +896,7 @@
 				BCB2D77F1D917897005D887C /* Configration.swift in Sources */,
 				BC371C3F1D913460009E50E2 /* UIImage+GIF.m in Sources */,
 				BC371C2B1D913460009E50E2 /* MJRefreshGifHeader.m in Sources */,
+				BCE2F5821D97F97500411A79 /* CitysCell.swift in Sources */,
 				BC7FACC21D92C0310036A963 /* CountrysModels.swift in Sources */,
 				BCB2D7871D917AFC005D887C /* BaseRequest.swift in Sources */,
 				BC371C371D913460009E50E2 /* SDImageCache.m in Sources */,
@@ -882,12 +914,14 @@
 				BC576D3C1D9380350084ECB2 /* CityVC.swift in Sources */,
 				BC371C361D913460009E50E2 /* NSData+ImageContentType.m in Sources */,
 				BC371C161D913460009E50E2 /* JSONModel.m in Sources */,
+				BC3BE4DD1D97C0EC00BD3A6A /* ContinentNetworkManager.swift in Sources */,
 				BC7FACB71D92B8A80036A963 /* CityCell.swift in Sources */,
 				BCB2D7951D917EDE005D887C /* HotCityVC.swift in Sources */,
 				BC371C201D913460009E50E2 /* MJRefreshAutoFooter.m in Sources */,
 				BC371C2F1D913460009E50E2 /* MJRefreshConst.m in Sources */,
 				BC371C411D913460009E50E2 /* UIImage+WebP.m in Sources */,
 				BC7FACBA1D92BA660036A963 /* CityModels.swift in Sources */,
+				BC3BE4D71D97AE8900BD3A6A /* ContinentCell.swift in Sources */,
 				BC371C281D913460009E50E2 /* MJRefreshBackGifFooter.m in Sources */,
 				BC371C3D1D913460009E50E2 /* SDWebImagePrefetcher.m in Sources */,
 				BC371C401D913460009E50E2 /* UIImage+MultiFormat.m in Sources */,
@@ -896,6 +930,8 @@
 				BC371C171D913460009E50E2 /* JSONModelClassProperty.m in Sources */,
 				BC371C241D913460009E50E2 /* MJRefreshHeader.m in Sources */,
 				BC371C301D913460009E50E2 /* UIScrollView+MJExtension.m in Sources */,
+				BCE2F57B1D97F39600411A79 /* CountryVC.swift in Sources */,
+				BCE2F5781D97F34F00411A79 /* CountryCell.swift in Sources */,
 				BC371C271D913460009E50E2 /* MJRefreshAutoStateFooter.m in Sources */,
 				BC371C1E1D913460009E50E2 /* HDManager.m in Sources */,
 				BC371C291D913460009E50E2 /* MJRefreshBackNormalFooter.m in Sources */,

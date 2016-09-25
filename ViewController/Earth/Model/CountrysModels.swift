@@ -19,21 +19,21 @@ class CountrysModel: JSONModel{
     var nameCn: String!
     var type: String!
     
-//    override class func keyMapper() -> JSONKeyMapper{
-//        return JSONKeyMapper.mapperFromUnderscoreCaseToCamelCase()
+    override class func keyMapper() -> JSONKeyMapper{
+        return JSONKeyMapper.init(modelToJSONDictionary: ["nameCn":"name_cn"])
+    }
+//    required init(dictionary dict: [NSObject : AnyObject]!) throws {
+//        super.init()
+//        self.nameCn = dict["name_cn"] as! String
 //    }
-    required init(dictionary dict: [NSObject : AnyObject]!) throws {
-        super.init()
-        self.nameCn = dict["name_cn"] as! String
-    }
-    
-    required init(data: NSData!) throws {
-        fatalError("init(data:) has not been implemented")
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    
+//    required init(data: NSData!) throws {
+//        fatalError("init(data:) has not been implemented")
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     
     

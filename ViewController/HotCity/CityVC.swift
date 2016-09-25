@@ -10,7 +10,7 @@ import UIKit
 
 class CityVC: UIViewController {
     
-    var hotCityModel: HotCityModel!
+    var Model: AnyObject!
     
     @IBOutlet weak var cnL: UILabel!
     
@@ -38,10 +38,21 @@ class CityVC: UIViewController {
         
     }
     func createUI(){
-        nameL.text = hotCityModel.name
-        cnL.text = hotCityModel.nameCn
+        if Model.isMemberOfClass(HotCityModel){
+            let model = Model as! HotCityModel
+            nameL.text = model.name
+            cnL.text = model.nameCn
+            
+            coverImage.sd_setImageWithURL(NSURL.init(string: model.cover))
+        }
+        if Model.isMemberOfClass(CityModel){
+            let model = Model as! CityModel
+            nameL.text = model.name
+            cnL.text = model.nameCn
+            
+            coverImage.sd_setImageWithURL(NSURL.init(string: model.cover))
+        }
         
-        coverImage.sd_setImageWithURL(NSURL.init(string: hotCityModel.cover))
         
 //        //创建毛玻璃
 //        let blurView = UIVisualEffectView.init(effect: UIBlurEffect.init(style: .Light))
@@ -57,19 +68,19 @@ class CityVC: UIViewController {
     
     func loadData(){
         
-        CityModel.requestCityData(hotCityModel.id) { (model, err) in
-            if err == nil{
-                
-                dispatch_async(dispatch_get_main_queue(), {
-
-                })
-                
-            }else{
-                print(err)
-                //发生网络错误时弹出警告框
-                AlertTwoSeconds(self)
-            }
-        }
+//        CityModel.requestCityData(hotCityModel.id) { (model, err) in
+//            if err == nil{
+//                
+//                dispatch_async(dispatch_get_main_queue(), {
+//
+//                })
+//                
+//            }else{
+//                print(err)
+//                //发生网络错误时弹出警告框
+//                AlertTwoSeconds(self)
+//            }
+//        }
         
     }
     //MARK: - 创建按钮
@@ -124,31 +135,63 @@ class CityVC: UIViewController {
 
     }
     func btnClick(sender: UIButton) -> Void {
-        
-        switch sender.tag {
-        case 100:
-            print("景点")
-        case 101:
-            print("餐馆")
-        case 102:
-            print("酒店")
-        case 103:
-            print("购物")
-        case 104:
-            print("活动")
-        case 105:
-            print("租车")
-        case 106:
-            print("城市指南")
-        case 107:
-            print("约伴")
-            let partner = PartnerVC()
-            partner.placeId = hotCityModel.id
-            partner.navigationItem.title = "邂逅\(hotCityModel.nameCn)旅行者"
-            self.navigationController?.pushViewController(partner, animated: true)
-            
-        default:
-            return
+        if Model.isMemberOfClass(HotCityModel){
+            let model = Model as! HotCityModel
+            switch sender.tag {
+            case 100:
+                print("景点")
+            case 101:
+                print("餐馆")
+            case 102:
+                print("酒店")
+            case 103:
+                print("购物")
+            case 104:
+                print("活动")
+            case 105:
+                print("租车")
+            case 106:
+                print("城市指南")
+            case 107:
+                print("约伴")
+                let partner = PartnerVC()
+                partner.placeId = model.id
+                partner.navigationItem.title = "邂逅\(model.nameCn)旅行者"
+                self.navigationController?.pushViewController(partner, animated: true)
+                
+            default:
+                return
+            }
+
+        }
+        if Model.isMemberOfClass(CityModel){
+            let model = Model as! CityModel
+            switch sender.tag {
+            case 100:
+                print("景点")
+            case 101:
+                print("餐馆")
+            case 102:
+                print("酒店")
+            case 103:
+                print("购物")
+            case 104:
+                print("活动")
+            case 105:
+                print("租车")
+            case 106:
+                print("城市指南")
+            case 107:
+                print("约伴")
+                let partner = PartnerVC()
+                partner.placeId = model.id
+                partner.navigationItem.title = "邂逅\(model.nameCn)旅行者"
+                self.navigationController?.pushViewController(partner, animated: true)
+                
+            default:
+                return
+            }
+
         }
     }
 
@@ -156,7 +199,7 @@ class CityVC: UIViewController {
 
     //MRAK:- 返回事件 返回上一页
     @IBAction func backClick(sender: UIButton) {
-        print(1)
+        
         self.navigationController?.popViewControllerAnimated(true)
         
     }

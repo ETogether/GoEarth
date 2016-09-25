@@ -20,12 +20,14 @@ class HotCityVC: GEBaseVC {
         layout.minimumInteritemSpacing = 10
         
         let cv = UICollectionView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64 - 49), collectionViewLayout: layout)
+        cv.showsVerticalScrollIndicator = false
         cv.registerNib(UINib.init(nibName: "CityCell", bundle: nil), forCellWithReuseIdentifier: "CityCell")
         cv.delegate = self
         cv.dataSource = self
         cv.backgroundColor = WHITECOLOR
         
         self.view.addSubview(cv)
+        self.view.sendSubviewToBack(cv)
         return cv
     }()
 
@@ -34,11 +36,13 @@ class HotCityVC: GEBaseVC {
         self.automaticallyAdjustsScrollViewInsets = false
         
         self.loadData()
+        
+
     }
 
     func loadData(){
         HDManager.startLoading()
-        HotCityModel.requestHotCityData("countrys") { (countryArr, hotCityArr, err) in
+        HotCityModel.requestHotCityData { (countryArr, hotCityArr, err) in
             if err == nil{
                 
                 self.cityArr.addObjectsFromArray(hotCityArr!)
@@ -74,7 +78,7 @@ extension HotCityVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let city = CityVC.init()
         let model = cityArr[indexPath.item] as! HotCityModel
-        city.hotCityModel = model
+        city.Model = model
 
         city.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(city, animated: true)

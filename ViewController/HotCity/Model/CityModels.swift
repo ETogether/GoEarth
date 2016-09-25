@@ -56,10 +56,17 @@ class CityModel: JSONModel {
     var path: String!
     var photoIds: String!
     var photos: NSMutableArray!
+    
+    var poiCount: String? = ""
+    var reviewCount: String? = ""
+    
     var type: String!
     
     override class func keyMapper() -> JSONKeyMapper{
         return JSONKeyMapper.init(modelToJSONDictionary:["nameCn":"name_cn", "infoCn":"info_cn"])
+    }
+    override class func propertyIsOptional(name: String) -> Bool{
+        return true
     }
     
 //    required init(dictionary dict: [NSObject : AnyObject]!) throws {
