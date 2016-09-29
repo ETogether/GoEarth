@@ -101,7 +101,41 @@ extension PartnerModel{
     }
 }
 
+//MARK: - CityGuide城市指南模型
+extension CityGuideModel{
+    static func requestCityGuideData(placeId: String, callBack:(guideArr: [AnyObject]?, err: NSError?) -> Void){
+        // http://www.koubeilvxing.com/placedetail?lang=zh&placeId=19039
+        let para = NSMutableDictionary.init(dictionary: ["placeId":placeId])
+        BaseRequest.getWithURL(HOME_URL + "placedetail", para: para) { (data, error) in
+            if error == nil{
+                
+                let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
+                let arr = rootDic["detail"] as? [AnyObject]
+                var guideArr: NSMutableArray? = nil
+                do{
+                    guideArr = try CityGuideModel.arrayOfModelsFromDictionaries(arr, error: ())
+                }catch{
+                    guideArr = nil
+                }
+                if guideArr == nil{
+                    dispatch_async(dispatch_get_main_queue(), {
+                        callBack(guideArr: nil, err: nil)
+                    })
+                    return
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    callBack(guideArr: guideArr! as [AnyObject], err: nil)
+                })
+            }else{
+                dispatch_async(dispatch_get_main_queue(), { 
+                    callBack(guideArr: nil, err: error)
+                })
+            }
+        }
+        
+    }
 
+}
 
 
 

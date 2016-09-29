@@ -94,7 +94,7 @@ class CountryVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewD
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let city = CityVC.init()
         let model = dataArr[indexPath.item] as! CityModel
-        city.Model = model
+        city.cityModel = model
         
         city.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(city, animated: true)

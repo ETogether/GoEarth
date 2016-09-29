@@ -15,11 +15,11 @@ class BaseRequest{
         let session = NSURLSession.sharedSession()
         
         let urlStr = NSMutableString.init(string: url)
+       
         if para != nil {
             urlStr.appendString(self.encodeUniCode(self.parasToString(para!)) as String)
-
-            
         }
+        // print(urlStr)
         let request = NSMutableURLRequest.init(URL: (NSURL.init(string: urlStr as String))!)
         request.HTTPMethod = "GET"
         let dataTask = session.dataTaskWithRequest(request) { (data, response, error) in

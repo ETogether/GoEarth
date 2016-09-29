@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CityGuideCell" customModule="GoEarth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7K-CM-adu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSy-jO-f7b">
+                        <rect key="frame" x="8" y="10" width="304" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="k3h-wh-ftw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GX7-jU-CiF">
+                        <rect key="frame" x="0.0" y="41" width="320" height="100"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="f7W-DP-ZnP">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="8" minY="10" maxX="8" maxY="10"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="z7K-CM-adu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4kf-Lg-tut"/>
+                    <constraint firstItem="z7K-CM-adu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8ua-VK-prX"/>
+                    <constraint firstItem="z7K-CM-adu" firstAttribute="bottom" secondItem="GX7-jU-CiF" secondAttribute="top" id="F80-01-VrA"/>
+                    <constraint firstAttribute="bottom" secondItem="GX7-jU-CiF" secondAttribute="bottom" constant="8" id="LpV-sr-7Gr"/>
+                    <constraint firstAttribute="trailing" secondItem="RSy-jO-f7b" secondAttribute="trailing" constant="8" id="PwT-MP-W8A"/>
+                    <constraint firstAttribute="trailing" secondItem="z7K-CM-adu" secondAttribute="trailing" id="Wwm-rF-al0"/>
+                    <constraint firstItem="GX7-jU-CiF" firstAttribute="top" secondItem="RSy-jO-f7b" secondAttribute="bottom" constant="8" id="eXE-d3-5yC"/>
+                    <constraint firstItem="RSy-jO-f7b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="h5V-a6-35f"/>
+                    <constraint firstItem="RSy-jO-f7b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="n0v-bd-mZ5"/>
+                    <constraint firstAttribute="trailing" secondItem="GX7-jU-CiF" secondAttribute="trailing" id="uBl-ab-AOt"/>
+                    <constraint firstItem="GX7-jU-CiF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="us0-dE-8OR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="sectionView" destination="GX7-jU-CiF" id="qzh-ml-yNF"/>
+                <outlet property="titleL" destination="RSy-jO-f7b" id="xN0-lV-fSv"/>
+            </connections>
+            <point key="canvasLocation" x="142" y="223"/>
+        </tableViewCell>
+    </objects>
+</document>

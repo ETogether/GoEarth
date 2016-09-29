@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC03D77B1D9BA7BC009E11B2 /* stars_bgq.png in Resources */ = {isa = PBXBuildFile; fileRef = BC03D7791D9BA7BC009E11B2 /* stars_bgq.png */; };
+		BC03D77C1D9BA7BC009E11B2 /* stars_fg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC03D77A1D9BA7BC009E11B2 /* stars_fg.png */; };
+		BC03D77E1D9BAA1B009E11B2 /* stars_bgs.png in Resources */ = {isa = PBXBuildFile; fileRef = BC03D77D1D9BAA1B009E11B2 /* stars_bgs.png */; };
+		BC03D7801D9BAEDF009E11B2 /* AttractionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03D77F1D9BAEDF009E11B2 /* AttractionDetailVC.swift */; };
+		BC03D7841D9BECFC009E11B2 /* AttractionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03D7831D9BECFC009E11B2 /* AttractionDetailView.swift */; };
+		BC03D7871D9BF79A009E11B2 /* AttractionTagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03D7851D9BF79A009E11B2 /* AttractionTagsCell.swift */; };
+		BC03D7881D9BF79A009E11B2 /* AttractionTagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC03D7861D9BF79A009E11B2 /* AttractionTagsCell.xib */; };
+		BC03D78B1D9BF9A9009E11B2 /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC03D7891D9BF9A9009E11B2 /* TagsCell.swift */; };
+		BC03D78C1D9BF9A9009E11B2 /* TagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC03D78A1D9BF9A9009E11B2 /* TagsCell.xib */; };
+		BC041DD51D9D4C42008709F1 /* PhotoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC041DD31D9D4C42008709F1 /* PhotoListVC.swift */; };
+		BC041DD61D9D4C42008709F1 /* PhotoListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC041DD41D9D4C42008709F1 /* PhotoListVC.xib */; };
+		BC041DD91D9D4D42008709F1 /* AttractionPhotoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC041DD71D9D4D42008709F1 /* AttractionPhotoListCell.swift */; };
+		BC041DDA1D9D4D42008709F1 /* AttractionPhotoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC041DD81D9D4D42008709F1 /* AttractionPhotoListCell.xib */; };
+		BC041DDC1D9D5C9A008709F1 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC041DDB1D9D5C9A008709F1 /* CommentVC.swift */; };
 		BC371B8F1D913448009E50E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC371B8E1D913448009E50E2 /* AppDelegate.swift */; };
 		BC371B911D913448009E50E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC371B901D913448009E50E2 /* ViewController.swift */; };
 		BC371B941D913448009E50E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC371B921D913448009E50E2 /* Main.storyboard */; };
@@ -64,6 +78,21 @@
 		BC576D351D9373E10084ECB2 /* UIImage+FEBoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = BC576D341D9373E10084ECB2 /* UIImage+FEBoxBlur.m */; };
 		BC576D3C1D9380350084ECB2 /* CityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC576D3A1D9380350084ECB2 /* CityVC.swift */; };
 		BC576D3D1D9380350084ECB2 /* CityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC576D3B1D9380350084ECB2 /* CityVC.xib */; };
+		BC647BE81D98F74A00D62DF4 /* CityGuideDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647BE71D98F74A00D62DF4 /* CityGuideDetailVC.swift */; };
+		BC647BEC1D990A5500D62DF4 /* nav_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC647BEA1D990A5500D62DF4 /* nav_back@3x.png */; };
+		BC647BEE1D99106F00D62DF4 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC647BED1D99106F00D62DF4 /* nav_back@2x.png */; };
+		BC647BF01D99159500D62DF4 /* RentalCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647BEF1D99159500D62DF4 /* RentalCarVC.swift */; };
+		BC647BF21D9916FF00D62DF4 /* NavBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647BF11D9916FF00D62DF4 /* NavBaseVC.swift */; };
+		BC647BF41D991CE900D62DF4 /* RentalCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647BF31D991CE900D62DF4 /* RentalCarModels.swift */; };
+		BC647BF61D991D0700D62DF4 /* RentalCarNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647BF51D991D0700D62DF4 /* RentalCarNetworkManager.swift */; };
+		BC647BFF1D993A1600D62DF4 /* VehiclesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647BFD1D993A1600D62DF4 /* VehiclesCell.swift */; };
+		BC647C001D993A1600D62DF4 /* VehiclesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC647BFE1D993A1600D62DF4 /* VehiclesCell.xib */; };
+		BC647C021D993CAA00D62DF4 /* SuppliersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647C011D993CAA00D62DF4 /* SuppliersView.swift */; };
+		BC647C051D99566D00D62DF4 /* nav_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC647C031D99566C00D62DF4 /* nav_message@2x.png */; };
+		BC647C061D99566D00D62DF4 /* nav_message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC647C041D99566C00D62DF4 /* nav_message@3x.png */; };
+		BC647C0A1D9958B100D62DF4 /* CompanyCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647C091D9958B100D62DF4 /* CompanyCompare.swift */; };
+		BC647C0D1D995F9500D62DF4 /* CompanyCompareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC647C0B1D995F9500D62DF4 /* CompanyCompareCell.swift */; };
+		BC647C0E1D995F9500D62DF4 /* CompanyCompareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC647C0C1D995F9500D62DF4 /* CompanyCompareCell.xib */; };
 		BC7FACB21D92B3B80036A963 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FACB11D92B3B80036A963 /* HexColor.swift */; };
 		BC7FACB71D92B8A80036A963 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FACB51D92B8A80036A963 /* CityCell.swift */; };
 		BC7FACB81D92B8A80036A963 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC7FACB61D92B8A80036A963 /* CityCell.xib */; };
@@ -78,6 +107,13 @@
 		BC8B90D01D920E0100D28AA9 /* 热门城市B@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8B90CC1D920E0100D28AA9 /* 热门城市B@3x.png */; };
 		BC8B90D11D920E0100D28AA9 /* 我的A@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8B90CD1D920E0100D28AA9 /* 我的A@3x.png */; };
 		BC8B90D21D920E0100D28AA9 /* 我的B@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8B90CE1D920E0100D28AA9 /* 我的B@3x.png */; };
+		BC97D9AA1D9A9F520081BD35 /* AttractionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D9A91D9A9F520081BD35 /* AttractionModels.swift */; };
+		BC97D9AC1D9AA4D60081BD35 /* AttractionNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D9AB1D9AA4D60081BD35 /* AttractionNetworkManager.swift */; };
+		BC97D9AE1D9AA6EB0081BD35 /* AttractionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D9AD1D9AA6EB0081BD35 /* AttractionVC.swift */; };
+		BC97D9B11D9AA7740081BD35 /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D9AF1D9AA7740081BD35 /* AttractionCell.swift */; };
+		BC97D9B21D9AA7740081BD35 /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */; };
+		BC97D9B51D9AAE1C0081BD35 /* StarsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */; };
+		BC97D9B61D9AAE1C0081BD35 /* StarsForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */; };
 		BCB2D77F1D917897005D887C /* Configration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D77E1D917897005D887C /* Configration.swift */; };
 		BCB2D7871D917AFC005D887C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D7861D917AFC005D887C /* BaseRequest.swift */; };
 		BCB2D7941D917EDE005D887C /* EarthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D78F1D917EDE005D887C /* EarthVC.swift */; };
@@ -90,6 +126,11 @@
 		BCB2D7A51D9186E6005D887C /* 热门城市B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D7A31D9186E6005D887C /* 热门城市B@2x.png */; };
 		BCB2D7A81D918AD0005D887C /* EarthA@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D7A61D918AD0005D887C /* EarthA@3x.png */; };
 		BCB2D7A91D918AD0005D887C /* EarthB@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCB2D7A71D918AD0005D887C /* EarthB@3x.png */; };
+		BCD3E74E1D98AD7300362016 /* CityGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */; };
+		BCD3E7521D98BA9600362016 /* CityGuideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E7501D98BA9600362016 /* CityGuideCell.swift */; };
+		BCD3E7531D98BA9600362016 /* CityGuideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD3E7511D98BA9600362016 /* CityGuideCell.xib */; };
+		BCD3E7561D98BD2B00362016 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E7541D98BD2B00362016 /* SectionViewCell.swift */; };
+		BCD3E7571D98BD2B00362016 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD3E7551D98BD2B00362016 /* SectionViewCell.xib */; };
 		BCE2F5781D97F34F00411A79 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F5761D97F34F00411A79 /* CountryCell.swift */; };
 		BCE2F5791D97F34F00411A79 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE2F5771D97F34F00411A79 /* CountryCell.xib */; };
 		BCE2F57B1D97F39600411A79 /* CountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F57A1D97F39600411A79 /* CountryVC.swift */; };
@@ -124,6 +165,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC03D7791D9BA7BC009E11B2 /* stars_bgq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars_bgq.png; sourceTree = "<group>"; };
+		BC03D77A1D9BA7BC009E11B2 /* stars_fg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars_fg.png; sourceTree = "<group>"; };
+		BC03D77D1D9BAA1B009E11B2 /* stars_bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars_bgs.png; sourceTree = "<group>"; };
+		BC03D77F1D9BAEDF009E11B2 /* AttractionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionDetailVC.swift; sourceTree = "<group>"; };
+		BC03D7831D9BECFC009E11B2 /* AttractionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionDetailView.swift; sourceTree = "<group>"; };
+		BC03D7851D9BF79A009E11B2 /* AttractionTagsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionTagsCell.swift; sourceTree = "<group>"; };
+		BC03D7861D9BF79A009E11B2 /* AttractionTagsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionTagsCell.xib; sourceTree = "<group>"; };
+		BC03D7891D9BF9A9009E11B2 /* TagsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCell.swift; sourceTree = "<group>"; };
+		BC03D78A1D9BF9A9009E11B2 /* TagsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsCell.xib; sourceTree = "<group>"; };
+		BC041DD31D9D4C42008709F1 /* PhotoListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListVC.swift; sourceTree = "<group>"; };
+		BC041DD41D9D4C42008709F1 /* PhotoListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoListVC.xib; sourceTree = "<group>"; };
+		BC041DD71D9D4D42008709F1 /* AttractionPhotoListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionPhotoListCell.swift; sourceTree = "<group>"; };
+		BC041DD81D9D4D42008709F1 /* AttractionPhotoListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionPhotoListCell.xib; sourceTree = "<group>"; };
+		BC041DDB1D9D5C9A008709F1 /* CommentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		BC371B8B1D913448009E50E2 /* GoEarth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEarth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC371B8E1D913448009E50E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC371B901D913448009E50E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +288,21 @@
 		BC576D341D9373E10084ECB2 /* UIImage+FEBoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FEBoxBlur.m"; sourceTree = "<group>"; };
 		BC576D3A1D9380350084ECB2 /* CityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityVC.swift; sourceTree = "<group>"; };
 		BC576D3B1D9380350084ECB2 /* CityVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityVC.xib; sourceTree = "<group>"; };
+		BC647BE71D98F74A00D62DF4 /* CityGuideDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideDetailVC.swift; sourceTree = "<group>"; };
+		BC647BEA1D990A5500D62DF4 /* nav_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@3x.png"; sourceTree = "<group>"; };
+		BC647BED1D99106F00D62DF4 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		BC647BEF1D99159500D62DF4 /* RentalCarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCarVC.swift; sourceTree = "<group>"; };
+		BC647BF11D9916FF00D62DF4 /* NavBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBaseVC.swift; sourceTree = "<group>"; };
+		BC647BF31D991CE900D62DF4 /* RentalCarModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCarModels.swift; sourceTree = "<group>"; };
+		BC647BF51D991D0700D62DF4 /* RentalCarNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCarNetworkManager.swift; sourceTree = "<group>"; };
+		BC647BFD1D993A1600D62DF4 /* VehiclesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesCell.swift; sourceTree = "<group>"; };
+		BC647BFE1D993A1600D62DF4 /* VehiclesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VehiclesCell.xib; sourceTree = "<group>"; };
+		BC647C011D993CAA00D62DF4 /* SuppliersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuppliersView.swift; sourceTree = "<group>"; };
+		BC647C031D99566C00D62DF4 /* nav_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_message@2x.png"; sourceTree = "<group>"; };
+		BC647C041D99566C00D62DF4 /* nav_message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_message@3x.png"; sourceTree = "<group>"; };
+		BC647C091D9958B100D62DF4 /* CompanyCompare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyCompare.swift; sourceTree = "<group>"; };
+		BC647C0B1D995F9500D62DF4 /* CompanyCompareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyCompareCell.swift; sourceTree = "<group>"; };
+		BC647C0C1D995F9500D62DF4 /* CompanyCompareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyCompareCell.xib; sourceTree = "<group>"; };
 		BC7FACB11D92B3B80036A963 /* HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		BC7FACB51D92B8A80036A963 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		BC7FACB61D92B8A80036A963 /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
@@ -247,6 +317,13 @@
 		BC8B90CC1D920E0100D28AA9 /* 热门城市B@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门城市B@3x.png"; sourceTree = "<group>"; };
 		BC8B90CD1D920E0100D28AA9 /* 我的A@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的A@3x.png"; sourceTree = "<group>"; };
 		BC8B90CE1D920E0100D28AA9 /* 我的B@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的B@3x.png"; sourceTree = "<group>"; };
+		BC97D9A91D9A9F520081BD35 /* AttractionModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionModels.swift; sourceTree = "<group>"; };
+		BC97D9AB1D9AA4D60081BD35 /* AttractionNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionNetworkManager.swift; sourceTree = "<group>"; };
+		BC97D9AD1D9AA6EB0081BD35 /* AttractionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionVC.swift; sourceTree = "<group>"; };
+		BC97D9AF1D9AA7740081BD35 /* AttractionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
+		BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
+		BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsBackground.png; sourceTree = "<group>"; };
+		BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsForeground.png; sourceTree = "<group>"; };
 		BCB2D77D1D9177A1005D887C /* GEBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEBridgeHeader.h; sourceTree = "<group>"; };
 		BCB2D77E1D917897005D887C /* Configration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configration.swift; sourceTree = "<group>"; };
 		BCB2D7861D917AFC005D887C /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
@@ -260,6 +337,11 @@
 		BCB2D7A31D9186E6005D887C /* 热门城市B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门城市B@2x.png"; sourceTree = "<group>"; };
 		BCB2D7A61D918AD0005D887C /* EarthA@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EarthA@3x.png"; sourceTree = "<group>"; };
 		BCB2D7A71D918AD0005D887C /* EarthB@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EarthB@3x.png"; sourceTree = "<group>"; };
+		BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideVC.swift; sourceTree = "<group>"; };
+		BCD3E7501D98BA9600362016 /* CityGuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideCell.swift; sourceTree = "<group>"; };
+		BCD3E7511D98BA9600362016 /* CityGuideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityGuideCell.xib; sourceTree = "<group>"; };
+		BCD3E7541D98BD2B00362016 /* SectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = "<group>"; };
+		BCD3E7551D98BD2B00362016 /* SectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = "<group>"; };
 		BCE2F5761D97F34F00411A79 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		BCE2F5771D97F34F00411A79 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		BCE2F57A1D97F39600411A79 /* CountryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryVC.swift; sourceTree = "<group>"; };
@@ -597,6 +679,10 @@
 			children = (
 				BC7FACB91D92BA660036A963 /* CityModels.swift */,
 				BC7FACBB1D92BD440036A963 /* CityNetworkManager.swift */,
+				BC97D9A91D9A9F520081BD35 /* AttractionModels.swift */,
+				BC97D9AB1D9AA4D60081BD35 /* AttractionNetworkManager.swift */,
+				BC647BF31D991CE900D62DF4 /* RentalCarModels.swift */,
+				BC647BF51D991D0700D62DF4 /* RentalCarNetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -606,6 +692,23 @@
 			children = (
 				BC7FACB51D92B8A80036A963 /* CityCell.swift */,
 				BC7FACB61D92B8A80036A963 /* CityCell.xib */,
+				BC97D9AF1D9AA7740081BD35 /* AttractionCell.swift */,
+				BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */,
+				BC041DD71D9D4D42008709F1 /* AttractionPhotoListCell.swift */,
+				BC041DD81D9D4D42008709F1 /* AttractionPhotoListCell.xib */,
+				BC03D7851D9BF79A009E11B2 /* AttractionTagsCell.swift */,
+				BC03D7861D9BF79A009E11B2 /* AttractionTagsCell.xib */,
+				BC03D7891D9BF9A9009E11B2 /* TagsCell.swift */,
+				BC03D78A1D9BF9A9009E11B2 /* TagsCell.xib */,
+				BC647BFD1D993A1600D62DF4 /* VehiclesCell.swift */,
+				BC647BFE1D993A1600D62DF4 /* VehiclesCell.xib */,
+				BC647C011D993CAA00D62DF4 /* SuppliersView.swift */,
+				BC647C0B1D995F9500D62DF4 /* CompanyCompareCell.swift */,
+				BC647C0C1D995F9500D62DF4 /* CompanyCompareCell.xib */,
+				BCD3E7501D98BA9600362016 /* CityGuideCell.swift */,
+				BCD3E7511D98BA9600362016 /* CityGuideCell.xib */,
+				BCD3E7541D98BD2B00362016 /* SectionViewCell.swift */,
+				BCD3E7551D98BD2B00362016 /* SectionViewCell.xib */,
 				BCFE4F1C1D9415AD00FAD80D /* PartnerTBC.swift */,
 				BCFE4F1D1D9415AD00FAD80D /* PartnerTBC.xib */,
 			);
@@ -624,9 +727,14 @@
 		BC86A9351D94B39C00E00C4A /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				BC03D77D1D9BAA1B009E11B2 /* stars_bgs.png */,
+				BC03D7791D9BA7BC009E11B2 /* stars_bgq.png */,
+				BC03D77A1D9BA7BC009E11B2 /* stars_fg.png */,
 				BCEB6A4C1D95502D005B146D /* 向上@2x.png */,
 				BCEB6A4D1D95502D005B146D /* 向上@3x.png */,
 				BCEB6A4E1D95502D005B146D /* 向下@2x.png */,
+				BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */,
+				BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */,
 				BCEB6A4F1D95502D005B146D /* 向下@3x.png */,
 				BC86A9361D94B39C00E00C4A /* open_up@2x.png */,
 				BC86A9371D94B39C00E00C4A /* open_up@3x.png */,
@@ -655,6 +763,16 @@
 				BCB2D7911D917EDE005D887C /* HotCityVC.swift */,
 				BC576D3A1D9380350084ECB2 /* CityVC.swift */,
 				BC576D3B1D9380350084ECB2 /* CityVC.xib */,
+				BC97D9AD1D9AA6EB0081BD35 /* AttractionVC.swift */,
+				BC03D7831D9BECFC009E11B2 /* AttractionDetailView.swift */,
+				BC041DD31D9D4C42008709F1 /* PhotoListVC.swift */,
+				BC041DD41D9D4C42008709F1 /* PhotoListVC.xib */,
+				BC03D77F1D9BAEDF009E11B2 /* AttractionDetailVC.swift */,
+				BC041DDB1D9D5C9A008709F1 /* CommentVC.swift */,
+				BC647BEF1D99159500D62DF4 /* RentalCarVC.swift */,
+				BC647C091D9958B100D62DF4 /* CompanyCompare.swift */,
+				BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */,
+				BC647BE71D98F74A00D62DF4 /* CityGuideDetailVC.swift */,
 				BCFE4F1A1D9413E400FAD80D /* PartnerVC.swift */,
 			);
 			path = HotCity;
@@ -674,6 +792,7 @@
 				BCB2D7981D917F06005D887C /* BaseVC.swift */,
 				BCB2D7991D917F06005D887C /* GEBaseVC.swift */,
 				BCB2D79C1D917F46005D887C /* GETBC.swift */,
+				BC647BF11D9916FF00D62DF4 /* NavBaseVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -751,6 +870,10 @@
 		BCFE4F041D940EDA00FAD80D /* Navi */ = {
 			isa = PBXGroup;
 			children = (
+				BC647BED1D99106F00D62DF4 /* nav_back@2x.png */,
+				BC647BEA1D990A5500D62DF4 /* nav_back@3x.png */,
+				BC647C031D99566C00D62DF4 /* nav_message@2x.png */,
+				BC647C041D99566C00D62DF4 /* nav_message@3x.png */,
 				BCFE4F051D940EDA00FAD80D /* back@2x.png */,
 				BCFE4F061D940EDA00FAD80D /* back@3x.png */,
 			);
@@ -789,6 +912,7 @@
 				TargetAttributes = {
 					BC371B8A1D913448009E50E2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D22NSE5N4G;
 					};
 				};
 			};
@@ -817,41 +941,59 @@
 			files = (
 				BCFE4F171D940EDA00FAD80D /* 餐馆@3x.png in Resources */,
 				BC371B991D913448009E50E2 /* LaunchScreen.storyboard in Resources */,
+				BC97D9B51D9AAE1C0081BD35 /* StarsBackground.png in Resources */,
+				BC647BEE1D99106F00D62DF4 /* nav_back@2x.png in Resources */,
+				BC647C051D99566D00D62DF4 /* nav_message@2x.png in Resources */,
+				BC647BEC1D990A5500D62DF4 /* nav_back@3x.png in Resources */,
 				BCFE4F0E1D940EDA00FAD80D /* 租车@2x.png in Resources */,
 				BC86A93D1D94B39C00E00C4A /* pinch@3x.png in Resources */,
+				BC03D78C1D9BF9A9009E11B2 /* TagsCell.xib in Resources */,
+				BC03D77B1D9BA7BC009E11B2 /* stars_bgq.png in Resources */,
 				BCB2D7A51D9186E6005D887C /* 热门城市B@2x.png in Resources */,
 				BC371B961D913448009E50E2 /* Assets.xcassets in Resources */,
+				BC041DDA1D9D4D42008709F1 /* AttractionPhotoListCell.xib in Resources */,
 				BCE2F5831D97F97500411A79 /* CitysCell.xib in Resources */,
 				BCB2D7A91D918AD0005D887C /* EarthB@3x.png in Resources */,
 				BCFE4F121D940EDA00FAD80D /* 购物@2x.png in Resources */,
 				BCFE4F131D940EDA00FAD80D /* 购物@3x.png in Resources */,
+				BC97D9B61D9AAE1C0081BD35 /* StarsForeground.png in Resources */,
 				BCFE4F161D940EDA00FAD80D /* 餐馆@2x.png in Resources */,
 				BCFE4F111D940EDA00FAD80D /* 约伴@3x.png in Resources */,
+				BC647C0E1D995F9500D62DF4 /* CompanyCompareCell.xib in Resources */,
 				BC371C2E1D913460009E50E2 /* MJRefresh.bundle in Resources */,
 				BCEB6A511D95502D005B146D /* 向上@3x.png in Resources */,
 				BCFE4F081D940EDA00FAD80D /* 城市指南@2x.png in Resources */,
 				BC8B90D11D920E0100D28AA9 /* 我的A@3x.png in Resources */,
 				BCFE4F191D940EDA00FAD80D /* back@3x.png in Resources */,
 				BC8B90D01D920E0100D28AA9 /* 热门城市B@3x.png in Resources */,
+				BC647C001D993A1600D62DF4 /* VehiclesCell.xib in Resources */,
 				BC7FACB81D92B8A80036A963 /* CityCell.xib in Resources */,
 				BCEB6A521D95502D005B146D /* 向下@2x.png in Resources */,
+				BC03D77E1D9BAA1B009E11B2 /* stars_bgs.png in Resources */,
 				BCEB6A501D95502D005B146D /* 向上@2x.png in Resources */,
 				BCFE4F091D940EDA00FAD80D /* 城市指南@3x.png in Resources */,
 				BCFE4F141D940EDA00FAD80D /* 酒店@2x.png in Resources */,
 				BC8B90D21D920E0100D28AA9 /* 我的B@3x.png in Resources */,
 				BC86A93A1D94B39C00E00C4A /* open_up@2x.png in Resources */,
+				BC041DD61D9D4C42008709F1 /* PhotoListVC.xib in Resources */,
 				BC371B941D913448009E50E2 /* Main.storyboard in Resources */,
 				BCFE4F0F1D940EDA00FAD80D /* 租车@3x.png in Resources */,
 				BC8B90CF1D920E0100D28AA9 /* 热门城市A@3x.png in Resources */,
 				BC86A93C1D94B39C00E00C4A /* pinch@2x.png in Resources */,
+				BCD3E7571D98BD2B00362016 /* SectionViewCell.xib in Resources */,
 				BC86A93B1D94B39C00E00C4A /* open_up@3x.png in Resources */,
 				BCFE4F101D940EDA00FAD80D /* 约伴@2x.png in Resources */,
+				BC03D77C1D9BA7BC009E11B2 /* stars_fg.png in Resources */,
 				BCFE4F0A1D940EDA00FAD80D /* 景点@2x.png in Resources */,
+				BCD3E7531D98BA9600362016 /* CityGuideCell.xib in Resources */,
 				BCFE4F151D940EDA00FAD80D /* 酒店@3x.png in Resources */,
+				BC97D9B21D9AA7740081BD35 /* AttractionCell.xib in Resources */,
 				BCFE4F181D940EDA00FAD80D /* back@2x.png in Resources */,
+				BC03D7881D9BF79A009E11B2 /* AttractionTagsCell.xib in Resources */,
 				BCB2D7A81D918AD0005D887C /* EarthA@3x.png in Resources */,
 				BCE2F5791D97F34F00411A79 /* CountryCell.xib in Resources */,
 				BCB2D7A41D9186E6005D887C /* 热门城市A.png in Resources */,
+				BC647C061D99566D00D62DF4 /* nav_message@3x.png in Resources */,
 				BCFE4F0C1D940EDA00FAD80D /* 活动@2x.png in Resources */,
 				BC576D3D1D9380350084ECB2 /* CityVC.xib in Resources */,
 				BCFE4F0B1D940EDA00FAD80D /* 景点@3x.png in Resources */,
@@ -868,25 +1010,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC041DDC1D9D5C9A008709F1 /* CommentVC.swift in Sources */,
 				BC371C2C1D913460009E50E2 /* MJRefreshNormalHeader.m in Sources */,
+				BC97D9AE1D9AA6EB0081BD35 /* AttractionVC.swift in Sources */,
 				BC371C221D913460009E50E2 /* MJRefreshComponent.m in Sources */,
 				BC371C1A1D913460009E50E2 /* JSONHTTPClient.m in Sources */,
+				BC647C0A1D9958B100D62DF4 /* CompanyCompare.swift in Sources */,
 				BCB2D79D1D917F46005D887C /* GETBC.swift in Sources */,
 				BC371C311D913460009E50E2 /* UIScrollView+MJRefresh.m in Sources */,
 				BCB2D7941D917EDE005D887C /* EarthVC.swift in Sources */,
 				BC371C191D913460009E50E2 /* JSONAPI.m in Sources */,
+				BC03D78B1D9BF9A9009E11B2 /* TagsCell.swift in Sources */,
 				BC371C141D913460009E50E2 /* CycleImageCell.m in Sources */,
 				BCEB6A4B1D954219005B146D /* ListView.swift in Sources */,
 				BC371C181D913460009E50E2 /* JSONModelError.m in Sources */,
 				BC371C321D913460009E50E2 /* UIView+MJExtension.m in Sources */,
+				BC97D9AC1D9AA4D60081BD35 /* AttractionNetworkManager.swift in Sources */,
 				BC371C261D913460009E50E2 /* MJRefreshAutoNormalFooter.m in Sources */,
+				BC041DD91D9D4D42008709F1 /* AttractionPhotoListCell.swift in Sources */,
+				BC647BF21D9916FF00D62DF4 /* NavBaseVC.swift in Sources */,
+				BC03D7801D9BAEDF009E11B2 /* AttractionDetailVC.swift in Sources */,
 				BCB2D7961D917EDE005D887C /* MineVC.swift in Sources */,
 				BC371C231D913460009E50E2 /* MJRefreshFooter.m in Sources */,
 				BC371C1C1D913460009E50E2 /* JSONKeyMapper.m in Sources */,
+				BC647BFF1D993A1600D62DF4 /* VehiclesCell.swift in Sources */,
 				BC371C2D1D913460009E50E2 /* MJRefreshStateHeader.m in Sources */,
 				BC371C441D913460009E50E2 /* UIView+WebCacheOperation.m in Sources */,
 				BC371C251D913460009E50E2 /* MJRefreshAutoGifFooter.m in Sources */,
+				BC03D7841D9BECFC009E11B2 /* AttractionDetailView.swift in Sources */,
 				BC371C391D913460009E50E2 /* SDWebImageDecoder.m in Sources */,
+				BC97D9AA1D9A9F520081BD35 /* AttractionModels.swift in Sources */,
 				BC371B911D913448009E50E2 /* ViewController.swift in Sources */,
 				BCB2D79A1D917F06005D887C /* BaseVC.swift in Sources */,
 				BC371C3C1D913460009E50E2 /* SDWebImageManager.m in Sources */,
@@ -903,25 +1056,35 @@
 				BC371C351D913460009E50E2 /* MKAnnotationView+WebCache.m in Sources */,
 				BCFE4F1B1D9413E400FAD80D /* PartnerVC.swift in Sources */,
 				BC371C3B1D913460009E50E2 /* SDWebImageDownloaderOperation.m in Sources */,
+				BC03D7871D9BF79A009E11B2 /* AttractionTagsCell.swift in Sources */,
 				BC371C151D913460009E50E2 /* XTADScrollView.m in Sources */,
 				BC371B8F1D913448009E50E2 /* AppDelegate.swift in Sources */,
+				BC647BE81D98F74A00D62DF4 /* CityGuideDetailVC.swift in Sources */,
 				BC371C3E1D913460009E50E2 /* UIButton+WebCache.m in Sources */,
 				BC7FACB21D92B3B80036A963 /* HexColor.swift in Sources */,
 				BCB2D79B1D917F06005D887C /* GEBaseVC.swift in Sources */,
+				BC647BF01D99159500D62DF4 /* RentalCarVC.swift in Sources */,
 				BC371C1B1D913460009E50E2 /* JSONModel+networking.m in Sources */,
 				BC371C3A1D913460009E50E2 /* SDWebImageDownloader.m in Sources */,
 				BCFE4F1E1D9415AD00FAD80D /* PartnerTBC.swift in Sources */,
 				BC576D3C1D9380350084ECB2 /* CityVC.swift in Sources */,
+				BCD3E74E1D98AD7300362016 /* CityGuideVC.swift in Sources */,
 				BC371C361D913460009E50E2 /* NSData+ImageContentType.m in Sources */,
 				BC371C161D913460009E50E2 /* JSONModel.m in Sources */,
+				BC041DD51D9D4C42008709F1 /* PhotoListVC.swift in Sources */,
 				BC3BE4DD1D97C0EC00BD3A6A /* ContinentNetworkManager.swift in Sources */,
 				BC7FACB71D92B8A80036A963 /* CityCell.swift in Sources */,
+				BC647C0D1D995F9500D62DF4 /* CompanyCompareCell.swift in Sources */,
+				BC647BF41D991CE900D62DF4 /* RentalCarModels.swift in Sources */,
 				BCB2D7951D917EDE005D887C /* HotCityVC.swift in Sources */,
 				BC371C201D913460009E50E2 /* MJRefreshAutoFooter.m in Sources */,
+				BC97D9B11D9AA7740081BD35 /* AttractionCell.swift in Sources */,
 				BC371C2F1D913460009E50E2 /* MJRefreshConst.m in Sources */,
 				BC371C411D913460009E50E2 /* UIImage+WebP.m in Sources */,
+				BC647C021D993CAA00D62DF4 /* SuppliersView.swift in Sources */,
 				BC7FACBA1D92BA660036A963 /* CityModels.swift in Sources */,
 				BC3BE4D71D97AE8900BD3A6A /* ContinentCell.swift in Sources */,
+				BCD3E7521D98BA9600362016 /* CityGuideCell.swift in Sources */,
 				BC371C281D913460009E50E2 /* MJRefreshBackGifFooter.m in Sources */,
 				BC371C3D1D913460009E50E2 /* SDWebImagePrefetcher.m in Sources */,
 				BC371C401D913460009E50E2 /* UIImage+MultiFormat.m in Sources */,
@@ -936,6 +1099,8 @@
 				BC371C1E1D913460009E50E2 /* HDManager.m in Sources */,
 				BC371C291D913460009E50E2 /* MJRefreshBackNormalFooter.m in Sources */,
 				BC371C431D913460009E50E2 /* UIImageView+WebCache.m in Sources */,
+				BCD3E7561D98BD2B00362016 /* SectionViewCell.swift in Sources */,
+				BC647BF61D991D0700D62DF4 /* RentalCarNetworkManager.swift in Sources */,
 				BC371C1D1D913460009E50E2 /* JSONValueTransformer.m in Sources */,
 				BC371C1F1D913460009E50E2 /* MBProgressHUD.m in Sources */,
 				BC576D351D9373E10084ECB2 /* UIImage+FEBoxBlur.m in Sources */,
@@ -1051,10 +1216,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEarth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cq.GoEarth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Common/GEBridgeHeader.h;
 			};
 			name = Debug;
@@ -1063,10 +1231,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEarth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cq.GoEarth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Common/GEBridgeHeader.h;
 			};
 			name = Release;

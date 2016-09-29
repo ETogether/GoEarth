@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartnerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, PartnerCellDelegate {
+class PartnerVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource, PartnerCellDelegate {
     var placeId = ""
     var dataArr = NSMutableArray()
     //默认是收缩的
@@ -16,7 +16,7 @@ class PartnerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, P
     
     lazy var tableView: UITableView = {
         
-        let tv = UITableView.init(frame: CGRectMake(0, 0, SCREEN_W, SCREEN_H - 49))
+        let tv = UITableView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64))
         tv.registerNib(UINib.init(nibName: "PartnerTBC", bundle: nil), forCellReuseIdentifier: "PartnerCell")
         tv.delegate = self
         tv.dataSource = self
@@ -28,7 +28,6 @@ class PartnerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, P
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.loadData()
         
@@ -49,6 +48,7 @@ class PartnerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, P
         
         HDManager.stopLoading()
     }
+    
 
     //MARK: - TableView 协议方法
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

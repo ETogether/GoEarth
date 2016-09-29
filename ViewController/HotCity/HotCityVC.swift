@@ -78,7 +78,7 @@ extension HotCityVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let city = CityVC.init()
         let model = cityArr[indexPath.item] as! HotCityModel
-        city.Model = model
+        city.placeId = model.id
 
         city.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(city, animated: true)
