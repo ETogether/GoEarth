@@ -12,7 +12,8 @@ class RentalCarVC: NavBaseVC, UITableViewDataSource, UITableViewDelegate {
     
     var placeId = ""
     var dataArr = NSMutableArray()
-    var supperliers = NSMutableArray()
+    var supperliersDic = NSDictionary()
+    var vehicleType = NSDictionary()
     
     lazy var rentalCar: UITableView = {
         let rc = UITableView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64))
@@ -48,10 +49,11 @@ class RentalCarVC: NavBaseVC, UITableViewDataSource, UITableViewDelegate {
     
     func loadData(){
         HDManager.startLoading()
-        VehiclesModel.requestVehiclesData(placeId) { (vehiclesArr, suppliersArr, err) in
+        VehiclesModel.requestVehiclesData(placeId) { (vehiclesArr, suppliersDic, vehicleType, err) in
             if err == nil{
                 self.dataArr.addObjectsFromArray(vehiclesArr!)
-                self.supperliers.addObjectsFromArray(suppliersArr!)
+                self.supperliersDic = suppliersDic!
+                self.vehicleType = vehicleType!
                 self.rentalCar.reloadData()
                 
             }else{
@@ -73,19 +75,22 @@ class RentalCarVC: NavBaseVC, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("VehiclesCell", forIndexPath: indexPath) as! VehiclesCell
         let models = dataArr[indexPath.row] as! VehiclesModel
         let model = models.vehicleInfo
-    
-        cell.imageCar.sd_setImageWithURL(NSURL.init(string: model.imagePath!))
+        
+        
+        cell.imageCar.sd_setImageWithURL(NSURL.init(string: model.imagePath))
         cell.nameL.text = model.vehicleName
-        cell.desL.text = model.groupType + " | " + model.transmission + " | " + model.seat + "座"
-        cell.createIcons(models.supplierQuotes)
+//        let type = (vehicleType[model.vehicleId] as! NSDictionary)["vehicleName"] as! String
+//        let name = type
+        cell.desL.text = "name" + " | " + model.transmission + " | " + model.seat + "座"
+        cell.createIcons(models.supplierQuotes, dic: self.supperliersDic)
         
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! VehiclesCell
+        
         let model = dataArr[indexPath.row] as! VehiclesModel
         let count = model.supplierQuotes.count
-        let height = cell.desL.mj_h + cell.desL.mj_y + 8 + CGFloat(count) * 30 + CGFloat(count - 1) * 5 + 8
+        let height = 21 + 41 + 8 + CGFloat(count) * 30 + CGFloat(count - 1) * 5 + 8 + 20
         if height > 120{
             return height
         }

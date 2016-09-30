@@ -50,9 +50,9 @@ class SupplierQuotesModel: JSONModel{
     required init(dictionary dict: [NSObject : AnyObject]!) throws {
         super.init()
         self.supplierId = (dict["supplierId"] as! NSNumber).stringValue
-        let arr = dict["allQuetes"] as! [AnyObject]
+        let arr = dict["allQuotes"] as! [AnyObject]
         if arr.count > 0{
-            self.allQuotes = allQuotesModel.arrayOfModelsFromDictionaries(arr)
+            self.allQuotes = AllQuotesModel.arrayOfModelsFromDictionaries(arr)
         }
         
     }
@@ -66,13 +66,14 @@ class SupplierQuotesModel: JSONModel{
     }
 }
 //MARK: - vehicles车辆allQuotes
-class allQuotesModel: JSONModel{
-    var priceInfo: priceInfoModel!
+class AllQuotesModel: JSONModel{
+    var priceInfo: PriceInfoModel!
+    
     required init(dictionary dict: [NSObject : AnyObject]!) throws {
         super.init()
         let price = dict["priceInfo"] as! NSDictionary
-        let array = priceInfoModel.arrayOfModelsFromDictionaries([price])
-        self.priceInfo = array.lastObject as! priceInfoModel
+        let array = PriceInfoModel.arrayOfModelsFromDictionaries([price])
+        self.priceInfo = array.lastObject as! PriceInfoModel
     }
     
     required init(data: NSData!) throws {
@@ -84,7 +85,7 @@ class allQuotesModel: JSONModel{
     }
 }
 //MARK: - vehicles车辆allQuotes priceInfo
-class priceInfoModel: JSONModel{
+class PriceInfoModel: JSONModel{
     var unitPriceRMB: String!
     override class func propertyIsOptional(name: String) -> Bool{
         return true
@@ -116,6 +117,7 @@ class SupplierModel: JSONModel{
     var addressMark: String!
     var supplierImage: String!
     var supplierName: String!
+    
 }
 
 //********

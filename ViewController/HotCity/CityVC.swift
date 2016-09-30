@@ -35,8 +35,6 @@ class CityVC: GEBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColor.cyanColor()
-        //self.createUI()
         
         //需要网络请求
         if cityModel == nil{

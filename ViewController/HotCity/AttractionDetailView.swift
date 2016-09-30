@@ -102,6 +102,10 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         scoreL.text = scoreStr
         scoreL.textColor = hexColor(hexStr: "909090")
         scoreL.font = UIFont.systemFontOfSize(12)
+        scoreL.addGestureRecognizer({
+            return UITapGestureRecognizer.init(target: self, action: #selector(self.reviewBtnClik(_:)))
+            }())
+        scoreL.userInteractionEnabled = true
         self.addSubview(scoreL)
         
         let dimLayout = UICollectionViewFlowLayout()
@@ -261,6 +265,8 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
             let icon = UIImageView.init(frame: CGRectMake(leftSpace, originY, 25, 25))
             icon.sd_setImageWithURL(NSURL.init(string: view.userface))
             secView.addSubview(icon)
+            icon.layer.cornerRadius = icon.mj_h / 2
+            icon.layer.masksToBounds = true
             
             let width = widthFor(strLength: view.author, height: 18, font: 13) + 5
             let name = UILabel.init(frame: CGRectMake(leftSpace + icon.mj_x + icon.mj_w, originY, width, 18))

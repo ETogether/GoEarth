@@ -32,10 +32,10 @@
                     <blurEffect style="dark"/>
                 </visualEffectView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9m-zo-Y89">
-                    <rect key="frame" x="10" y="28" width="44" height="44"/>
+                    <rect key="frame" x="10" y="28" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="44" id="oPe-pN-gv0"/>
-                        <constraint firstAttribute="height" constant="44" id="x2I-oh-CDK"/>
+                        <constraint firstAttribute="width" constant="30" id="oPe-pN-gv0"/>
+                        <constraint firstAttribute="height" constant="30" id="x2I-oh-CDK"/>
                     </constraints>
                     <state key="normal" backgroundImage="back.png"/>
                     <connections>

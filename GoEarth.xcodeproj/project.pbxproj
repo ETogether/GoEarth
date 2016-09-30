@@ -99,6 +99,8 @@
 		BC7FACBA1D92BA660036A963 /* CityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FACB91D92BA660036A963 /* CityModels.swift */; };
 		BC7FACBC1D92BD440036A963 /* CityNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FACBB1D92BD440036A963 /* CityNetworkManager.swift */; };
 		BC7FACC21D92C0310036A963 /* CountrysModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FACC11D92C0310036A963 /* CountrysModels.swift */; };
+		BC8548301D9DEF8C001957E1 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85482E1D9DEF8C001957E1 /* CommentCell.swift */; };
+		BC8548311D9DEF8C001957E1 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC85482F1D9DEF8C001957E1 /* CommentCell.xib */; };
 		BC86A93A1D94B39C00E00C4A /* open_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC86A9361D94B39C00E00C4A /* open_up@2x.png */; };
 		BC86A93B1D94B39C00E00C4A /* open_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC86A9371D94B39C00E00C4A /* open_up@3x.png */; };
 		BC86A93C1D94B39C00E00C4A /* pinch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC86A9381D94B39C00E00C4A /* pinch@2x.png */; };
@@ -309,6 +311,8 @@
 		BC7FACB91D92BA660036A963 /* CityModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModels.swift; sourceTree = "<group>"; };
 		BC7FACBB1D92BD440036A963 /* CityNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityNetworkManager.swift; sourceTree = "<group>"; };
 		BC7FACC11D92C0310036A963 /* CountrysModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountrysModels.swift; sourceTree = "<group>"; };
+		BC85482E1D9DEF8C001957E1 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		BC85482F1D9DEF8C001957E1 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		BC86A9361D94B39C00E00C4A /* open_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open_up@2x.png"; sourceTree = "<group>"; };
 		BC86A9371D94B39C00E00C4A /* open_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open_up@3x.png"; sourceTree = "<group>"; };
 		BC86A9381D94B39C00E00C4A /* pinch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinch@2x.png"; sourceTree = "<group>"; };
@@ -700,6 +704,8 @@
 				BC03D7861D9BF79A009E11B2 /* AttractionTagsCell.xib */,
 				BC03D7891D9BF9A9009E11B2 /* TagsCell.swift */,
 				BC03D78A1D9BF9A9009E11B2 /* TagsCell.xib */,
+				BC85482E1D9DEF8C001957E1 /* CommentCell.swift */,
+				BC85482F1D9DEF8C001957E1 /* CommentCell.xib */,
 				BC647BFD1D993A1600D62DF4 /* VehiclesCell.swift */,
 				BC647BFE1D993A1600D62DF4 /* VehiclesCell.xib */,
 				BC647C011D993CAA00D62DF4 /* SuppliersView.swift */,
@@ -976,6 +982,7 @@
 				BC8B90D21D920E0100D28AA9 /* 我的B@3x.png in Resources */,
 				BC86A93A1D94B39C00E00C4A /* open_up@2x.png in Resources */,
 				BC041DD61D9D4C42008709F1 /* PhotoListVC.xib in Resources */,
+				BC8548311D9DEF8C001957E1 /* CommentCell.xib in Resources */,
 				BC371B941D913448009E50E2 /* Main.storyboard in Resources */,
 				BCFE4F0F1D940EDA00FAD80D /* 租车@3x.png in Resources */,
 				BC8B90CF1D920E0100D28AA9 /* 热门城市A@3x.png in Resources */,
@@ -1010,6 +1017,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8548301D9DEF8C001957E1 /* CommentCell.swift in Sources */,
 				BC041DDC1D9D5C9A008709F1 /* CommentVC.swift in Sources */,
 				BC371C2C1D913460009E50E2 /* MJRefreshNormalHeader.m in Sources */,
 				BC97D9AE1D9AA6EB0081BD35 /* AttractionVC.swift in Sources */,

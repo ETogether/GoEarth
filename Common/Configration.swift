@@ -52,7 +52,7 @@ func createBackButton(vc: GEBaseVC, action: Selector){
     
     let image = UIImage.init(named: "nav_back")?.imageWithRenderingMode(.AlwaysOriginal)
     let btn = UIButton.init(type: .System)
-    btn.frame = CGRectMake(0, 0, 25, 25)
+    btn.frame = CGRectMake(0, 0, 20, 20)
     btn.setBackgroundImage(image, forState: .Normal)
     btn.setBackgroundImage(image, forState: .Highlighted)
     btn.addTarget(vc, action: action, forControlEvents: .TouchUpInside)

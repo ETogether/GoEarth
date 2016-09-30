@@ -12,16 +12,18 @@ class SuppliersView: UIView {
 
     init(frame: CGRect, imageURL:[String], RMBS: [String]) {
         super.init(frame: frame)
-        
+        //
         var i = 0
         
         for url in imageURL{
             let originY = CGFloat(i) * (30 + 5)
-            let imageView = UIImageView.init(frame: CGRectMake(0, originY, 50, 30))
+            let imageView = UIImageView.init(frame: CGRectMake(0, originY, 60, 30))
             imageView.sd_setImageWithURL(NSURL.init(string: url))
             self.addSubview(imageView)
             
-            let rmb = UILabel.init(frame: CGRectMake(frame.width - 60, originY, 60, 30))
+            let rmb = UILabel.init(frame: CGRectMake(frame.width - 100, originY, 90, 30))
+            rmb.font = UIFont.systemFontOfSize(14)
+            rmb.textAlignment = .Left
             
             let content = NSMutableString.init(string: "¥" + RMBS[i] + "/天")
             let attri = NSMutableAttributedString.init(string: content as String)

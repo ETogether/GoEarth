@@ -33,12 +33,10 @@ class PhotoListVC: NavBaseVC , UICollectionViewDelegateFlowLayout, UICollectionV
             self.page = 1
             self.dataArr.removeAll()
             self.loadData()
-            self.PhotoListView.reloadData()
         })
         PhotoListView.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { 
             self.page += 1
             self.loadData()
-            self.PhotoListView.reloadData()
         })
         
     }

@@ -12,26 +12,30 @@ import Foundation
 extension VehiclesModel{
     
     //https://www.koubeilvxing.com/rental_search?dropoffDate=2016-10-04&pickupDateTime=10:00&type=3&lang=zh&placeId=19039&dropoffDateTime=10:00&pickupDate=2016-09-27
-    static func requestVehiclesData(placeId: String, callBack:(vehiclesArr: [AnyObject]?, suppliersArr: [AnyObject]?, err: NSError?) -> Void){
+    static func requestVehiclesData(placeId: String, callBack:(vehiclesArr: [AnyObject]?, suppliersDic: NSDictionary?, vehicleType: NSDictionary?, err: NSError?) -> Void){
         let dropDate = stringFor(3600 * 24 * 14)
         let pickDate = stringFor(3600 * 24 * 7)
         
         let para = NSMutableDictionary.init(dictionary: ["type":"3", "placeId":placeId, "dropoffDate":dropDate, "pickupDateTime":"10:00", "dropoffDateTime":"10:00", "pickupDate":pickDate])
         BaseRequest.getWithURL(HOME_URL + "rental_search", para: para) { (data, error) in
-            dispatch_async(dispatch_get_main_queue(), { 
-                print(NSString.init(data: data!, encoding: NSUTF8StringEncoding))
-            })
+//            dispatch_async(dispatch_get_main_queue(), { 
+//                print(NSString.init(data: data!, encoding: NSUTF8StringEncoding))
+//            })
             
             
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 let dataDic = rootDic["data"] as! NSDictionary
+                /* vehicleTypeDescs - 车辆类型 */
+                let type = dataDic["vehicleTypeDescs"] as! NSDictionary
+                
+                
                 
                 /* Vehicles - 车辆 *********************************************/
                 let vehicles = dataDic["vehicles"] as? [AnyObject]
                 var vehArr = NSMutableArray()
                 if vehicles == nil{
-                    
+                    return
                 }else{
                     if vehicles!.count > 0{
                         vehArr = VehiclesModel.arrayOfModelsFromDictionaries(vehicles)
@@ -40,27 +44,27 @@ extension VehiclesModel{
                 
                 
                 /* Suppliers - 供应商 *********************************************/
-                var supArr = NSMutableArray()
+               
                 let suppliers = dataDic["suppliers"] as! NSDictionary
-                let supKeys = suppliers.allKeys
-                let keyArr = NSMutableArray()
-                for key in supKeys{
-                    
-                    let dic = suppliers[key as! String] as! NSDictionary
-                    //SupplierModel.arrayOfModelsFromDictionaries([dic])
-                    keyArr.addObject(dic)
-                }
-                if keyArr.count > 0{
-                    supArr = SupplierModel.arrayOfModelsFromDictionaries(keyArr as [AnyObject])
-                }
+//                let supKeys = suppliers.allKeys
+//                let keyArr = NSMutableArray()
+//                for key in supKeys{
+//                    
+//                    let dic = suppliers[key as! String] as! NSDictionary
+//                    //SupplierModel.arrayOfModelsFromDictionaries([dic])
+//                    keyArr.addObject(dic)
+//                }
+//                if keyArr.count > 0{
+//                    supArr = SupplierModel.arrayOfModelsFromDictionaries(keyArr as [AnyObject])
+//                }
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    callBack(vehiclesArr: vehArr as [AnyObject], suppliersArr: supArr as [AnyObject], err: nil)
+                    callBack(vehiclesArr: vehArr as [AnyObject], suppliersDic: suppliers, vehicleType: type, err: nil)
                 })
 
             }else{
                 dispatch_async(dispatch_get_main_queue(), { 
-                    callBack(vehiclesArr: nil, suppliersArr: nil, err: error)
+                    callBack(vehiclesArr: nil, suppliersDic: nil, vehicleType: nil, err: error)
                 })
             }
         }
