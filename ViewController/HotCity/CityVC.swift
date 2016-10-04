@@ -125,19 +125,47 @@ class CityVC: GEBaseVC {
 
             switch sender.tag {
             case 100:
+                //景点
                 let attraction = AttractionVC()
                 attraction.countryId = cityModel!.countryId
                 attraction.placeId = cityModel!.id
+                attraction.module = "attraction"
                 attraction.navigationItem.title = "\(cityModel!.nameCn)景点"
                 self.navigationController?.pushViewController(attraction, animated: true)
             case 101:
-                print("餐馆")
+               //餐馆
+                let attraction = AttractionVC()
+                attraction.countryId = cityModel!.countryId
+                attraction.placeId = cityModel!.id
+                attraction.module = "restaurant"
+                attraction.navigationItem.title = "\(cityModel!.nameCn)餐馆"
+                self.navigationController?.pushViewController(attraction, animated: true)
             case 102:
-                print("酒店")
+                //酒店
+                let attraction = AttractionVC()
+                attraction.countryId = cityModel!.countryId
+                attraction.placeId = cityModel!.id
+                attraction.module = "hotel"
+                attraction.navigationItem.title = "\(cityModel!.nameCn)酒店"
+                self.navigationController?.pushViewController(attraction, animated: true)
             case 103:
-                print("购物")
+                //购物
+                let attraction = AttractionVC()
+                attraction.countryId = cityModel!.countryId
+                attraction.placeId = cityModel!.id
+                attraction.module = "shopping"
+                attraction.navigationItem.title = "\(cityModel!.nameCn)购物"
+                self.navigationController?.pushViewController(attraction, animated: true)
             case 104:
-                print("活动")
+                //活动
+                let attraction = AttractionVC()
+                attraction.countryId = cityModel!.countryId
+                attraction.placeId = cityModel!.id
+                attraction.module = "activity"
+                attraction.navigationItem.title = "\(cityModel!.nameCn)活动"
+                self.navigationController?.pushViewController(attraction, animated: true)
+                
+  //MARK: - 租车 城市指南 约伴
             case 105:
                 let rentalCar = RentalCarVC()
                 rentalCar.placeId = cityModel!.id

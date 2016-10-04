@@ -42,7 +42,7 @@ class ListView: UIView {
         for title in tittles{
             
             
-            let btn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * (btnH + 5), btnW, btnH))
+            let btn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * (btnH + 2), btnW, btnH))
             self.addSubview(btn)
             
             btn.setTitle(title, forState: .Normal)
@@ -63,13 +63,14 @@ class ListView: UIView {
             btns.append(btn)
             if i == 0{
                 btn.selected = true
+                btn.layer.borderColor = hexColor(hexStr: "14ea24").CGColor
             }
             
             i += 1
         }
-        pinchBtn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * (btnH + 5), btnW, btnW))
+        pinchBtn = UIButton.init(frame: CGRectMake(0, CGFloat(i) * (btnH + 2), btnW, btnH))
         self.addSubview(pinchBtn)
-        
+        pinchBtn.setImage(UIImage.init(named: "向上"), forState: .Highlighted)
         pinchBtn.setImage(UIImage.init(named: "向上"), forState: .Normal)
         pinchBtn.addTarget(self, action: #selector(self.pinchBtnClick(_:)), forControlEvents: .TouchUpInside)
         
@@ -83,10 +84,12 @@ class ListView: UIView {
     func updateIndex(idx: NSInteger){
         
         let preBtn = self.viewWithTag(selectedIndex + 100) as! UIButton
+        preBtn.layer.borderColor = WHITECOLOR.CGColor
         preBtn.selected = false
         
         let currentBtn = self.viewWithTag(idx + 100) as! UIButton
         currentBtn.selected = true
+        currentBtn.layer.borderColor = hexColor(hexStr: "14ea24").CGColor
         selectedIndex = idx
     }
     
@@ -102,6 +105,7 @@ class ListView: UIView {
                 
                 }, completion: { (true) in
                 self.pinchBtn.setImage(UIImage.init(named: "向下"), forState: .Normal)
+                    self.pinchBtn.setImage(UIImage.init(named: "向下"), forState: .Highlighted)
             })
             //隐藏显示的按钮
             self.hiddenBtns(btns[index - 1], i: index)
@@ -109,10 +113,11 @@ class ListView: UIView {
         }else{
             
             UIView.animateWithDuration(trends * NSTimeInterval(index), animations: {
-                self.pinchBtn.frame.origin.y = CGFloat(self.index) * self.btnH
+                self.pinchBtn.frame.origin.y = CGFloat(self.index) * (self.btnH + 2)
                 self.mj_h = self.pinchBtn.mj_h + self.pinchBtn.mj_y
                 }, completion: { (true) in
                     self.pinchBtn.setImage(UIImage.init(named: "向上"), forState: .Normal)
+                    self.pinchBtn.setImage(UIImage.init(named: "向下"), forState: .Highlighted)
             })
             //显示隐藏的按钮
             self.showBtns(btns[0], i: 0)

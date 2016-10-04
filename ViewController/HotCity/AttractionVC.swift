@@ -12,6 +12,7 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
     
     var countryId = ""
     var placeId = ""
+    var module = ""
     var page = 1
     
     var dataArr = NSMutableArray()
@@ -45,10 +46,11 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
 
     func loadData(){
         HDManager.startLoading()
-        AttractionModel.requestAttractionData(countryId, placeId: placeId, page: page) { (attractionArr,err) in
+        AttractionModel.requestAttractionData(countryId, placeId: placeId, module: module, page: page) { (attractionArr,err) in
             if err == nil{
                 self.dataArr.addObjectsFromArray(attractionArr!)
                 self.attractionView.reloadData()
+                
             }else{
                 print(err)
                 AlertTwoSeconds(self)
@@ -56,9 +58,7 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
         }
         HDManager.stopLoading()
     }
-    
-    
-    
+        
 
     //MARK: - UITableView协议方法
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +80,7 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detail = AttractionDetailVC()
         detail.model = dataArr[indexPath.row] as! AttractionModel
+        detail.module = self.module
         self.navigationController?.pushViewController(detail, animated: true)
     }
 }

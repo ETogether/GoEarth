@@ -11,9 +11,10 @@ import Foundation
 //MARK: - 景点页面
 extension AttractionModel{
     
-    static func requestAttractionData(countryId: String!, placeId: String!, page: NSInteger, callBack:(attactionArr: [AnyObject]?, err: NSError?) -> Void){
-        let para = NSMutableDictionary.init(dictionary: ["countryId":countryId, "placeId":placeId, "page":String(page), "count":"10", "module":"attraction", "":""])
+    static func requestAttractionData(countryId: String!, placeId: String!, module: String!, page: NSInteger, callBack:(attactionArr: [AnyObject]?, err: NSError?) -> Void){
+        let para = NSMutableDictionary.init(dictionary: ["countryId":countryId, "placeId":placeId, "page":String(page), "module":module, "count":"10"])
         BaseRequest.getWithURL(HOME_URL + "search", para: para) { (data, error) in
+            print(NSString.init(data: data!, encoding: NSUTF8StringEncoding))
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 let list = rootDic["list"] as! [AnyObject]
@@ -38,9 +39,9 @@ extension AttractionModel{
 
 //MARK: - 某景点的具体页面Item
 extension AttractionItemModel{
-    static func requestAttractionItemData(countryId: String!, recordId: String!, callBack:(array: [AnyObject]?, err: NSError?) -> Void){
+    static func requestAttractionItemData(countryId: String!, recordId: String!, module: String!, callBack:(array: [AnyObject]?, err: NSError?) -> Void){
         //http://www.koubeilvxing.com/iteminfo?countryId=1&recordId=9&module=attraction&lang=zh&sessionId=
-        let para = NSMutableDictionary.init(dictionary: ["countryId":countryId, "recordId":recordId, "module":"attraction"])
+        let para = NSMutableDictionary.init(dictionary: ["countryId":countryId, "recordId":recordId, "module":module])
         BaseRequest.getWithURL(HOME_URL + "iteminfo", para: para) { (data, error) in
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
@@ -62,8 +63,8 @@ extension AttractionItemModel{
         
     }
     //http://www.koubeilvxing.com/reviewtags?recordId=9&lang=zh&module=attraction
-    static func requestAttractionTagsData(recordId: String, callBack:(tagsArr: [AnyObject]?, err: NSError?) -> Void){
-        let para = NSMutableDictionary.init(dictionary: ["recordId":recordId, "module":"attraction"])
+    static func requestAttractionTagsData(recordId: String!, module: String!, callBack:(tagsArr: [AnyObject]?, err: NSError?) -> Void){
+        let para = NSMutableDictionary.init(dictionary: ["recordId":recordId, "module":module])
         BaseRequest.getWithURL(HOME_URL + "reviewtags", para: para) { (data, error) in
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
@@ -89,9 +90,9 @@ extension AttractionItemModel{
 
 //MARK: - 评论CommentModel
 extension CommentModel{
-    static func requestCommentData(recordId: String, page: NSInteger, callBack:(comments: [AnyObject]?, err: NSError?) -> Void){
+    static func requestCommentData(recordId: String, page: NSInteger, module: String, callBack:(comments: [AnyObject]?, err: NSError?) -> Void){
         
-        let para = NSMutableDictionary.init(dictionary: ["recordId":recordId, "page":"\(page)", "rows":"10", "module":"attraction"])
+        let para = NSMutableDictionary.init(dictionary: ["recordId":recordId, "page":"\(page)", "rows":"10", "module":module])
         BaseRequest.getWithURL(HOME_URL + "reviews", para: para) { (data, error) in
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary

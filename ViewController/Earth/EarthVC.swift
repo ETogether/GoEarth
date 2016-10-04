@@ -74,6 +74,7 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
     func createUI(){
         self.navigationItem.title = continentTitles.first
         listView = ListView.init(frame: CGRectMake(0, 100, 60, CGFloat(continentTitles.count) * 60), tittles: continentTitles)
+        listView.center.y = self.view.center.y
         listView.delegate = self
         self.view.addSubview(listView)
  

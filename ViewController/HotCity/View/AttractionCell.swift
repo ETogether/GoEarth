@@ -69,7 +69,7 @@ class AttractionCell: UITableViewCell {
                 view.removeFromSuperview()
             }
             
-            if model.mustgo.integerValue > 0{
+            if model.mustgo!.integerValue > 0{
                 
                 let lab = UILabel.init(frame: CGRectMake(8, 0, 40, 18))
                 lab.center.y = self.cnL.center.y

@@ -98,7 +98,7 @@ class CompanyCompare: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
         return 0.1
     }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleArr[section] as! String
+        return titleArr[section] as? String
     }
 
 

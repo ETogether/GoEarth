@@ -9,7 +9,7 @@
 import UIKit
 
 class CommentVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
-    
+    var module = ""
     var recordId = ""
     var page = 1
     var dataArr = NSMutableArray()
@@ -104,7 +104,7 @@ class CommentVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
 
     func loadData(){
         HDManager.startLoading()
-        CommentModel.requestCommentData(recordId, page: page) { (comments, err) in
+        CommentModel.requestCommentData(recordId, page: page, module: module) { (comments, err) in
             if err == nil{
                 self.dataArr.addObjectsFromArray(comments!)
                 let arr = (self.dataArr.lastObject as! CommentModel).reviews

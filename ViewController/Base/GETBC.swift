@@ -31,12 +31,13 @@ class GETBC: UITabBarController {
         for vc in vcArr{
             let nc = UINavigationController.init(rootViewController: vc)
             nc.navigationBar.barTintColor = WHITECOLOR
+            //nc.navigationBar.setBackgroundImage(UIImage.init(named: "nav_bg"), forBarMetrics: .Default)
             //图标 及 title（文字）
             let image = UIImage.init(named: titleArr[i] + "A")?.imageWithRenderingMode(.AlwaysOriginal)
             let selImage = UIImage.init(named: titleArr[i] + "B")?.imageWithRenderingMode(.AlwaysOriginal)
             nc.tabBarItem = UITabBarItem.init(title: titleArr[i], image: image, selectedImage: selImage)
             //设置title颜色
-            nc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: hexColor(hexStr: "eb4f38")], forState: .Selected)
+            nc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: hexColor(hexStr: "04f0a1")], forState: .Selected)
             nc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: hexColor(hexStrJ: "#bdbbbb")], forState: .Normal)
             ncArr.append(nc)
             i += 1

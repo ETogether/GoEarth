@@ -9,8 +9,8 @@
 import UIKit
 
 class PhotoListVC: NavBaseVC , UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
-    
-    var recordId = "9"
+    var module = ""
+    var recordId = ""
     var page = 1
     @IBOutlet weak var PhotoListView: UICollectionView!
     
@@ -44,7 +44,7 @@ class PhotoListVC: NavBaseVC , UICollectionViewDelegateFlowLayout, UICollectionV
     func loadData(){
         HDManager.startLoading()
     //    GET http://www.koubeilvxing.com/photos?recordId=9&module=attraction&lang=zh&page=1&rows=10
-        let para = ["recordId": recordId,"page": String(page), "rows":"10","module":"attraction"]
+        let para = ["recordId": recordId,"page": String(page), "rows":"10","module":module]
         BaseRequest.getWithURL(HOME_URL + "photos", para: para) { (data, error) in
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
@@ -52,8 +52,10 @@ class PhotoListVC: NavBaseVC , UICollectionViewDelegateFlowLayout, UICollectionV
                 for photo in photos{
                     let dic = photo as! [String: String]
                     self.dataArr.append(dic["url"]!)
-                    self.PhotoListView.reloadData()
                 }
+                dispatch_async(dispatch_get_main_queue(), { 
+                    self.PhotoListView.reloadData()
+                })
             }else{
                 print(error)
                 AlertTwoSeconds(self)

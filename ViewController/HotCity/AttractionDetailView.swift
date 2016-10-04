@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate {
+    
+    var module = ""
     
     let topSpace: CGFloat = 10
     let leftSpace: CGFloat = 10
@@ -65,13 +67,13 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         headerImage.addGestureRecognizer({
             return UITapGestureRecognizer.init(target: self, action: #selector(self.tapClick(_:)))
             }())
-        
         photoCount = UILabel.init(frame: CGRectMake(SCREEN_W - leftSpace - 50, headerImage.mj_h - 50, 50, 20))
         photoCount.text = itemModel.photoCount + "张"
         photoCount.textColor = WHITECOLOR
         photoCount.textAlignment = .Center
         photoCount.font = UIFont.boldSystemFontOfSize(13)
         headerImage.addSubview(photoCount)
+        
         let cnW = widthFor(strLength: itemModel.nameCn, height: 21, font: 16) + 5
         cnL = UILabel.init(frame: CGRectMake(0, headerImage.mj_h + topSpace, cnW, 21))
         cnL.center.x = self.center.x
@@ -211,9 +213,9 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         openTimeTTL.textColor = TEXTGRAYCOLOR
         openTimeTTL.font = UIFont.systemFontOfSize(12)
         secView.addSubview(openTimeTTL)
-        let opeH = heightFor(strLength: itemModel.openingTimeCn, width: SCREEN_W - 2 * leftSpace, font: 14) + 5
+        let opeH = heightFor(strLength: itemModel.openingTime, width: SCREEN_W - 2 * leftSpace, font: 14) + 5
         openTimeCTT = UILabel.init(frame: CGRectMake(leftSpace, openTimeTTL.mj_y + openTimeTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, opeH))
-        openTimeCTT.text = itemModel.openingTimeCn
+        openTimeCTT.text = itemModel.openingTime
         openTimeCTT.numberOfLines = 0
         openTimeCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(openTimeCTT)
@@ -332,6 +334,7 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         
         let photoList = PhotoListVC()
         photoList.recordId = itemModel.id
+        photoList.module = module
         self.block!(detail: photoList)
     }
     func infoBtnClick(sender: UIButton){
@@ -343,6 +346,7 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
     func reviewBtnClik(sender: UIButton){
         let comment = CommentVC()
         comment.recordId = itemModel.id
+        comment.module = self.module
         comment.navigationItem.title = "全部评论"
         self.block!(detail: comment)
     }
@@ -384,6 +388,11 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
 //        return (SCREEN_W - 4 * leftSpace - 3 * 80 ) / 2 - 2
 //    }
-    
+
+//    //MARK: -UIScrollView协议方法
+//    //根据DetailView的滑动
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        print(scrollView.contentOffset.y)
+//    }
 
 }

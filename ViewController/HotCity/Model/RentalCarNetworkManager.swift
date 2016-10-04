@@ -26,7 +26,7 @@ extension VehiclesModel{
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 let dataDic = rootDic["data"] as! NSDictionary
-                /* vehicleTypeDescs - 车辆类型 */
+                /* vehicleTypeDescs - 车辆类型 ***********************************/
                 let type = dataDic["vehicleTypeDescs"] as! NSDictionary
                 
                 

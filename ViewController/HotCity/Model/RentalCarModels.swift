@@ -100,7 +100,7 @@ class VehicleInfoModel: JSONModel{
     var seat: String!
     var transmission: String!
     var vehicleName: String!
-    var vehicleId: String!
+    var vehicleTypeId: String!
     
     override class func propertyIsOptional(name: String) -> Bool{
         return true

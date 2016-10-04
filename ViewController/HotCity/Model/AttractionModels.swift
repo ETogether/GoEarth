@@ -20,7 +20,7 @@ class AttractionModel: JSONModel {
     var id: String!
     var lat: String!
     var lng: String!
-    var mustgo: NSNumber!
+    var mustgo: NSNumber?
     var name: String!
     var nameCn: String!
     var negativeReviewCount: String!

@@ -76,12 +76,11 @@ class RentalCarVC: NavBaseVC, UITableViewDataSource, UITableViewDelegate {
         let models = dataArr[indexPath.row] as! VehiclesModel
         let model = models.vehicleInfo
         
-        
         cell.imageCar.sd_setImageWithURL(NSURL.init(string: model.imagePath))
         cell.nameL.text = model.vehicleName
-//        let type = (vehicleType[model.vehicleId] as! NSDictionary)["vehicleName"] as! String
-//        let name = type
-        cell.desL.text = "name" + " | " + model.transmission + " | " + model.seat + "座"
+        let type = (vehicleType[model.vehicleTypeId] as! NSDictionary)["vehicleName"] as! String
+
+        cell.desL.text = type + " | " + model.transmission + " | " + model.seat + "座"
         cell.createIcons(models.supplierQuotes, dic: self.supperliersDic)
         
         return cell
