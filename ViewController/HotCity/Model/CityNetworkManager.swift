@@ -16,11 +16,11 @@ extension HotCityModel{
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 //推荐城市(热门城市)
-                let cityArr = rootDic["recommendplaces"] as! [AnyObject]
-                var hotArr = NSMutableArray()
-                if cityArr.count > 0{
-                    hotArr = HotCityModel.arrayOfModelsFromDictionaries(cityArr)
-                }
+//                let cityArr = rootDic["recommendplaces"] as! [AnyObject]
+//                var hotArr = NSMutableArray()
+//                if cityArr.count > 0{
+//                    hotArr = HotCityModel.arrayOfModelsFromDictionaries(cityArr)
+//                }
                 
                 //六大洲
                 let conArr = rootDic["continents"] as! [AnyObject]
@@ -32,7 +32,7 @@ extension HotCityModel{
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), { 
-                    callBack(countryArr: countyrs! as [AnyObject], hotCityArr: hotArr as [AnyObject], err: nil)
+                    callBack(countryArr: countyrs! as [AnyObject], hotCityArr: nil, err: nil)
                 })
                 
                 

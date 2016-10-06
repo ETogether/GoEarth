@@ -35,21 +35,37 @@ class HotCityVC: GEBaseVC {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         
-        self.loadData()
-        
-
+        self.readRecommendplaces()
+        //由于版本变动，数据热门数据无法得到只能本地加载
+//        self.loadData()
     }
-
+    
+    func readRecommendplaces(){
+        let path = NSBundle.mainBundle().pathForResource("recommendplaces", ofType: "json")
+        let data = NSData.init(contentsOfFile: path!)
+        let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
+        let arr = rootDic["recommendplaces"] as! [AnyObject]
+        //一般使用方式
+//        for city in arr{
+//            let model = HotCityModel()
+//            model.setValuesForKeysWithDictionary(city as! [String: AnyObject])
+//            self.cityArr.addObject(model)
+//        }
+//        self.collectionView.reloadData()
+        //这是JSONModel(第三方)解析数据
+        if arr.count > 0{
+            self.cityArr = HotCityModel.arrayOfModelsFromDictionaries(arr)
+            self.collectionView.reloadData()
+        }
+    }
+    
+    
     func loadData(){
         HDManager.startLoading()
         HotCityModel.requestHotCityData { (countryArr, hotCityArr, err) in
             if err == nil{
-                
                 self.cityArr.addObjectsFromArray(hotCityArr!)
                 self.collectionView.reloadData()
-                
-                
-                
             }else{
                 print(err)
                 //发生网络错误时弹出警告框

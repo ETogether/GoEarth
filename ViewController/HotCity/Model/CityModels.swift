@@ -11,18 +11,37 @@ import Foundation
 //MARK:热门城市模型
 class HotCityModel: JSONModel{
     
+//    "cover" : "http://img.koubeilvxing.com/pics/upload/2015-07-28/55b6d992efaed.jpg@!thumb",
+//    "desc" : "佛教之都，包罗万象",
+//    "id" : "326",
+//    "info" : "",
+//    "info_cn" : "",
+//    "name" : "Bangkok",
+//    "name_cn"
+    
     var cover: String!
     var desc: String!
     var id: String!
     var name: String!
     var nameCn: String!
     
-    override class func keyMapper() -> JSONKeyMapper{
-        return JSONKeyMapper.mapperFromUnderscoreCaseToCamelCase()
-    }
-    override class func propertyIsOptional(propertyName: String) -> Bool{
+    override class func propertyIsOptional(name: String) -> Bool{
         return true
     }
+    override class func keyMapper() -> JSONKeyMapper{
+        return JSONKeyMapper.init(modelToJSONDictionary: ["nameCn":"name_cn"])//对少数字段就行操作
+        //return JSONKeyMapper.mapperFromUnderscoreCaseToCamelCase()  //对多数有下划的字段操作(将下划线去掉首字母大写)，但数据里原有字段存在大写字母，会把它当成原字段是带下划线处理导致崩溃
+    }
+//    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+//        
+//    }
+//    override func setValue(value: AnyObject?, forKey key: String) {
+//        if key == "name_cn"{
+//            self.setValue(value, forKey: "nameCn")
+//        }else{
+//            super.setValue(value, forKey: key)
+//        }
+//    }
     
 }
 //MARK:城市页面

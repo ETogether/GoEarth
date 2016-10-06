@@ -110,10 +110,13 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         scoreL.userInteractionEnabled = true
         self.addSubview(scoreL)
         
+        //MARK: - DimensionScores
+       
         let dimLayout = UICollectionViewFlowLayout()
         dimLayout.scrollDirection = .Horizontal
-        dimLayout.sectionInset = UIEdgeInsets.init(top: 0, left: 11 * leftSpace, bottom: 0, right: 0)
-        //dimLayout.minimumInteritemSpacing = (SCREEN_W - 4 * leftSpace - 3 * 80 ) / 2 - 10
+        dimLayout.sectionInset = UIEdgeInsets.init(top: 0, left: 2 * leftSpace, bottom: 0, right: 2 * leftSpace)
+//        dimLayout.minimumInteritemSpacing = (SCREEN_W - 2 * leftSpace - num * 80 ) / (num - 1)
+//        dimLayout.minimumLineSpacing = (SCREEN_W - 2 * leftSpace - num * 80) / (num - 1) / 2
         dimensionView = UICollectionView.init(frame: CGRectMake(0, starsFG.mj_y + starsFG.mj_h + 2 * topSpace, SCREEN_W, 100), collectionViewLayout: dimLayout)
         dimensionView.showsHorizontalScrollIndicator = false
         self.addSubview(dimensionView)
@@ -125,9 +128,9 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         
         let tagLayout = UICollectionViewFlowLayout()
         tagLayout.sectionInset = UIEdgeInsets.init(top: 5, left: leftSpace, bottom: 5, right: leftSpace)
-        tagLayout.minimumLineSpacing = 5
+        
         tagLayout.scrollDirection = .Vertical
-        tags = UICollectionView.init(frame: CGRectMake(0, dimensionView.mj_y + dimensionView.mj_h, self.mj_w, 180), collectionViewLayout: tagLayout)
+        tags = UICollectionView.init(frame: CGRectMake(0, dimensionView.mj_y + dimensionView.mj_h, self.mj_w, 150), collectionViewLayout: tagLayout)
         tags.showsVerticalScrollIndicator = false
         tags.bounces = false
         tags.scrollEnabled = false
@@ -141,8 +144,9 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         
         //MARK:第二部分
         secView = UIView.init(frame: CGRectMake(0, tags.mj_y + tags.mj_h, SCREEN_W, 1000))
+        secView.backgroundColor = GRAYCOLOR
         self.addSubview(secView)
-        infoCnL = UILabel.init(frame: CGRectMake(0, 50,50, 30))
+        infoCnL = UILabel.init(frame: CGRectMake(0, 20,50, 30))
         infoCnL.center.x = self.center.x
         infoCnL.numberOfLines = 0
         infoCnL.text = "简介"
@@ -166,15 +170,21 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         infoBtn.layer.borderWidth = 2
         infoBtn.backgroundColor = UIColor.clearColor()
         
+        //MARK: -地址
         addressTTL = UILabel.init(frame: CGRectMake(leftSpace, infoBtn.mj_y + infoBtn.mj_h + topSpace, 30, 20))
         addressTTL.text = "地址"
         addressTTL.textColor = TEXTGRAYCOLOR
         addressTTL.font = UIFont.systemFontOfSize(12)
         secView.addSubview(addressTTL)
-        addressCTT = UILabel.init(frame: CGRectMake(leftSpace, addressTTL.mj_y + addressTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, 20))
+        let addH = heightFor(strLength: itemModel.address, width: SCREEN_W - 2 * leftSpace, font: 14) + 5
+        addressCTT = UILabel.init(frame: CGRectMake(leftSpace, addressTTL.mj_y + addressTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, addH))
         addressCTT.text = itemModel.address
+        addressCTT.numberOfLines = 0
         addressCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(addressCTT)
+        
+        
+        //MARK: -交通
         
         trafficTTL = UILabel.init(frame: CGRectMake(leftSpace, addressCTT.mj_y + addressCTT.mj_h + topSpace, 30, 20))
         trafficTTL.text = "交通"
@@ -188,8 +198,9 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         trafficCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(trafficCTT)
         
+        //MARK: -价格
         ticketTTL = UILabel.init(frame: CGRectMake(leftSpace, trafficCTT.mj_y + trafficCTT.mj_h + topSpace, 30, 20))
-        ticketTTL.text = "门票"
+        ticketTTL.text = "人均消费"
         ticketTTL.textColor = TEXTGRAYCOLOR
         ticketTTL.font = UIFont.systemFontOfSize(12)
         secView.addSubview(ticketTTL)
@@ -220,27 +231,60 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         openTimeCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(openTimeCTT)
         
-        duractionTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, 130, 20))
-        duractionTTL.text = "游玩时间"
-        duractionTTL.textColor = TEXTGRAYCOLOR
-        duractionTTL.font = UIFont.systemFontOfSize(12)
-        secView.addSubview(duractionTTL)
-        duractionCTT = UILabel.init(frame: CGRectMake(leftSpace, duractionTTL.mj_y + duractionTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, 20))
-        duractionCTT.text = itemModel.contact
-        duractionCTT.font = UIFont.systemFontOfSize(14)
-        secView.addSubview(duractionCTT)
+        if itemModel.duration_cn.stringLength() > 0{
+            ticketTTL.text = "门票"   //在景点中是写门票
+            duractionTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, 130, 20))
+            duractionTTL.text = "游玩时间"
+            duractionTTL.textColor = TEXTGRAYCOLOR
+            duractionTTL.font = UIFont.systemFontOfSize(12)
+            secView.addSubview(duractionTTL)
+            duractionCTT = UILabel.init(frame: CGRectMake(leftSpace, duractionTTL.mj_y + duractionTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, 20))
+            duractionCTT.text = itemModel.duration_cn
+            duractionCTT.font = UIFont.systemFontOfSize(14)
+            secView.addSubview(duractionCTT)
+            
+            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, duractionCTT.mj_y + duractionCTT.mj_h + topSpace, 130, 20))
+        }else{
+            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, 130, 20))
+        }
+       
         
-        tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, duractionCTT.mj_y + duractionCTT.mj_h + topSpace, 130, 20))
+        
         tagCnTTL.text = "分类标签"
         tagCnTTL.textColor = TEXTGRAYCOLOR
         tagCnTTL.font = UIFont.systemFontOfSize(12)
         secView.addSubview(tagCnTTL)
-        tagCnCTT = UILabel.init(frame: CGRectMake(leftSpace, tagCnTTL.mj_y + tagCnTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, 20))
+        let tagH = heightFor(strLength: itemModel.tagCn, width: SCREEN_W - 2 * leftSpace, font: 14)
+        tagCnCTT = UILabel.init(frame: CGRectMake(leftSpace, tagCnTTL.mj_y + tagCnTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, tagH))
         tagCnCTT.text = itemModel.tagCn
         tagCnCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(tagCnCTT)
         
-        tipTTL = UILabel.init(frame: CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, 120, 20))
+        //菜系
+        let cuisinesTTL = UILabel.init()
+        let cuisinesCTT = UILabel.init()
+        if itemModel.cuisinesCn.characters.count > 0{
+            
+            cuisinesTTL.frame = CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, 120, 20)
+            cuisinesTTL.text = "菜系"
+            cuisinesTTL.textColor = TEXTGRAYCOLOR
+            cuisinesTTL.font = UIFont.systemFontOfSize(12)
+            secView.addSubview(cuisinesTTL)
+            
+            cuisinesCTT.frame = CGRectMake(leftSpace, cuisinesTTL.mj_y + cuisinesTTL.mj_h + topSpace, 120, 20)
+            cuisinesCTT.text = itemModel.cuisinesCn
+            cuisinesCTT.font = UIFont.systemFontOfSize(14)
+            secView.addSubview(cuisinesCTT)
+            
+            tipTTL = UILabel.init(frame: CGRectMake(leftSpace, cuisinesCTT.mj_y + cuisinesCTT.mj_h + topSpace, 120, 20))
+
+        }else{
+            tipTTL = UILabel.init(frame: CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, 120, 20))
+           
+
+        }
+        
+//        tipTTL = UILabel.init(frame: CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, 120, 20))
         tipTTL.text = "小帖士"
         tipTTL.textColor = TEXTGRAYCOLOR
         tipTTL.font = UIFont.systemFontOfSize(12)
@@ -325,9 +369,8 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
             i += 1
         }
         secView.mj_h = tableView.mj_y + tableView.mj_h + 365
-        self.contentSize = CGSizeMake(secView.mj_w, secView.mj_y + secView.mj_h + topSpace)
-        
-        
+        self.bounces = false
+        self.contentSize = CGSizeMake(secView.mj_w, secView.mj_y + secView.mj_h)
     }
     //MARK: - 照片、简介、评论的点击事件
     func tapClick(tap: UITapGestureRecognizer){
@@ -375,7 +418,10 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TagsCell", forIndexPath: indexPath) as! TagsCell
         let model = tagArr[indexPath.item] as! AttractionTagsModel
         cell.tagsL.text = model.tag + " " + model.num
-       // cell.lineL.backgroundColor = hexColor(hexStr: "04a0f1")
+        if indexPath.item > 9{
+            cell.lineL.backgroundColor = GRAYCOLOR
+        }
+       
         
         return cell
     }
@@ -385,9 +431,22 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         }
         return CGSizeMake((SCREEN_W - 4 * leftSpace) / 3 - 20, 28)
     }
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-//        return (SCREEN_W - 4 * leftSpace - 3 * 80 ) / 2 - 2
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+//        if collectionView == dimensionView{
+//            let num = CGFloat(itemModel.dimensionScores.count)
+//            return (SCREEN_W - 4 * leftSpace - (num * 60)) / (num - 1)
+//        }
+        return 0
+        
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        
+        if collectionView == dimensionView{
+            let num = CGFloat(itemModel.dimensionScores.count)
+            return (SCREEN_W - 4 * leftSpace - (num * 60)) / (num - 1)
+        }
+        return 0
+    }
 
 //    //MARK: -UIScrollView协议方法
 //    //根据DetailView的滑动

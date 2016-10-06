@@ -17,8 +17,9 @@ class TagsCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        lineL.layer.cornerRadius = lineL.mj_w / 2
+        lineL.layer.cornerRadius = lineL.mj_h / 2
         lineL.clipsToBounds = true
+       
         
     }
 

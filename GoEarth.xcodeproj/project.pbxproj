@@ -129,6 +129,7 @@
 		BC97D9B21D9AA7740081BD35 /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */; };
 		BC97D9B51D9AAE1C0081BD35 /* StarsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */; };
 		BC97D9B61D9AAE1C0081BD35 /* StarsForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */; };
+		BCB23B911DA50AF3005F8D6A /* recommendplaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BCB23B901DA50AF3005F8D6A /* recommendplaces.json */; };
 		BCB2D77F1D917897005D887C /* Configration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D77E1D917897005D887C /* Configration.swift */; };
 		BCB2D7871D917AFC005D887C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D7861D917AFC005D887C /* BaseRequest.swift */; };
 		BCB2D7941D917EDE005D887C /* EarthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D78F1D917EDE005D887C /* EarthVC.swift */; };
@@ -346,6 +347,7 @@
 		BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
 		BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsBackground.png; sourceTree = "<group>"; };
 		BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsForeground.png; sourceTree = "<group>"; };
+		BCB23B901DA50AF3005F8D6A /* recommendplaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendplaces.json; sourceTree = "<group>"; };
 		BCB2D77D1D9177A1005D887C /* GEBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEBridgeHeader.h; sourceTree = "<group>"; };
 		BCB2D77E1D917897005D887C /* Configration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configration.swift; sourceTree = "<group>"; };
 		BCB2D7861D917AFC005D887C /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 		BC371C451D913505009E50E2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BCB23B901DA50AF3005F8D6A /* recommendplaces.json */,
 				BCB2D7861D917AFC005D887C /* BaseRequest.swift */,
 				BCB2D77D1D9177A1005D887C /* GEBridgeHeader.h */,
 				BCB2D77E1D917897005D887C /* Configration.swift */,
@@ -1006,6 +1009,7 @@
 				BC371B941D913448009E50E2 /* Main.storyboard in Resources */,
 				BCFE4F0F1D940EDA00FAD80D /* 租车@3x.png in Resources */,
 				BC86A93C1D94B39C00E00C4A /* pinch@2x.png in Resources */,
+				BCB23B911DA50AF3005F8D6A /* recommendplaces.json in Resources */,
 				BCD3E7571D98BD2B00362016 /* SectionViewCell.xib in Resources */,
 				BC86A93B1D94B39C00E00C4A /* open_up@3x.png in Resources */,
 				BCFE4F101D940EDA00FAD80D /* 约伴@2x.png in Resources */,

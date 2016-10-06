@@ -80,3 +80,11 @@ func AttributeText(color: UIColor, text: String, rangeStr: String) -> NSMutableA
 }
 
 
+//MARK: -字符串长度
+extension String{
+    func stringLength() -> NSInteger{
+        return self.characters.count
+    }
+}
+
+

@@ -111,8 +111,11 @@ class AttractionItemModel: JSONModel{
     var coverPhotoId: String!
     var covermore: String!
     var dimensionScores: NSMutableArray!  //另一个模型******
-    var duration: String!
-    var duration_cn: String!
+    
+    //MARK: -景点中有的字段 游玩时间
+    var duration: String = ""
+    var duration_cn: String = "" //duration_cn其实这样的字段也可以使用，只是iOS中没有这种书写习惯
+    
     var favoured: NSNumber!  //NSNumber
     var hotelCount: String!
     var id: String!
@@ -124,8 +127,11 @@ class AttractionItemModel: JSONModel{
     var nameCn: String! // name_cn
     var negativeReviewCount: String!
     var neutralReviewCount: String!
-    var openingTime: String!//opening_time
-    var openingTimeCn: String! //opening_time_cn
+    
+    //MARK: -酒店中没有 开放时间
+    var openingTime: String = ""//opening_time
+    var openingTimeCn: String = "" //opening_time_cn
+    
     var overall: String!
     var parent: String!
     var path: String!
@@ -143,8 +149,22 @@ class AttractionItemModel: JSONModel{
     var status: String!
     var tag: String!
     var tagCn: String! //tag_cn
-    var tip: String!
-    var traffic: String!
+    
+    //MARK: - Restaurant里多了菜系cuisines
+    var cuisines: String = ""
+    var cuisinesCn: String = ""
+    
+    //MARK: - Hotel里多了 入住/退房时间 住宿政策 设施服务 是否允许带宠物  星级
+    var check_in = ""
+    var check_out = ""
+    var children = ""
+    var facility = ""
+    var facility_cn = ""
+    var pets = ""
+    var star = ""
+    
+    var tip: String = "" //酒店中没有
+    var traffic: String = "" //酒店中没有
     required init(dictionary dict: [NSObject : AnyObject]!) throws {
         super.init()
         
@@ -169,9 +189,10 @@ class AttractionItemModel: JSONModel{
             self.setValue(value, forKey: "openingTime")
         }else if key == "name_cn"{
             self.setValue(value, forKey: "nameCn")
-        }
-        else if key == "info_cn"{
+        }else if key == "info_cn"{
             self.setValue(value, forKey: "infoCn")
+        }else if key == "cuisines_cn"{
+            self.setValue(value, forKey: "cuisinesCn")
         }else{
             super.setValue(value, forKey: key)
         }
