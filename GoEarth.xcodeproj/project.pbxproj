@@ -82,8 +82,8 @@
 		BC552EA01DA3CEE200CFE302 /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552E9F1DA3CEE200CFE302 /* nav_bg.png */; };
 		BC552EA71DA3D42400CFE302 /* 热门城市A@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA11DA3D42400CFE302 /* 热门城市A@2x.png */; };
 		BC552EA81DA3D42400CFE302 /* 热门城市B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA21DA3D42400CFE302 /* 热门城市B@2x.png */; };
-		BC552EA91DA3D42400CFE302 /* 我的A@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA31DA3D42400CFE302 /* 我的A@2x.png */; };
-		BC552EAA1DA3D42400CFE302 /* 我的B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA41DA3D42400CFE302 /* 我的B@2x.png */; };
+		BC552EA91DA3D42400CFE302 /* 个人中心A@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA31DA3D42400CFE302 /* 个人中心A@2x.png */; };
+		BC552EAA1DA3D42400CFE302 /* 个人中心B@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA41DA3D42400CFE302 /* 个人中心B@2x.png */; };
 		BC552EAB1DA3D42400CFE302 /* EarthA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA51DA3D42400CFE302 /* EarthA@2x.png */; };
 		BC552EAC1DA3D42400CFE302 /* EarthB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EA61DA3D42400CFE302 /* EarthB@2x.png */; };
 		BC552EB31DA3D54500CFE302 /* 热门城市A@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC552EAD1DA3D54500CFE302 /* 热门城市A@3x.png */; };
@@ -118,6 +118,13 @@
 		BC7FACC21D92C0310036A963 /* CountrysModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FACC11D92C0310036A963 /* CountrysModels.swift */; };
 		BC8548301D9DEF8C001957E1 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85482E1D9DEF8C001957E1 /* CommentCell.swift */; };
 		BC8548311D9DEF8C001957E1 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC85482F1D9DEF8C001957E1 /* CommentCell.xib */; };
+		BC855B151DA656FC00949EE3 /* Info.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC855B131DA656FC00949EE3 /* Info.xcdatamodeld */; };
+		BC855B181DA6583100949EE3 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC855B161DA6583100949EE3 /* Place+CoreDataProperties.swift */; };
+		BC855B191DA6583100949EE3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC855B171DA6583100949EE3 /* Place.swift */; };
+		BC855B1E1DA65CA500949EE3 /* nav_storeA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC855B1A1DA65CA500949EE3 /* nav_storeA@2x.png */; };
+		BC855B1F1DA65CA500949EE3 /* nav_storeA@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC855B1B1DA65CA500949EE3 /* nav_storeA@3x.png */; };
+		BC855B201DA65CA500949EE3 /* nav_storeB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC855B1C1DA65CA500949EE3 /* nav_storeB@2x.png */; };
+		BC855B211DA65CA500949EE3 /* nav_storeB@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC855B1D1DA65CA500949EE3 /* nav_storeB@3x.png */; };
 		BC86A93A1D94B39C00E00C4A /* open_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC86A9361D94B39C00E00C4A /* open_up@2x.png */; };
 		BC86A93B1D94B39C00E00C4A /* open_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC86A9371D94B39C00E00C4A /* open_up@3x.png */; };
 		BC86A93C1D94B39C00E00C4A /* pinch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC86A9381D94B39C00E00C4A /* pinch@2x.png */; };
@@ -129,7 +136,6 @@
 		BC97D9B21D9AA7740081BD35 /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */; };
 		BC97D9B51D9AAE1C0081BD35 /* StarsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */; };
 		BC97D9B61D9AAE1C0081BD35 /* StarsForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */; };
-		BCB23B911DA50AF3005F8D6A /* recommendplaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BCB23B901DA50AF3005F8D6A /* recommendplaces.json */; };
 		BCB2D77F1D917897005D887C /* Configration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D77E1D917897005D887C /* Configration.swift */; };
 		BCB2D7871D917AFC005D887C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D7861D917AFC005D887C /* BaseRequest.swift */; };
 		BCB2D7941D917EDE005D887C /* EarthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D78F1D917EDE005D887C /* EarthVC.swift */; };
@@ -138,11 +144,24 @@
 		BCB2D79A1D917F06005D887C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D7981D917F06005D887C /* BaseVC.swift */; };
 		BCB2D79B1D917F06005D887C /* GEBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D7991D917F06005D887C /* GEBaseVC.swift */; };
 		BCB2D79D1D917F46005D887C /* GETBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D79C1D917F46005D887C /* GETBC.swift */; };
+		BCB308871DA5D41C00C7FF2C /* recommendplaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BCB308861DA5D41C00C7FF2C /* recommendplaces.json */; };
 		BCD3E74E1D98AD7300362016 /* CityGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */; };
 		BCD3E7521D98BA9600362016 /* CityGuideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E7501D98BA9600362016 /* CityGuideCell.swift */; };
 		BCD3E7531D98BA9600362016 /* CityGuideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD3E7511D98BA9600362016 /* CityGuideCell.xib */; };
 		BCD3E7561D98BD2B00362016 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E7541D98BD2B00362016 /* SectionViewCell.swift */; };
 		BCD3E7571D98BD2B00362016 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD3E7551D98BD2B00362016 /* SectionViewCell.xib */; };
+		BCDD9AF21DA735DD00D3B58E /* Mine.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF11DA735DD00D3B58E /* Mine.plist */; };
+		BCDD9AF71DA73EC200D3B58E /* headimage_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF31DA73EC100D3B58E /* headimage_0.jpg */; };
+		BCDD9AF81DA73EC200D3B58E /* headimage_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF41DA73EC200D3B58E /* headimage_1.jpg */; };
+		BCDD9AF91DA73EC200D3B58E /* headimage_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF51DA73EC200D3B58E /* headimage_2.jpg */; };
+		BCDD9AFA1DA73EC200D3B58E /* headimage_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF61DA73EC200D3B58E /* headimage_3.jpg */; };
+		BCDD9AFF1DA7459200D3B58E /* 关于我们.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFB1DA7459200D3B58E /* 关于我们.png */; };
+		BCDD9B001DA7459200D3B58E /* 清除缓存.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFC1DA7459200D3B58E /* 清除缓存.png */; };
+		BCDD9B011DA7459200D3B58E /* 我的收藏.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFD1DA7459200D3B58E /* 我的收藏.png */; };
+		BCDD9B021DA7459200D3B58E /* 我的位置.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFE1DA7459200D3B58E /* 我的位置.png */; };
+		BCDD9B041DA745B300D3B58E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9B031DA745B300D3B58E /* next.png */; };
+		BCDD9B091DA7461800D3B58E /* MineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDD9B071DA7461800D3B58E /* MineCell.swift */; };
+		BCDD9B0A1DA7461800D3B58E /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9B081DA7461800D3B58E /* MineCell.xib */; };
 		BCE2F5781D97F34F00411A79 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F5761D97F34F00411A79 /* CountryCell.swift */; };
 		BCE2F5791D97F34F00411A79 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCE2F5771D97F34F00411A79 /* CountryCell.xib */; };
 		BCE2F57B1D97F39600411A79 /* CountryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2F57A1D97F39600411A79 /* CountryVC.swift */; };
@@ -299,8 +318,8 @@
 		BC552E9F1DA3CEE200CFE302 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
 		BC552EA11DA3D42400CFE302 /* 热门城市A@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门城市A@2x.png"; sourceTree = "<group>"; };
 		BC552EA21DA3D42400CFE302 /* 热门城市B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门城市B@2x.png"; sourceTree = "<group>"; };
-		BC552EA31DA3D42400CFE302 /* 我的A@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的A@2x.png"; sourceTree = "<group>"; };
-		BC552EA41DA3D42400CFE302 /* 我的B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的B@2x.png"; sourceTree = "<group>"; };
+		BC552EA31DA3D42400CFE302 /* 个人中心A@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心A@2x.png"; sourceTree = "<group>"; };
+		BC552EA41DA3D42400CFE302 /* 个人中心B@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心B@2x.png"; sourceTree = "<group>"; };
 		BC552EA51DA3D42400CFE302 /* EarthA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EarthA@2x.png"; sourceTree = "<group>"; };
 		BC552EA61DA3D42400CFE302 /* EarthB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EarthB@2x.png"; sourceTree = "<group>"; };
 		BC552EAD1DA3D54500CFE302 /* 热门城市A@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "热门城市A@3x.png"; sourceTree = "<group>"; };
@@ -336,6 +355,13 @@
 		BC7FACC11D92C0310036A963 /* CountrysModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountrysModels.swift; sourceTree = "<group>"; };
 		BC85482E1D9DEF8C001957E1 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		BC85482F1D9DEF8C001957E1 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		BC855B141DA656FC00949EE3 /* Info.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Info.xcdatamodel; sourceTree = "<group>"; };
+		BC855B161DA6583100949EE3 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BC855B171DA6583100949EE3 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		BC855B1A1DA65CA500949EE3 /* nav_storeA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_storeA@2x.png"; sourceTree = "<group>"; };
+		BC855B1B1DA65CA500949EE3 /* nav_storeA@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_storeA@3x.png"; sourceTree = "<group>"; };
+		BC855B1C1DA65CA500949EE3 /* nav_storeB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_storeB@2x.png"; sourceTree = "<group>"; };
+		BC855B1D1DA65CA500949EE3 /* nav_storeB@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_storeB@3x.png"; sourceTree = "<group>"; };
 		BC86A9361D94B39C00E00C4A /* open_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open_up@2x.png"; sourceTree = "<group>"; };
 		BC86A9371D94B39C00E00C4A /* open_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open_up@3x.png"; sourceTree = "<group>"; };
 		BC86A9381D94B39C00E00C4A /* pinch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinch@2x.png"; sourceTree = "<group>"; };
@@ -347,7 +373,6 @@
 		BC97D9B01D9AA7740081BD35 /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
 		BC97D9B31D9AAE1C0081BD35 /* StarsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsBackground.png; sourceTree = "<group>"; };
 		BC97D9B41D9AAE1C0081BD35 /* StarsForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarsForeground.png; sourceTree = "<group>"; };
-		BCB23B901DA50AF3005F8D6A /* recommendplaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendplaces.json; sourceTree = "<group>"; };
 		BCB2D77D1D9177A1005D887C /* GEBridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEBridgeHeader.h; sourceTree = "<group>"; };
 		BCB2D77E1D917897005D887C /* Configration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configration.swift; sourceTree = "<group>"; };
 		BCB2D7861D917AFC005D887C /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
@@ -357,11 +382,24 @@
 		BCB2D7981D917F06005D887C /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		BCB2D7991D917F06005D887C /* GEBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GEBaseVC.swift; sourceTree = "<group>"; };
 		BCB2D79C1D917F46005D887C /* GETBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GETBC.swift; sourceTree = "<group>"; };
+		BCB308861DA5D41C00C7FF2C /* recommendplaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendplaces.json; sourceTree = "<group>"; };
 		BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideVC.swift; sourceTree = "<group>"; };
 		BCD3E7501D98BA9600362016 /* CityGuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideCell.swift; sourceTree = "<group>"; };
 		BCD3E7511D98BA9600362016 /* CityGuideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityGuideCell.xib; sourceTree = "<group>"; };
 		BCD3E7541D98BD2B00362016 /* SectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = "<group>"; };
 		BCD3E7551D98BD2B00362016 /* SectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = "<group>"; };
+		BCDD9AF11DA735DD00D3B58E /* Mine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mine.plist; sourceTree = "<group>"; };
+		BCDD9AF31DA73EC100D3B58E /* headimage_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage_0.jpg; sourceTree = "<group>"; };
+		BCDD9AF41DA73EC200D3B58E /* headimage_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage_1.jpg; sourceTree = "<group>"; };
+		BCDD9AF51DA73EC200D3B58E /* headimage_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage_2.jpg; sourceTree = "<group>"; };
+		BCDD9AF61DA73EC200D3B58E /* headimage_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage_3.jpg; sourceTree = "<group>"; };
+		BCDD9AFB1DA7459200D3B58E /* 关于我们.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关于我们.png"; sourceTree = "<group>"; };
+		BCDD9AFC1DA7459200D3B58E /* 清除缓存.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "清除缓存.png"; sourceTree = "<group>"; };
+		BCDD9AFD1DA7459200D3B58E /* 我的收藏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的收藏.png"; sourceTree = "<group>"; };
+		BCDD9AFE1DA7459200D3B58E /* 我的位置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的位置.png"; sourceTree = "<group>"; };
+		BCDD9B031DA745B300D3B58E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		BCDD9B071DA7461800D3B58E /* MineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCell.swift; sourceTree = "<group>"; };
+		BCDD9B081DA7461800D3B58E /* MineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
 		BCE2F5761D97F34F00411A79 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		BCE2F5771D97F34F00411A79 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		BCE2F57A1D97F39600411A79 /* CountryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryVC.swift; sourceTree = "<group>"; };
@@ -431,6 +469,7 @@
 				BC371B951D913448009E50E2 /* Assets.xcassets */,
 				BC371B971D913448009E50E2 /* LaunchScreen.storyboard */,
 				BC371B9A1D913448009E50E2 /* Info.plist */,
+				BCDD9AF11DA735DD00D3B58E /* Mine.plist */,
 			);
 			path = GoEarth;
 			sourceTree = "<group>";
@@ -654,7 +693,7 @@
 		BC371C451D913505009E50E2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BCB23B901DA50AF3005F8D6A /* recommendplaces.json */,
+				BCB308861DA5D41C00C7FF2C /* recommendplaces.json */,
 				BCB2D7861D917AFC005D887C /* BaseRequest.swift */,
 				BCB2D77D1D9177A1005D887C /* GEBridgeHeader.h */,
 				BCB2D77E1D917897005D887C /* Configration.swift */,
@@ -746,6 +785,11 @@
 		BC86A9351D94B39C00E00C4A /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				BCDD9AFB1DA7459200D3B58E /* 关于我们.png */,
+				BCDD9AFC1DA7459200D3B58E /* 清除缓存.png */,
+				BCDD9AFD1DA7459200D3B58E /* 我的收藏.png */,
+				BCDD9AFE1DA7459200D3B58E /* 我的位置.png */,
+				BCDD9B031DA745B300D3B58E /* next.png */,
 				BC552E951DA3BCE100CFE302 /* 向上@2x.png */,
 				BC552E961DA3BCE100CFE302 /* 向上@3x.png */,
 				BC552E971DA3BCE100CFE302 /* 向下@2x.png */,
@@ -800,6 +844,8 @@
 		BCB2D7921D917EDE005D887C /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				BCDD9B051DA745F800D3B58E /* Models */,
+				BCDD9B061DA745F800D3B58E /* View */,
 				BCB2D7931D917EDE005D887C /* MineVC.swift */,
 			);
 			path = Mine;
@@ -812,6 +858,9 @@
 				BCB2D7991D917F06005D887C /* GEBaseVC.swift */,
 				BCB2D79C1D917F46005D887C /* GETBC.swift */,
 				BC647BF11D9916FF00D62DF4 /* NavBaseVC.swift */,
+				BC855B131DA656FC00949EE3 /* Info.xcdatamodeld */,
+				BC855B161DA6583100949EE3 /* Place+CoreDataProperties.swift */,
+				BC855B171DA6583100949EE3 /* Place.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -819,6 +868,10 @@
 		BCB2D79E1D9183B9005D887C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BCDD9AF31DA73EC100D3B58E /* headimage_0.jpg */,
+				BCDD9AF41DA73EC200D3B58E /* headimage_1.jpg */,
+				BCDD9AF51DA73EC200D3B58E /* headimage_2.jpg */,
+				BCDD9AF61DA73EC200D3B58E /* headimage_3.jpg */,
 				BC86A9351D94B39C00E00C4A /* icons */,
 				BCFE4EF21D940EDA00FAD80D /* cityicon */,
 				BCFE4F041D940EDA00FAD80D /* Navi */,
@@ -838,12 +891,28 @@
 				BC552EB21DA3D54500CFE302 /* EarthB@3x.png */,
 				BC552EA11DA3D42400CFE302 /* 热门城市A@2x.png */,
 				BC552EA21DA3D42400CFE302 /* 热门城市B@2x.png */,
-				BC552EA31DA3D42400CFE302 /* 我的A@2x.png */,
-				BC552EA41DA3D42400CFE302 /* 我的B@2x.png */,
+				BC552EA31DA3D42400CFE302 /* 个人中心A@2x.png */,
+				BC552EA41DA3D42400CFE302 /* 个人中心B@2x.png */,
 				BC552EA51DA3D42400CFE302 /* EarthA@2x.png */,
 				BC552EA61DA3D42400CFE302 /* EarthB@2x.png */,
 			);
 			path = tabbar;
+			sourceTree = "<group>";
+		};
+		BCDD9B051DA745F800D3B58E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCDD9B061DA745F800D3B58E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCDD9B071DA7461800D3B58E /* MineCell.swift */,
+				BCDD9B081DA7461800D3B58E /* MineCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BCE2F5751D97F34F00411A79 /* cell */ = {
@@ -893,6 +962,10 @@
 		BCFE4F041D940EDA00FAD80D /* Navi */ = {
 			isa = PBXGroup;
 			children = (
+				BC855B1A1DA65CA500949EE3 /* nav_storeA@2x.png */,
+				BC855B1B1DA65CA500949EE3 /* nav_storeA@3x.png */,
+				BC855B1C1DA65CA500949EE3 /* nav_storeB@2x.png */,
+				BC855B1D1DA65CA500949EE3 /* nav_storeB@3x.png */,
 				BC552E9F1DA3CEE200CFE302 /* nav_bg.png */,
 				BC647BED1D99106F00D62DF4 /* nav_back@2x.png */,
 				BC647BEA1D990A5500D62DF4 /* nav_back@3x.png */,
@@ -964,27 +1037,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCFE4F171D940EDA00FAD80D /* 餐馆@3x.png in Resources */,
+				BCDD9AFA1DA73EC200D3B58E /* headimage_3.jpg in Resources */,
 				BC552E9B1DA3BCE100CFE302 /* 向下@2x.png in Resources */,
 				BC371B991D913448009E50E2 /* LaunchScreen.storyboard in Resources */,
 				BC97D9B51D9AAE1C0081BD35 /* StarsBackground.png in Resources */,
+				BCDD9B011DA7459200D3B58E /* 我的收藏.png in Resources */,
+				BCDD9AF71DA73EC200D3B58E /* headimage_0.jpg in Resources */,
 				BC552E991DA3BCE100CFE302 /* 向上@2x.png in Resources */,
 				BC647BEE1D99106F00D62DF4 /* nav_back@2x.png in Resources */,
 				BC647C051D99566D00D62DF4 /* nav_message@2x.png in Resources */,
+				BCDD9AF91DA73EC200D3B58E /* headimage_2.jpg in Resources */,
 				BC647BEC1D990A5500D62DF4 /* nav_back@3x.png in Resources */,
 				BCFE4F0E1D940EDA00FAD80D /* 租车@2x.png in Resources */,
 				BC86A93D1D94B39C00E00C4A /* pinch@3x.png in Resources */,
 				BC03D78C1D9BF9A9009E11B2 /* TagsCell.xib in Resources */,
+				BC855B201DA65CA500949EE3 /* nav_storeB@2x.png in Resources */,
 				BC03D77B1D9BA7BC009E11B2 /* stars_bgq.png in Resources */,
 				BC371B961D913448009E50E2 /* Assets.xcassets in Resources */,
 				BC041DDA1D9D4D42008709F1 /* AttractionPhotoListCell.xib in Resources */,
 				BC552EB81DA3D54500CFE302 /* EarthB@3x.png in Resources */,
 				BCE2F5831D97F97500411A79 /* CitysCell.xib in Resources */,
 				BC552EAB1DA3D42400CFE302 /* EarthA@2x.png in Resources */,
-				BC552EA91DA3D42400CFE302 /* 我的A@2x.png in Resources */,
+				BC552EA91DA3D42400CFE302 /* 个人中心A@2x.png in Resources */,
 				BC552E9C1DA3BCE100CFE302 /* 向下@3x.png in Resources */,
+				BCDD9B001DA7459200D3B58E /* 清除缓存.png in Resources */,
 				BCFE4F121D940EDA00FAD80D /* 购物@2x.png in Resources */,
 				BCFE4F131D940EDA00FAD80D /* 购物@3x.png in Resources */,
-				BC552EAA1DA3D42400CFE302 /* 我的B@2x.png in Resources */,
+				BC552EAA1DA3D42400CFE302 /* 个人中心B@2x.png in Resources */,
+				BCDD9B041DA745B300D3B58E /* next.png in Resources */,
 				BC552E9A1DA3BCE100CFE302 /* 向上@3x.png in Resources */,
 				BC97D9B61D9AAE1C0081BD35 /* StarsForeground.png in Resources */,
 				BCFE4F161D940EDA00FAD80D /* 餐馆@2x.png in Resources */,
@@ -996,24 +1076,31 @@
 				BC552EB61DA3D54500CFE302 /* 我的B@3x.png in Resources */,
 				BC371C2E1D913460009E50E2 /* MJRefresh.bundle in Resources */,
 				BCFE4F081D940EDA00FAD80D /* 城市指南@2x.png in Resources */,
+				BCDD9AF81DA73EC200D3B58E /* headimage_1.jpg in Resources */,
 				BC552EA81DA3D42400CFE302 /* 热门城市B@2x.png in Resources */,
 				BCFE4F191D940EDA00FAD80D /* back@3x.png in Resources */,
 				BC647C001D993A1600D62DF4 /* VehiclesCell.xib in Resources */,
 				BC7FACB81D92B8A80036A963 /* CityCell.xib in Resources */,
 				BC03D77E1D9BAA1B009E11B2 /* stars_bgs.png in Resources */,
 				BCFE4F091D940EDA00FAD80D /* 城市指南@3x.png in Resources */,
+				BC855B1F1DA65CA500949EE3 /* nav_storeA@3x.png in Resources */,
 				BCFE4F141D940EDA00FAD80D /* 酒店@2x.png in Resources */,
+				BC855B211DA65CA500949EE3 /* nav_storeB@3x.png in Resources */,
 				BC86A93A1D94B39C00E00C4A /* open_up@2x.png in Resources */,
 				BC041DD61D9D4C42008709F1 /* PhotoListVC.xib in Resources */,
+				BCDD9AFF1DA7459200D3B58E /* 关于我们.png in Resources */,
 				BC8548311D9DEF8C001957E1 /* CommentCell.xib in Resources */,
 				BC371B941D913448009E50E2 /* Main.storyboard in Resources */,
 				BCFE4F0F1D940EDA00FAD80D /* 租车@3x.png in Resources */,
 				BC86A93C1D94B39C00E00C4A /* pinch@2x.png in Resources */,
-				BCB23B911DA50AF3005F8D6A /* recommendplaces.json in Resources */,
+				BCB308871DA5D41C00C7FF2C /* recommendplaces.json in Resources */,
+				BCDD9AF21DA735DD00D3B58E /* Mine.plist in Resources */,
+				BCDD9B021DA7459200D3B58E /* 我的位置.png in Resources */,
 				BCD3E7571D98BD2B00362016 /* SectionViewCell.xib in Resources */,
 				BC86A93B1D94B39C00E00C4A /* open_up@3x.png in Resources */,
 				BCFE4F101D940EDA00FAD80D /* 约伴@2x.png in Resources */,
 				BC03D77C1D9BA7BC009E11B2 /* stars_fg.png in Resources */,
+				BCDD9B0A1DA7461800D3B58E /* MineCell.xib in Resources */,
 				BCFE4F0A1D940EDA00FAD80D /* 景点@2x.png in Resources */,
 				BCD3E7531D98BA9600362016 /* CityGuideCell.xib in Resources */,
 				BCFE4F151D940EDA00FAD80D /* 酒店@3x.png in Resources */,
@@ -1025,6 +1112,7 @@
 				BC552EB31DA3D54500CFE302 /* 热门城市A@3x.png in Resources */,
 				BC552EA01DA3CEE200CFE302 /* nav_bg.png in Resources */,
 				BC647C061D99566D00D62DF4 /* nav_message@3x.png in Resources */,
+				BC855B1E1DA65CA500949EE3 /* nav_storeA@2x.png in Resources */,
 				BCFE4F0C1D940EDA00FAD80D /* 活动@2x.png in Resources */,
 				BC576D3D1D9380350084ECB2 /* CityVC.xib in Resources */,
 				BCFE4F0B1D940EDA00FAD80D /* 景点@3x.png in Resources */,
@@ -1046,6 +1134,7 @@
 				BC371C2C1D913460009E50E2 /* MJRefreshNormalHeader.m in Sources */,
 				BC97D9AE1D9AA6EB0081BD35 /* AttractionVC.swift in Sources */,
 				BC371C221D913460009E50E2 /* MJRefreshComponent.m in Sources */,
+				BC855B191DA6583100949EE3 /* Place.swift in Sources */,
 				BC371C1A1D913460009E50E2 /* JSONHTTPClient.m in Sources */,
 				BC647C0A1D9958B100D62DF4 /* CompanyCompare.swift in Sources */,
 				BCB2D79D1D917F46005D887C /* GETBC.swift in Sources */,
@@ -1062,6 +1151,7 @@
 				BC041DD91D9D4D42008709F1 /* AttractionPhotoListCell.swift in Sources */,
 				BC647BF21D9916FF00D62DF4 /* NavBaseVC.swift in Sources */,
 				BC03D7801D9BAEDF009E11B2 /* AttractionDetailVC.swift in Sources */,
+				BC855B151DA656FC00949EE3 /* Info.xcdatamodeld in Sources */,
 				BCB2D7961D917EDE005D887C /* MineVC.swift in Sources */,
 				BC371C231D913460009E50E2 /* MJRefreshFooter.m in Sources */,
 				BC371C1C1D913460009E50E2 /* JSONKeyMapper.m in Sources */,
@@ -1120,6 +1210,7 @@
 				BC371C281D913460009E50E2 /* MJRefreshBackGifFooter.m in Sources */,
 				BC371C3D1D913460009E50E2 /* SDWebImagePrefetcher.m in Sources */,
 				BC371C401D913460009E50E2 /* UIImage+MultiFormat.m in Sources */,
+				BC855B181DA6583100949EE3 /* Place+CoreDataProperties.swift in Sources */,
 				BC7FACBC1D92BD440036A963 /* CityNetworkManager.swift in Sources */,
 				BC371C381D913460009E50E2 /* SDWebImageCompat.m in Sources */,
 				BC371C171D913460009E50E2 /* JSONModelClassProperty.m in Sources */,
@@ -1127,6 +1218,7 @@
 				BC371C301D913460009E50E2 /* UIScrollView+MJExtension.m in Sources */,
 				BCE2F57B1D97F39600411A79 /* CountryVC.swift in Sources */,
 				BCE2F5781D97F34F00411A79 /* CountryCell.swift in Sources */,
+				BCDD9B091DA7461800D3B58E /* MineCell.swift in Sources */,
 				BC371C271D913460009E50E2 /* MJRefreshAutoStateFooter.m in Sources */,
 				BC371C1E1D913460009E50E2 /* HDManager.m in Sources */,
 				BC371C291D913460009E50E2 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1296,6 +1388,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC855B131DA656FC00949EE3 /* Info.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC855B141DA656FC00949EE3 /* Info.xcdatamodel */,
+			);
+			currentVersion = BC855B141DA656FC00949EE3 /* Info.xcdatamodel */;
+			path = Info.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BC371B831D913448009E50E2 /* Project object */;
 }

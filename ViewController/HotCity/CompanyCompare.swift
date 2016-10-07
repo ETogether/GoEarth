@@ -46,7 +46,7 @@ class CompanyCompare: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
                 
             }else{
                 print(err)
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         

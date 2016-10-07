@@ -52,7 +52,7 @@ class CityGuideVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
             }else{
                 print(err)
                 //弹窗警告
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         HDManager.stopLoading()

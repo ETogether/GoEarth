@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class AttractionDetailVC: NavBaseVC, UIScrollViewDelegate {
-    //返回按钮
+    //导航条  返回按钮
+    var navBar: UIView!
     var back: UIButton!
     
     var model: AttractionModel!
@@ -55,28 +57,80 @@ class AttractionDetailVC: NavBaseVC, UIScrollViewDelegate {
                         self.createBackButton()
                     }else{
                         print(err)
-                        AlertTwoSeconds(self)
+                        AlertTwoSeconds(self, title: "网络连接请求失败！")
                     }
                 }
                 
             }else{
                 print(err)
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         HDManager.stopLoading()
     }
     //MARK: - 返回按钮
     func createBackButton(){
-        back = UIButton.init(frame: CGRectMake(15, 32, 20, 20))
+        navBar = UIView.init(frame: CGRectMake(0, 20, SCREEN_W, 44))
+        navBar.backgroundColor = UIColor.init(white: 1, alpha: 0)
+        self.view.addSubview(navBar)
+        self.view.bringSubviewToFront(navBar)
+        back = UIButton.init(frame: CGRectMake(15, 12, 20, 20))
         back.setImage(UIImage.init(named: "nav_back"), forState: .Normal)
         back.addTarget(self, action: #selector(self.backButtonAction), forControlEvents: .TouchUpInside)
-        self.view.addSubview(back)
-        self.view.bringSubviewToFront(back)
+        navBar.addSubview(back)
+        
+        let store = UIButton.init(frame: CGRectMake(SCREEN_W - 15 - 20, 12, 20, 20))
+        store.setImage(UIImage.init(named: "nav_storeA"), forState: .Normal)
+        store.setImage(UIImage.init(named: "nav_storeB"), forState: .Selected)
+        store.addTarget(self, action: #selector(self.storeUpData(_:)), forControlEvents: .TouchUpInside)
+        navBar.addSubview(store)
+        
+        
     }
     func backButtonAction(){
         self.navigationController?.popViewControllerAnimated(true)
     }
+    func storeUpData(sender: UIButton){
+        sender.selected = !sender.selected
+        //创建对象并给其各个字段赋值
+        let place = NSEntityDescription.insertNewObjectForEntityForName("Place", inManagedObjectContext: context) as! Place
+        if sender.selected {
+            place.countryId = model.countryId
+            place.recordId = model.id
+            place.module = self.module
+            place.imageUrl = model.cover
+            place.nameCn = model.nameCn
+            place.name = model.name
+            place.score = model.score
+            place.reviews = model.reviewCount
+            place.countryName = model.countryName
+            place.cityName = model.cityName
+            do{
+                try context.save()
+                AlertTwoSeconds(self, title: "收藏成功！")
+            }catch{
+                print(error)
+                AlertTwoSeconds(self, title: "收藏失败！")
+            }
+        }else{
+            context.deleteObject(place)
+            
+            do{
+                try context.save()
+                AlertTwoSeconds(self, title: "取消收藏！")
+            }catch{
+                print(error)
+                AlertTwoSeconds(self, title: "取消收藏失败！")
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
     
     //MARK: -UIScrollView协议方法
     //根据DetailView的滑动 显示/隐藏返回按钮

@@ -14,6 +14,7 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
     
     let topSpace: CGFloat = 10
     let leftSpace: CGFloat = 10
+    let titleW: CGFloat = 150  //酒店中最长的字段标题长度： 入住/退房时间
     
     var itemModel: AttractionItemModel!
     var tagArr: NSMutableArray!
@@ -64,17 +65,20 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         headerImage.sd_setImageWithURL(NSURL.init(string: itemModel.cover))
         self.addSubview(headerImage)
         headerImage.userInteractionEnabled = true
-        headerImage.addGestureRecognizer({
-            return UITapGestureRecognizer.init(target: self, action: #selector(self.tapClick(_:)))
-            }())
-        photoCount = UILabel.init(frame: CGRectMake(SCREEN_W - leftSpace - 50, headerImage.mj_h - 50, 50, 20))
-        photoCount.text = itemModel.photoCount + "张"
-        photoCount.textColor = WHITECOLOR
-        photoCount.textAlignment = .Center
-        photoCount.font = UIFont.boldSystemFontOfSize(13)
-        headerImage.addSubview(photoCount)
+        if itemModel.photoCount != "0"{
+            headerImage.addGestureRecognizer({
+                return UITapGestureRecognizer.init(target: self, action: #selector(self.tapClick(_:)))
+                }())
+            photoCount = UILabel.init(frame: CGRectMake(SCREEN_W - leftSpace - 50, headerImage.mj_h - 50, 50, 20))
+            photoCount.text = itemModel.photoCount + "张"
+            photoCount.textColor = WHITECOLOR
+            photoCount.textAlignment = .Center
+            photoCount.font = UIFont.boldSystemFontOfSize(13)
+            headerImage.addSubview(photoCount)
+        }
         
-        let cnW = widthFor(strLength: itemModel.nameCn, height: 21, font: 16) + 5
+        
+        let cnW = widthFor(strLength: itemModel.nameCn, height: 21, font: 16) + 20
         cnL = UILabel.init(frame: CGRectMake(0, headerImage.mj_h + topSpace, cnW, 21))
         cnL.center.x = self.center.x
         cnL.text = itemModel.nameCn
@@ -124,7 +128,9 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         dimensionView.delegate = self
         dimensionView.dataSource = self
         dimensionView.backgroundColor = WHITECOLOR
-        
+        if itemModel.dimensionScores.count == 0{
+            dimensionView.mj_h = 0
+        }
         
         let tagLayout = UICollectionViewFlowLayout()
         tagLayout.sectionInset = UIEdgeInsets.init(top: 5, left: leftSpace, bottom: 5, right: leftSpace)
@@ -157,6 +163,10 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         infoL.font = UIFont.systemFontOfSize(12)
         infoL.numberOfLines = 4
         secView.addSubview(infoL)
+        if itemModel.infoCn.stringLength() == 0{
+            infoL.text = itemModel.info
+        }
+        
         infoBtn = UIButton.init(frame: CGRectMake(0, infoL.mj_y + infoL.mj_h + leftSpace, 100, 30))
         infoBtn.center.x = self.center.x
         infoBtn.setTitle("查看更多", forState: .Normal)
@@ -171,7 +181,7 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         infoBtn.backgroundColor = UIColor.clearColor()
         
         //MARK: -地址
-        addressTTL = UILabel.init(frame: CGRectMake(leftSpace, infoBtn.mj_y + infoBtn.mj_h + topSpace, 30, 20))
+        addressTTL = UILabel.init(frame: CGRectMake(leftSpace, infoBtn.mj_y + infoBtn.mj_h + topSpace, titleW, 20))
         addressTTL.text = "地址"
         addressTTL.textColor = TEXTGRAYCOLOR
         addressTTL.font = UIFont.systemFontOfSize(12)
@@ -186,20 +196,27 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         
         //MARK: -交通
         
-        trafficTTL = UILabel.init(frame: CGRectMake(leftSpace, addressCTT.mj_y + addressCTT.mj_h + topSpace, 30, 20))
+        trafficTTL = UILabel.init(frame: CGRectMake(leftSpace, addressCTT.mj_y + addressCTT.mj_h + topSpace, titleW, 20))
         trafficTTL.text = "交通"
         trafficTTL.textColor = TEXTGRAYCOLOR
         trafficTTL.font = UIFont.systemFontOfSize(12)
         secView.addSubview(trafficTTL)
         let traH = heightFor(strLength: itemModel.traffic, width: SCREEN_W - 2 * leftSpace, font: 14) + 5
-        trafficCTT = UILabel.init(frame: CGRectMake(leftSpace, trafficTTL.mj_y + trafficTTL.mj_w + topSpace, SCREEN_W - 2 * leftSpace, traH))
+        trafficCTT = UILabel.init(frame: CGRectMake(leftSpace, trafficTTL.mj_y + trafficTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, traH))
         trafficCTT.text = itemModel.traffic
         trafficCTT.numberOfLines = 0
         trafficCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(trafficCTT)
+        //在酒店中把  交通--》宠物
+        if itemModel.pets.stringLength() > 0{
+            trafficTTL.text = "宠物"
+            let petsH = heightFor(strLength: itemModel.pets, width: SCREEN_W - 2 * leftSpace, font: 14) + 5
+            trafficCTT.mj_h = petsH
+            trafficCTT.text = itemModel.pets
+        }
         
         //MARK: -价格
-        ticketTTL = UILabel.init(frame: CGRectMake(leftSpace, trafficCTT.mj_y + trafficCTT.mj_h + topSpace, 30, 20))
+        ticketTTL = UILabel.init(frame: CGRectMake(leftSpace, trafficCTT.mj_y + trafficCTT.mj_h + topSpace, titleW, 20))
         ticketTTL.text = "人均消费"
         ticketTTL.textColor = TEXTGRAYCOLOR
         ticketTTL.font = UIFont.systemFontOfSize(12)
@@ -209,7 +226,7 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         ticketCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(ticketCTT)
         
-        phoneTTL = UILabel.init(frame: CGRectMake(leftSpace, ticketCTT.mj_y + ticketCTT.mj_h + topSpace, 30, 20))
+        phoneTTL = UILabel.init(frame: CGRectMake(leftSpace, ticketCTT.mj_y + ticketCTT.mj_h + topSpace, titleW, 20))
         phoneTTL.text = "电话"
         phoneTTL.textColor = TEXTGRAYCOLOR
         phoneTTL.font = UIFont.systemFontOfSize(12)
@@ -219,7 +236,7 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         phoneCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(phoneCTT)
         
-        openTimeTTL = UILabel.init(frame: CGRectMake(leftSpace, phoneCTT.mj_y + phoneCTT.mj_h + topSpace, 130, 20))
+        openTimeTTL = UILabel.init(frame: CGRectMake(leftSpace, phoneCTT.mj_y + phoneCTT.mj_h + topSpace, titleW, 20))
         openTimeTTL.text = "开放时间"
         openTimeTTL.textColor = TEXTGRAYCOLOR
         openTimeTTL.font = UIFont.systemFontOfSize(12)
@@ -230,10 +247,18 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         openTimeCTT.numberOfLines = 0
         openTimeCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(openTimeCTT)
+        //当点击的是酒店--把开放时间里的值改成入住/退房时间
+        if itemModel.check_in.characters.count > 0{
+            openTimeTTL.text = "入住/退房时间"
+            openTimeCTT.text = "入住时间：" + itemModel.check_in + "\n" + "退房时间：" + itemModel.check_out
+            openTimeCTT.mj_h = 40
+        }
+        
+        
         
         if itemModel.duration_cn.stringLength() > 0{
             ticketTTL.text = "门票"   //在景点中是写门票
-            duractionTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, 130, 20))
+            duractionTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, titleW, 20))
             duractionTTL.text = "游玩时间"
             duractionTTL.textColor = TEXTGRAYCOLOR
             duractionTTL.font = UIFont.systemFontOfSize(12)
@@ -243,10 +268,25 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
             duractionCTT.font = UIFont.systemFontOfSize(14)
             secView.addSubview(duractionCTT)
             
-            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, duractionCTT.mj_y + duractionCTT.mj_h + topSpace, 130, 20))
+            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, duractionCTT.mj_y + duractionCTT.mj_h + topSpace, titleW, 20))
+        }else if itemModel.star.stringLength() > 0{
+            //如果在酒店中，把游玩时间 -》 星级
+            duractionTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, 130, 20))
+            duractionTTL.text = "星级"
+            duractionTTL.textColor = TEXTGRAYCOLOR
+            duractionTTL.font = UIFont.systemFontOfSize(12)
+            secView.addSubview(duractionTTL)
+            duractionCTT = UILabel.init(frame: CGRectMake(leftSpace, duractionTTL.mj_y + duractionTTL.mj_h + topSpace, SCREEN_W - 2 * leftSpace, 20))
+            duractionCTT.text = itemModel.star
+            duractionCTT.font = UIFont.systemFontOfSize(14)
+            secView.addSubview(duractionCTT)
+            
+            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, duractionCTT.mj_y + duractionCTT.mj_h + topSpace, titleW, 20))
         }else{
-            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, 130, 20))
+            tagCnTTL = UILabel.init(frame: CGRectMake(leftSpace, openTimeCTT.mj_y + openTimeCTT.mj_h + topSpace, titleW, 20))
         }
+            
+        
        
         
         
@@ -259,6 +299,10 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         tagCnCTT.text = itemModel.tagCn
         tagCnCTT.font = UIFont.systemFontOfSize(14)
         secView.addSubview(tagCnCTT)
+        if itemModel.tagCn.stringLength() == 0{
+            tagCnCTT.mj_h = 20
+            tagCnCTT.text = "购物"
+        }
         
         //菜系
         let cuisinesTTL = UILabel.init()
@@ -276,14 +320,14 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
             cuisinesCTT.font = UIFont.systemFontOfSize(14)
             secView.addSubview(cuisinesCTT)
             
-            tipTTL = UILabel.init(frame: CGRectMake(leftSpace, cuisinesCTT.mj_y + cuisinesCTT.mj_h + topSpace, 120, 20))
+            tipTTL = UILabel.init(frame: CGRectMake(leftSpace, cuisinesCTT.mj_y + cuisinesCTT.mj_h + topSpace, titleW, 20))
 
         }else{
-            tipTTL = UILabel.init(frame: CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, 120, 20))
+            tipTTL = UILabel.init(frame: CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, titleW, 20))
            
 
         }
-        
+        //MARK: -小贴士
 //        tipTTL = UILabel.init(frame: CGRectMake(leftSpace, tagCnCTT.mj_y + tagCnCTT.mj_h + topSpace, 120, 20))
         tipTTL.text = "小帖士"
         tipTTL.textColor = TEXTGRAYCOLOR
@@ -295,6 +339,16 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
         tipCTT.font = UIFont.systemFontOfSize(14)
         tipCTT.numberOfLines = 0
         secView.addSubview(tipCTT)
+        
+        if itemModel.children.stringLength() > 0{
+            //在酒店中把 小贴士 --》 住宿政策
+            tipTTL.text = "住宿政策"
+            let chH = heightFor(strLength: "儿童和加床" + itemModel.children, width: SCREEN_W - leftSpace * 2, font: 14) + 5
+            tipCTT.mj_h = chH
+            tipCTT.text = "儿童和加床" + itemModel.children
+        }
+        
+        
         
         tableView = UILabel.init(frame: CGRectMake(0, tipCTT.mj_y + tipCTT.mj_h + topSpace, 120, 20))
         tableView.center.x = self.center.x
@@ -368,21 +422,56 @@ class AttractionDetailView: UIScrollView, UICollectionViewDelegateFlowLayout, UI
             }
             i += 1
         }
-        secView.mj_h = tableView.mj_y + tableView.mj_h + 365
+        
+        //MARK: -设施服务
+        var facilityH: CGFloat = 0
+        if itemModel.facility_cn.stringLength() > 0{
+            //酒店中有设施服务
+            let imageV = UIImageView.init(frame: CGRectMake(leftSpace, tableView.mj_y + tableView.mj_h + 365, SCREEN_W - 2 * leftSpace, 2))
+            imageV.backgroundColor = TEXTGRAYCOLOR
+            secView.addSubview(imageV)
+            let facilityTTL = UILabel.init(frame: CGRectMake(0, imageV.mj_y + 2 + leftSpace, titleW, 30))
+            facilityTTL.center.x = SCREEN_W / 2
+            facilityTTL.text = "设施服务"
+            facilityTTL.textAlignment = .Center
+            facilityTTL.font = UIFont.systemFontOfSize(15)
+            secView.addSubview(facilityTTL)
+            let faH = heightFor(strLength: itemModel.facility_cn, width: SCREEN_W - 3 * leftSpace, font: 12) + 5
+            let facilityCTT = UILabel.init(frame: CGRectMake(1.5 * leftSpace, facilityTTL.mj_y + facilityTTL.mj_h + leftSpace, SCREEN_W - 3 * leftSpace, faH))
+            facilityCTT.text = itemModel.facility_cn
+            facilityCTT.numberOfLines = 0
+            facilityCTT.textColor = TEXTGRAYCOLOR
+            facilityCTT.font = UIFont.systemFontOfSize(12)
+            secView.addSubview(facilityCTT)
+            
+            let imageV1 = UIImageView.init(frame: CGRectMake(leftSpace, facilityCTT.mj_y + facilityCTT.mj_h + leftSpace, SCREEN_W - 2 * leftSpace, 2))
+            imageV1.backgroundColor = TEXTGRAYCOLOR
+            secView.addSubview(imageV1)
+            facilityH = imageV1.mj_y + imageV1.mj_h - imageV.mj_y
+        }
+        
+        
+        secView.mj_h = tableView.mj_y + tableView.mj_h + 365 + facilityH + leftSpace
         self.bounces = false
         self.contentSize = CGSizeMake(secView.mj_w, secView.mj_y + secView.mj_h)
     }
     //MARK: - 照片、简介、评论的点击事件
     func tapClick(tap: UITapGestureRecognizer){
+        //购物中的某个地点没有其他照片 photoCount值为"0"无需要展开下一页
+        //if itemModel.photoCount != "0"{
+            let photoList = PhotoListVC()
+            photoList.recordId = itemModel.id
+            photoList.module = module
+            self.block!(detail: photoList)
+        //}
         
-        let photoList = PhotoListVC()
-        photoList.recordId = itemModel.id
-        photoList.module = module
-        self.block!(detail: photoList)
     }
     func infoBtnClick(sender: UIButton){
         let detail = CityGuideDetailVC()
         detail.content = itemModel.infoCn
+        if itemModel.infoCn.stringLength() == 0{
+            detail.content = itemModel.info
+        }
         detail.navigationItem.title = "简介"
         self.block!(detail: detail)
     }

@@ -36,8 +36,8 @@ func heightFor(strLength str: String, width: CGFloat, font: CGFloat) -> CGFloat 
 
 
 //MARK: - 警告框 弹出两秒自动消失
-func AlertTwoSeconds(object: UIViewController){
-    let ac = UIAlertController.init(title: "网络连接请求失败！", message: nil, preferredStyle: .Alert)
+func AlertTwoSeconds(object: UIViewController, title: String){
+    let ac = UIAlertController.init(title: title, message: nil, preferredStyle: .Alert)
     dispatch_async(dispatch_get_main_queue(), {
         //延迟两秒后消失
         object.presentViewController(ac, animated: true, completion: {

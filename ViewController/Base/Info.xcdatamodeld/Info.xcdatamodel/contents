@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Place" representedClassName=".Place" syncable="YES">
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="module" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameCn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reviews" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Place" positionX="-54" positionY="-9" width="128" height="195"/>
+    </elements>
+</model>

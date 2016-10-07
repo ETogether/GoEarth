@@ -58,7 +58,7 @@ class PhotoListVC: NavBaseVC , UICollectionViewDelegateFlowLayout, UICollectionV
                 })
             }else{
                 print(error)
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         

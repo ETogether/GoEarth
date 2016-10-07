@@ -24,13 +24,17 @@ class GETBC: UITabBarController {
         let mineVC = MineVC()
         
         let vcArr = [hotVC, earthVC, mineVC]
-        let titleArr = ["热门城市", "Earth", "我的"]
+        let titleArr = ["热门城市", "Earth", "个人中心"]
         //tabbar的viewControllers不能直接添加ViewController
         var ncArr = [UINavigationController]()
         var i = 0
         for vc in vcArr{
             let nc = UINavigationController.init(rootViewController: vc)
-            nc.navigationBar.barTintColor = WHITECOLOR
+            nc.navigationBar.barTintColor = hexColor(hexStr: "04f0a1")
+            if i == 2{
+               // nc.navigationBar.barTintColor = UIColor.init(white: 1, alpha: 0)
+            
+            }
             //nc.navigationBar.setBackgroundImage(UIImage.init(named: "nav_bg"), forBarMetrics: .Default)
             //图标 及 title（文字）
             let image = UIImage.init(named: titleArr[i] + "A")?.imageWithRenderingMode(.AlwaysOriginal)

@@ -97,8 +97,10 @@ class AttractionCell: UITableViewCell {
         stars.mj_w = width
         //starsView.frame.size.width = width
         scoreReviewL.text = model.score + "分/" + model.reviewCount + "点评"
+        if model.review != nil{
+            contentL.attributedText = AttributeText(hexColor(hexStr: "000000"), text: model.review!.author + ":" + model.review!.comment, rangeStr: model.review!.author)
+        }
         
-        contentL.attributedText = AttributeText(hexColor(hexStr: "000000"), text: model.review.author + ":" + model.review.comment, rangeStr: model.review.author)
     }
     
     

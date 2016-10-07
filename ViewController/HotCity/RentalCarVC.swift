@@ -58,7 +58,7 @@ class RentalCarVC: NavBaseVC, UITableViewDataSource, UITableViewDelegate {
                 
             }else{
                 print(err)
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
             
         }

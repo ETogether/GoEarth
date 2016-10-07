@@ -50,10 +50,12 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
             if err == nil{
                 self.dataArr.addObjectsFromArray(attractionArr!)
                 self.attractionView.reloadData()
+                self.attractionView.header.endRefreshing()
+                self.attractionView.footer.endRefreshing()
                 
             }else{
                 print(err)
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         HDManager.stopLoading()
@@ -71,11 +73,15 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let cell = tableView.cellForRowAtIndexPath(indexPath) as! AttractionCell
+
         let model = (dataArr[indexPath.row] as! AttractionModel).review
-        let height = heightFor(strLength: model.author + model.comment, width: SCREEN_W - 10 * 2, font: 12) + 20
-//        let h = height + cell.contentL.mj_y + 8
-        return height + 140
+        if model != nil{
+            let height = heightFor(strLength: model!.author + model!.comment, width: SCREEN_W - 10 * 2, font: 12) + 20
+            return height + 140
+        }else{
+            return 140
+        }
+        
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detail = AttractionDetailVC()

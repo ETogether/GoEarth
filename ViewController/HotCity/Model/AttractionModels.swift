@@ -32,7 +32,7 @@ class AttractionModel: JSONModel {
     var price: String!
     var reservable: NSNumber!
     
-    var review: ReviewModel! //一个对象模型
+    var review: ReviewModel? = nil //一个对象模型   购物中的有些地点没有该字段，所设置为可选
     
     var reviewCount: String!
     var reviewIds: String!
@@ -45,8 +45,13 @@ class AttractionModel: JSONModel {
         //借用KVC给属性赋值赋值
         self.setValuesForKeysWithDictionary(dict as! [String : AnyObject])  //调用了setValue...forKye
         self.nameCn = dict["name_cn"] as! String
-        let reviewDic = dict["review"] as! NSDictionary
-        self.review = (ReviewModel.arrayOfModelsFromDictionaries([reviewDic])).lastObject as! ReviewModel
+        if (dict["reviewIds"] as! String) == ""{
+            //新加坡中的某些地点没被评论
+        }else{
+            let reviewDic = dict["review"] as! NSDictionary
+            self.review = (ReviewModel.arrayOfModelsFromDictionaries([reviewDic])).lastObject as! ReviewModel
+        }
+        
     }
     
     override func setValue(value: AnyObject?, forKey key: String) {

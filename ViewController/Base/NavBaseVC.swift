@@ -16,6 +16,8 @@ class NavBaseVC: GEBaseVC {
         self.navigationItem.hidesBackButton = true
         createBackButton(self, action: #selector(self.backButtonClick(_:)))
         self.view.backgroundColor = WHITECOLOR
+        
+        self.navigationController?.navigationBar.barTintColor = hexColor(hexStr: "ffffff")//把首页的导航bar主题色改成白色
     }
     
     func backButtonClick(sender: UIBarButtonItem){

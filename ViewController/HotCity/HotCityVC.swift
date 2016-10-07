@@ -69,7 +69,7 @@ class HotCityVC: GEBaseVC {
             }else{
                 print(err)
                 //发生网络错误时弹出警告框
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         HDManager.stopLoading()

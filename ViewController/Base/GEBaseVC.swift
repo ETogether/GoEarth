@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class GEBaseVC: BaseVC {
     
-    
+    let context = NSManagedObjectContext.init(concurrencyType: .MainQueueConcurrencyType)
+    var coreDataArr = [Place]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.createCoreData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +24,15 @@ class GEBaseVC: BaseVC {
         // Dispose of any resources that can be recreated.
     }
     
+    func createCoreData(){
+        let path = NSBundle.mainBundle().pathForResource("Info", ofType: "momd")
+        let model = NSManagedObjectModel.init(contentsOfURL: NSURL.init(fileURLWithPath: path!))
+        let coordinator = NSPersistentStoreCoordinator.init(managedObjectModel: model!)
+        let sqlPath = NSHomeDirectory() + "/Documents/Info.sqlite"
+        try! coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: NSURL.init(fileURLWithPath: sqlPath), options: nil)
+        context.persistentStoreCoordinator = coordinator
+
+    }
 
 
 }

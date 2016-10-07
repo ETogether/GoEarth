@@ -113,9 +113,11 @@ class CommentVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
                 }
                 
                 self.tableView.reloadData()
+                self.tableView.header.endRefreshing()
+                self.tableView.footer.endRefreshing()
             }else{
                 print(err)
-                AlertTwoSeconds(self)
+                AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
         }
         
