@@ -12,7 +12,7 @@ import CoreData
 class GEBaseVC: BaseVC {
     
     let context = NSManagedObjectContext.init(concurrencyType: .MainQueueConcurrencyType)
-    var coreDataArr = [Place]()
+   // var coreDataArr = [Place]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

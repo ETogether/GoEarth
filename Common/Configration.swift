@@ -41,7 +41,7 @@ func AlertTwoSeconds(object: UIViewController, title: String){
     dispatch_async(dispatch_get_main_queue(), {
         //延迟两秒后消失
         object.presentViewController(ac, animated: true, completion: {
-            ac.performSelector(#selector(UIAlertController.dismissViewControllerAnimated(_:completion:)), withObject: nil, afterDelay: 2)
+            ac.performSelector(#selector(UIAlertController.dismissViewControllerAnimated(_:completion:)), withObject: nil, afterDelay: 1)
         })
     })
 

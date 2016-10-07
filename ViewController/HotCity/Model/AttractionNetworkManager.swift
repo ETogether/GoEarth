@@ -52,7 +52,7 @@ extension AttractionItemModel{
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    callBack(array: arr as [AnyObject], err: error)
+                    callBack(array: arr as [AnyObject], err: nil)
                 })
             }else{
                 dispatch_async(dispatch_get_main_queue(), { 
