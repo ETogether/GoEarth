@@ -161,7 +161,7 @@
 		BCDD9AF91DA73EC200D3B58E /* headimage_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF51DA73EC200D3B58E /* headimage_2.jpg */; };
 		BCDD9AFA1DA73EC200D3B58E /* headimage_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AF61DA73EC200D3B58E /* headimage_3.jpg */; };
 		BCDD9AFF1DA7459200D3B58E /* 关于我们.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFB1DA7459200D3B58E /* 关于我们.png */; };
-		BCDD9B001DA7459200D3B58E /* 清除缓存.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFC1DA7459200D3B58E /* 清除缓存.png */; };
+		BCDD9B001DA7459200D3B58E /* 清空收藏.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFC1DA7459200D3B58E /* 清空收藏.png */; };
 		BCDD9B011DA7459200D3B58E /* 我的收藏.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFD1DA7459200D3B58E /* 我的收藏.png */; };
 		BCDD9B021DA7459200D3B58E /* 我的位置.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9AFE1DA7459200D3B58E /* 我的位置.png */; };
 		BCDD9B041DA745B300D3B58E /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDD9B031DA745B300D3B58E /* next.png */; };
@@ -404,7 +404,7 @@
 		BCDD9AF51DA73EC200D3B58E /* headimage_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage_2.jpg; sourceTree = "<group>"; };
 		BCDD9AF61DA73EC200D3B58E /* headimage_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headimage_3.jpg; sourceTree = "<group>"; };
 		BCDD9AFB1DA7459200D3B58E /* 关于我们.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关于我们.png"; sourceTree = "<group>"; };
-		BCDD9AFC1DA7459200D3B58E /* 清除缓存.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "清除缓存.png"; sourceTree = "<group>"; };
+		BCDD9AFC1DA7459200D3B58E /* 清空收藏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "清空收藏.png"; sourceTree = "<group>"; };
 		BCDD9AFD1DA7459200D3B58E /* 我的收藏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的收藏.png"; sourceTree = "<group>"; };
 		BCDD9AFE1DA7459200D3B58E /* 我的位置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的位置.png"; sourceTree = "<group>"; };
 		BCDD9B031DA745B300D3B58E /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
@@ -796,7 +796,7 @@
 			isa = PBXGroup;
 			children = (
 				BCDD9AFB1DA7459200D3B58E /* 关于我们.png */,
-				BCDD9AFC1DA7459200D3B58E /* 清除缓存.png */,
+				BCDD9AFC1DA7459200D3B58E /* 清空收藏.png */,
 				BCDD9AFD1DA7459200D3B58E /* 我的收藏.png */,
 				BCDD9AFE1DA7459200D3B58E /* 我的位置.png */,
 				BCDD9B031DA745B300D3B58E /* next.png */,
@@ -1024,7 +1024,7 @@
 				TargetAttributes = {
 					BC371B8A1D913448009E50E2 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = D22NSE5N4G;
+						DevelopmentTeam = D6634TEQRK;
 					};
 				};
 			};
@@ -1076,7 +1076,7 @@
 				BC552EAB1DA3D42400CFE302 /* EarthA@2x.png in Resources */,
 				BC552EA91DA3D42400CFE302 /* 个人中心A@2x.png in Resources */,
 				BC552E9C1DA3BCE100CFE302 /* 向下@3x.png in Resources */,
-				BCDD9B001DA7459200D3B58E /* 清除缓存.png in Resources */,
+				BCDD9B001DA7459200D3B58E /* 清空收藏.png in Resources */,
 				BCFE4F121D940EDA00FAD80D /* 购物@2x.png in Resources */,
 				BCFE4F131D940EDA00FAD80D /* 购物@3x.png in Resources */,
 				BC552EAA1DA3D42400CFE302 /* 个人中心B@2x.png in Resources */,
@@ -1364,7 +1364,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEarth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cq.GoEarth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cq.GoEarthlw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Common/GEBridgeHeader.h;
@@ -1379,7 +1379,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEarth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cq.GoEarth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cq.GoEarthlw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Common/GEBridgeHeader.h;

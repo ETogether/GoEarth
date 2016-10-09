@@ -55,7 +55,9 @@ class ContinentCell: UICollectionViewCell, UICollectionViewDelegateFlowLayout, U
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(206, 260)
+        let w = (SCREEN_W - 2) / 2
+        let h = w * 260 / 206
+        return CGSizeMake(w, h)
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let model = dataArr[indexPath.item] as! CountrysModel

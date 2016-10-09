@@ -38,11 +38,14 @@ func heightFor(strLength str: String, width: CGFloat, font: CGFloat) -> CGFloat 
 //MARK: - 警告框 弹出两秒自动消失
 func AlertTwoSeconds(object: UIViewController, title: String){
     let ac = UIAlertController.init(title: title, message: nil, preferredStyle: .Alert)
+    let action = UIAlertAction.init(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+    ac.addAction(action)
     dispatch_async(dispatch_get_main_queue(), {
         //延迟两秒后消失
-        object.presentViewController(ac, animated: true, completion: {
-            ac.performSelector(#selector(UIAlertController.dismissViewControllerAnimated(_:completion:)), withObject: nil, afterDelay: 1)
-        })
+        object.presentViewController(ac, animated: true, completion: nil)
+        
+//        ac.performSelector(#selector(UIAlertController.dismissViewControllerAnimated(_:completion:)), withObject: nil, afterDelay: 1)
+
     })
 
 }

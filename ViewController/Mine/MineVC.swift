@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var mineView: UITableView!
@@ -28,6 +29,7 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
         self.loadData()
         self.createUI()
     }
+    
 
     func createUI(){
         
@@ -79,12 +81,19 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
         
         self.dataLength()
     }
+    //MARK: -求出缓存数据
     func dataLength() -> Void {
-        let data1 = NSData.init(contentsOfFile: path)
-        if data1 != nil{
-            let num1 = data1!.length
+        var dataLength: Double = 0
+        let request = NSFetchRequest.init(entityName: "Place")
+        let arr = try! context.executeFetchRequest(request) as! [Place]
+        dataLength += Double(arr.count) * pow(2, 8)
+        
+        //headImage图片的大小
+        let dataImage = NSData.init(contentsOfFile: path)
+        if dataImage != nil{
+            let num1 = dataImage!.length
             if numLab != nil{
-                let num = Double(num1)
+                let num = Double(num1) + dataLength
                 switch num {
                 case 0...pow(2, 20) - 1:
                     numLab!.text = String.init(format: "%0.2fKB", Double(num1) / pow(2, 10))
@@ -95,7 +104,20 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
                 }
             }
         }else{
-            numLab?.text = "0.00KB"
+            if numLab != nil{
+                
+                switch dataLength {
+                case 0...pow(2, 20) - 1:
+                    numLab!.text = String.init(format: "%0.2fKB", Double(dataLength) / pow(2, 10))
+                case pow(2, 20)...pow(2, 30) - 1:
+                    numLab!.text = String.init(format: "%0.2fMB", Double(dataLength) / pow(2, 20))
+                default:
+                    numLab!.text = String.init(format: "%0.2fGB", Double(dataLength) / pow(2, 30))
+                }
+            }else{
+                numLab?.text = "0.00KB"
+            }
+            
         }
         
     }

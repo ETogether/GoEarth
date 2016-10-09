@@ -74,6 +74,12 @@ class HotCityVC: GEBaseVC {
         }
         HDManager.stopLoading()
     }
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = hexColor(hexStr: "04f0a1")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = WHITECOLOR
+    }
 
 }
 
@@ -89,7 +95,9 @@ extension HotCityVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(195, 260)
+        let width = SCREEN_W / 2 - 12
+        let height = 260 * width / 195
+        return CGSizeMake(width, height)
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let city = CityVC.init()

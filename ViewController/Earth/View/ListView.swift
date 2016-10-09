@@ -52,7 +52,14 @@ class ListView: UIView {
             btn.setTitle(title, forState: .Selected)
             btn.setTitleColor(hexColor(hexStr: "14ea24"), forState: .Selected)
             btn.backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
-            btn.titleLabel?.font = UIFont.systemFontOfSize(18)
+            if SCREEN_W == 414{
+                btn.titleLabel?.font = UIFont.systemFontOfSize(18)
+            }else if SCREEN_W == 375{
+                btn.titleLabel?.font = UIFont.systemFontOfSize(16)
+            }else{  // 320
+                btn.titleLabel?.font = UIFont.systemFontOfSize(14)
+            }
+            
             
             btn.layer.cornerRadius = 5
             btn.layer.borderWidth = 2

@@ -30,7 +30,6 @@ class GETBC: UITabBarController {
         var i = 0
         for vc in vcArr{
             let nc = UINavigationController.init(rootViewController: vc)
-            nc.navigationBar.barTintColor = hexColor(hexStr: "04f0a1")
             if i == 2{
                // nc.navigationBar.barTintColor = UIColor.init(white: 1, alpha: 0)
             

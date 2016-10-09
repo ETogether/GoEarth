@@ -34,12 +34,6 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
         self.view.addSubview(cv)
         return cv
     }()
-//    lazy var listView: ListView = {
-//        
-//        let listView = ListView.init(frame: CGRectMake(0, 100, 60, CGFloat(self.continentTitles.count) * 60), tittles: self.continentTitles)
-//        self.view.addSubview(listView)
-//        return listView
-//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,12 +67,21 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
 
     func createUI(){
         self.navigationItem.title = continentTitles.first
-        listView = ListView.init(frame: CGRectMake(0, 100, 60, CGFloat(continentTitles.count) * 60), tittles: continentTitles)
+        let w = SCREEN_W * 60 / 414
+        listView = ListView.init(frame: CGRectMake(0, 100, w, CGFloat(continentTitles.count) * 60), tittles: continentTitles)
         listView.center.y = self.view.center.y
         listView.delegate = self
         self.view.addSubview(listView)
  
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = hexColor(hexStr: "04f0a1")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = WHITECOLOR
+    }
+    
     //MARK: - listView 协议方法
     func didSeletedIndexContentOffsetFor(idx: NSInteger) {
         self.navigationItem.title = continentTitles[idx]

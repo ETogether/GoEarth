@@ -78,7 +78,9 @@ class PhotoListVC: NavBaseVC , UICollectionViewDelegateFlowLayout, UICollectionV
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((SCREEN_W - 20) / 2, 137)
+        let w = (SCREEN_W - 20) / 2
+        let h = w * 274 / 407
+        return CGSizeMake(w, h)
     }
 
     

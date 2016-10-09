@@ -41,9 +41,9 @@ class CityVC: GEBaseVC {
             self.loadData()
             return
         }
-        createUI(cityModel!)
-        
-   
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.createUI(self.cityModel!)
+        }
     }
     func createUI(model: CityModel){
 

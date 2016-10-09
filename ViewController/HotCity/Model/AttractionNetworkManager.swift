@@ -14,7 +14,7 @@ extension AttractionModel{
     static func requestAttractionData(countryId: String!, placeId: String!, module: String!, page: NSInteger, callBack:(attactionArr: [AnyObject]?, err: NSError?) -> Void){
         let para = NSMutableDictionary.init(dictionary: ["countryId":countryId, "placeId":placeId, "page":String(page), "module":module, "count":"10"])
         BaseRequest.getWithURL(HOME_URL + "search", para: para) { (data, error) in
-            print(NSString.init(data: data!, encoding: NSUTF8StringEncoding)!)
+            //print(NSString.init(data: data!, encoding: NSUTF8StringEncoding)!)
             if error == nil{
                 let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
                 let list = rootDic["list"] as! [AnyObject]

@@ -84,16 +84,16 @@ class AttractionDetailVC: NavBaseVC, UIScrollViewDelegate {
         navBar.backgroundColor = UIColor.init(white: 1, alpha: 0.5)
         self.view.addSubview(navBar)
         self.view.bringSubviewToFront(navBar)
-        back = UIButton.init(frame: CGRectMake(15, 32, 20, 20))
+        back = UIButton.init(frame: CGRectMake(15, 30, 24, 24))
         back.setImage(UIImage.init(named: "nav_back"), forState: .Normal)
         back.addTarget(self, action: #selector(self.backButtonAction), forControlEvents: .TouchUpInside)
-        self.view.addSubview(back)
+        navBar.addSubview(back)
         
-        let store = UIButton.init(frame: CGRectMake(SCREEN_W - 15 - 20, 32, 20, 20))
+        let store = UIButton.init(frame: CGRectMake(SCREEN_W - 15 - 30, 26, 30, 30))
         store.setImage(UIImage.init(named: "nav_storeA"), forState: .Normal)
         store.setImage(UIImage.init(named: "nav_storeB"), forState: .Selected)
         store.addTarget(self, action: #selector(self.storeUpData(_:)), forControlEvents: .TouchUpInside)
-        self.view.addSubview(store)
+        navBar.addSubview(store)
         
         
     }
@@ -133,12 +133,7 @@ class AttractionDetailVC: NavBaseVC, UIScrollViewDelegate {
                 AlertTwoSeconds(self, title: "取消收藏失败！")
             }
         }
-        
-        
-        
-        
-        
-        
+
     }
     
     

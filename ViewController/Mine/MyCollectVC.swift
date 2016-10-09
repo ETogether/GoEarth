@@ -39,12 +39,13 @@ class MyCollectVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
         
         if dataArr.count == 0{
             AlertTwoSeconds(self, title: "您未收藏，请先收藏了！再查看！")
+            
         }
     }
     override func viewWillAppear(animated: Bool) {
-       
-        self.tableViw.reloadData()
-
+        if dataArr.count != 0{
+            self.tableViw.reloadData()
+        }
     }
     
     //MARK: - tableView协议方法
