@@ -10,11 +10,11 @@
 #define GEBridgeHeader_h
 
 #import "JSONModel.h"
-#import "XTADScrollView.h"//轮播视图的头文件
+#import "XTADScrollView.h"              //轮播视图的头文件
 
-#import "UIImageView+WebCache.h"//图片异步加载的类别
+#import "UIImageView+WebCache.h"        //图片异步加载的类别
 
-#import "UIButton+WebCache.h"//按钮异步加载网络图片的头文件
+#import "UIButton+WebCache.h"           //按钮异步加载网络图片的头文件
 
 #import <CommonCrypto/CommonCrypto.h>
 
@@ -22,6 +22,9 @@
 
 #import "HDManager.h"
 
-#import "UIImage+FEBoxBlur.h"   //模糊效果
+#import "UIImage+FEBoxBlur.h"           //模糊效果
+
+#import "CleanCache.h"                    //清空缓存类
+
 
 #endif /* GEBridgeHeader_h */

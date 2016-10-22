@@ -48,11 +48,11 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
         let dic = NSDictionary.init(contentsOfFile: path)
         if dic != nil{
             headImage.setBackgroundImage(UIImage.init(data: (dic!["img"] as? NSData)!), forState: .Normal)
-           // headImage.setBackgroundImage(UIImage.init(data: (dic!["img"] as? NSData)!), forState: .Highlighted)
+           
         }else{
             let i = arc4random_uniform(4)
             headImage.setBackgroundImage(UIImage.init(named: "headimage_\(i).jpg"), forState: .Normal)
-            //headImage.setBackgroundImage(UIImage.init(named: "headimage_\(i).jpg"), forState: .Highlighted)
+            
         }
         headImage.addTarget(self, action: #selector(self.headImageAction), forControlEvents: .TouchUpInside)
         
@@ -62,9 +62,7 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
         let path = NSBundle.mainBundle().pathForResource("Mine.plist", ofType: nil)
         let dic = NSDictionary.init(contentsOfFile: path!)!
         mineArr = dic["mines"] as! [[String]]
-//        for arr in mines{
-//            
-//        }
+
     }
     
     func headImageAction(){
@@ -81,51 +79,25 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
         
         self.dataLength()
     }
-    //MARK: -求出缓存数据
-    func dataLength() -> Void {
-        var dataLength: Double = 0
-        let request = NSFetchRequest.init(entityName: "Place")
-        let arr = try! context.executeFetchRequest(request) as! [Place]
-        dataLength += Double(arr.count) * pow(2, 8)
-        
-        //headImage图片的大小
-        let dataImage = NSData.init(contentsOfFile: path)
-        if dataImage != nil{
-            let num1 = dataImage!.length
-            if numLab != nil{
-                let num = Double(num1) + dataLength
-                switch num {
-                case 0...pow(2, 20) - 1:
-                    numLab!.text = String.init(format: "%0.2fKB", Double(num1) / pow(2, 10))
-                case pow(2, 20)...pow(2, 30) - 1:
-                    numLab!.text = String.init(format: "%0.2fMB", Double(num1) / pow(2, 20))
-                default:
-                    numLab!.text = String.init(format: "%0.2fGB", Double(num1) / pow(2, 30))
-                }
-            }
-        }else{
-            if numLab != nil{
-                
-                switch dataLength {
-                case 0...pow(2, 20) - 1:
-                    numLab!.text = String.init(format: "%0.2fKB", Double(dataLength) / pow(2, 10))
-                case pow(2, 20)...pow(2, 30) - 1:
-                    numLab!.text = String.init(format: "%0.2fMB", Double(dataLength) / pow(2, 20))
-                default:
-                    numLab!.text = String.init(format: "%0.2fGB", Double(dataLength) / pow(2, 30))
-                }
-            }else{
-                numLab?.text = "0.00KB"
-            }
-            
-        }
-        
-    }
+    
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
     }
     
-
+    //MARK: -求出缓存文件里的数据大小
+    func dataLength() -> String {
+        var dataLength: Double = 0
+        let cachePath = CleanCache.getCachesPath()
+        dataLength = Double(CleanCache.getCacheSizeAtPath(cachePath))
+        switch dataLength {
+        case 0...pow(2, 20) - 1:
+            return  String.init(format: "%0.2fKB", Double(dataLength) / pow(2, 10))
+        case pow(2, 20)...pow(2, 30) - 1:
+            return String.init(format: "%0.2fMB", Double(dataLength) / pow(2, 20))
+        default:
+            return String.init(format: "%0.2fGB", Double(dataLength) / pow(2, 30))
+        }
+    }
     
     //MARK: -mineView 协议方法
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -143,8 +115,7 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
         cell.titleL.text = title
         
         if indexPath.section == 2{
-            numLab = cell.numL
-            self.dataLength()
+            cell.numL.text = self.dataLength()
         }
         
         
@@ -178,25 +149,10 @@ class MineVC: GEBaseVC, UITableViewDelegate, UITableViewDataSource, UIImagePicke
             version.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(version, animated: true)
         case 2:
-            let request = NSFetchRequest.init(entityName: "Place")
-            let arr = try! context.executeFetchRequest(request) as! [Place]
-            for model in arr{
-                context.deleteObject(model)
-            }
-            
-            do{
-                try context.save()
-                AlertTwoSeconds(self, title: "清除成功！")
-            }catch{
-                AlertTwoSeconds(self, title: "清除失败！")
-            }
-            do{
-                try fileManager.removeItemAtPath(path)
-                self.createHeadImage()
-            }catch{
-                
-            }
-            self.mineView.reloadData()
+            let path = CleanCache.getCachesPath()
+            CleanCache.clearCacheAtPath(path)
+            AlertTwoSeconds(self, title: "已清空缓存!")
+            self.mineView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
             
         default:
             print("超过了")

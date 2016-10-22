@@ -24,7 +24,6 @@ class VersionVC: NavBaseVC {
     func createUI(){
         let path = NSBundle.mainBundle().pathForResource("Info.plist", ofType: nil)
         let infoDic = NSDictionary.init(contentsOfFile: path!)!
-        print(infoDic)
         
         versionL = UILabel.init(frame: CGRectMake(0, 0, SCREEN_W, 30))
         versionL.center = CGPointMake(SCREEN_W / 2, SCREEN_H / 2)
@@ -39,6 +38,11 @@ class VersionVC: NavBaseVC {
         appNameL.textAlignment = .Center
         appNameL.font = UIFont.boldSystemFontOfSize(24)
         self.view.addSubview(appNameL)
+        
+        let imageView = UIImageView.init(frame: CGRectMake(0, appNameL.mj_y - 76 - 20, 76, 76))
+        imageView.center.x = appNameL.center.x
+        imageView.image = UIImage.init(named: "icon")
+        self.view.addSubview(imageView)
         
 //        versionL1 = UILabel.init(frame: CGRectMake(0, versionL.mj_y + 30 + 5, SCREEN_W, 30))
 //        versionL1.center.x = versionL.center.x

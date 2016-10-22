@@ -16,10 +16,12 @@ let SCREEN_H = UIScreen.mainScreen().bounds.height
 //首网址
 let HOME_URL = "http://www.koubeilvxing.com/"
 
+//主题色
+let THEAMCOLOR = hexColor(hexStr: "14ea24")
 //灰色白色
 let GRAYCOLOR = UIColor.init(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
 let WHITECOLOR = hexColor(hexStr: "FFFFFF")
-
+//文字颜色
 let TEXTGRAYCOLOR = hexColor(hexStr: "a0a0a0")
 
 //MARK: - 根据字符串长度返回合适的宽高
@@ -75,13 +77,21 @@ func stringFor(time: NSTimeInterval) -> String{
 
 
 //MARK: - 副文本
+/**副文本-修改某子串颜色*/
 func AttributeText(color: UIColor, text: String, rangeStr: String) -> NSMutableAttributedString{
     let content = NSMutableString.init(string: text)
     let attr = NSMutableAttributedString.init(string: text)
     attr.addAttributes([NSForegroundColorAttributeName: color], range: content.rangeOfString(rangeStr))
     return attr
 }
-
+/**副文本-修改某子串颜色及字体*/
+func AttributeText(color: UIColor, text: String, rangeStr: String, font: CGFloat) -> NSMutableAttributedString{
+    let content = NSMutableString.init(string: text)
+    let attr = NSMutableAttributedString.init(string: text)
+    attr.addAttributes([NSForegroundColorAttributeName: color], range: content.rangeOfString(rangeStr))
+    attr.addAttributes([NSFontAttributeName:UIFont.systemFontOfSize(font)], range: content.rangeOfString(rangeStr))
+    return attr
+}
 
 //MARK: -字符串长度
 extension String{

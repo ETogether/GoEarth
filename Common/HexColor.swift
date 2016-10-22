@@ -9,6 +9,7 @@
 import UIKit
 
 //MARK: - 不带#
+/**不带#号的字符串*/
 func hexColor(hexStr hex: String) -> UIColor{
     let str = NSString.init(string: hex)
     var red: UInt32 = 0
@@ -31,6 +32,7 @@ func hexColor(hexStr hex: String) -> UIColor{
     
 }
 //MARK: 带#号的字符串
+/**带#号的字符串*/
 func hexColor(hexStrJ hex: String) -> UIColor{
     let str = NSString.init(string: hex)
     var red: UInt32 = 0

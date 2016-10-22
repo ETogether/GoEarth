@@ -24,7 +24,7 @@ class GETBC: UITabBarController {
         let mineVC = MineVC()
         
         let vcArr = [hotVC, earthVC, mineVC]
-        let titleArr = ["热门城市", "Earth", "个人中心"]
+        let titleArr = ["热门城市", "浪哪儿", "个人中心"]
         //tabbar的viewControllers不能直接添加ViewController
         var ncArr = [UINavigationController]()
         var i = 0

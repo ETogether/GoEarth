@@ -12,6 +12,7 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
     
     var continentTitles = [String]()
     var continentsArr = NSMutableArray()
+    var titleLab: UILabel!//显示title
     
     var listView: ListView!
     
@@ -37,10 +38,43 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.automaticallyAdjustsScrollViewInsets = false
- 
+        self.createSeachBar()
         self.loadData()
         
+    }
+    /**创建搜索条-样式*/
+    func createSeachBar(){
+        let btn = UIButton.init(frame: CGRectMake(0, 0, SCREEN_W * 0.55, 30))
+        
+        btn.backgroundColor = WHITECOLOR
+        btn.setTitle("搜索国家、城市等", forState: .Normal)
+        btn.setTitleColor(hexColor(hexStr: "ebebeb"), forState: .Normal)
+        btn.titleLabel!.font = UIFont.systemFontOfSize(15)
+        btn.addTarget(self, action: #selector(self.checkCountryOrCity), forControlEvents: .TouchUpInside)
+        btn.layer.cornerRadius = btn.mj_h / 2
+        btn.clipsToBounds = true
+        self.navigationItem.titleView = btn
+        
+        //按钮字体所需要的宽度 搜索图片的宽
+        let fontW = widthFor(strLength: btn.currentTitle!, height: 30, font: 15)
+        let imageW:CGFloat = 20
+        //添加搜索图片
+        let image = UIImageView.init(frame: CGRectMake((btn.mj_w - fontW ) / 2 - imageW, 0, imageW, imageW))
+        image.center.y = btn.center.y
+        //设置按钮title(默认为居中)的内容偏移，使整个内容都属于居中
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, (imageW) / 2, 0, 0)
+        image.image = UIImage.init(named: "search")
+        btn.addSubview(image)
+        
+        
+    }
+    func checkCountryOrCity(){
+        let svc = SearchContryOrCityController()
+        svc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(svc, animated: true)
+
     }
     func loadData(){
         HDManager.startLoading()
@@ -66,9 +100,15 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
 
 
     func createUI(){
-        self.navigationItem.title = continentTitles.first
+        
+        titleLab = UILabel.init(frame: CGRectMake(0, (64 - 20 - 23) / 2, 60, 23))
+        titleLab.text = continentTitles.first//默认为亚洲
+        titleLab.font = UIFont.boldSystemFontOfSize(18)
+        titleLab.textAlignment = .Center
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLab)
+        
         let w = SCREEN_W * 60 / 414
-        listView = ListView.init(frame: CGRectMake(0, 100, w, CGFloat(continentTitles.count) * 60), tittles: continentTitles)
+        listView = ListView.init(frame: CGRectMake(SCREEN_W - w, 100, w, CGFloat(continentTitles.count) * 60), tittles: continentTitles)
         listView.center.y = self.view.center.y
         listView.delegate = self
         self.view.addSubview(listView)
@@ -84,7 +124,9 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
     
     //MARK: - listView 协议方法
     func didSeletedIndexContentOffsetFor(idx: NSInteger) {
-        self.navigationItem.title = continentTitles[idx]
+        let labW = widthFor(strLength: continentTitles[idx], height: 23, font: 18) + 5
+        self.titleLab.mj_w = labW
+        self.titleLab.text = continentTitles[idx]
         self.contentView.setContentOffset(CGPointMake(CGFloat(idx) * self.contentView.mj_w, 0), animated: true)
     }
   

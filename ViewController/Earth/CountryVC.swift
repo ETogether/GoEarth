@@ -23,7 +23,7 @@ class CountryVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewD
         layout.minimumLineSpacing = 10
         
         let con = UICollectionView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64), collectionViewLayout: layout)
-        con.pagingEnabled = true
+        //con.pagingEnabled = true
         //cv.showsHorizontalScrollIndicator = false
         con.backgroundColor = hexColor(hexStr: "eeeeee")
         

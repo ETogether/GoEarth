@@ -71,7 +71,28 @@ class ContinentModel: JSONModel {
     }
     
 }
-
+/**点击搜索的模型*/
+class SearchModel: JSONModel{
+    
+    
+    
+    var cityId: String = ""
+    var cityName: String = ""
+    var countryId: String = ""
+    var cover: String = ""
+    var lat: String = ""
+    var lng: String = ""
+    var module: String!
+    var name: String!
+    var nameCn: String!         //name_cn
+    var parent: String = ""
+    var recordId: String!
+    
+    override class func keyMapper() -> JSONKeyMapper{
+        return JSONKeyMapper.init(modelToJSONDictionary: ["nameCn":"name_cn"])
+    }
+    
+}
 
 
 

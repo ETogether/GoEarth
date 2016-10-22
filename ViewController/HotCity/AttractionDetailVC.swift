@@ -43,7 +43,7 @@ class AttractionDetailVC: NavBaseVC, UIScrollViewDelegate {
         super.viewDidLoad()
         if countryId.stringLength() > 0{
             //直接从收藏而中赋值
-        }else{
+        }else if countryId == ""{//只有他们也为空才赋值  添加搜索功能里的数据可以给三个参数赋值
             countryId = model.countryId
             recordId = model.id
         }

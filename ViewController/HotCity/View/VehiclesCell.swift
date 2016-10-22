@@ -41,7 +41,7 @@ class VehiclesCell: UITableViewCell {
         //取出车辆信息中的供应商id
         for model in sup{
             let mdl = model as! SupplierQuotesModel
-            let price = (mdl.allQuotes[0] as! AllQuotesModel).priceInfo as! PriceInfoModel
+            let price = (mdl.allQuotes[0] as! AllQuotesModel).priceInfo as PriceInfoModel
             arrRMB.append(price.unitPriceRMB)
             arrId.append(mdl.supplierId)
         }

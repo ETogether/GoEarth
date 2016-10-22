@@ -46,14 +46,49 @@ class CityVC: GEBaseVC {
         }
     }
     func createUI(model: CityModel){
-
-            nameL.text = model.name
-            cnL.text = model.nameCn
-            
-            coverImage.sd_setImageWithURL(NSURL.init(string: model.cover))
- 
+        
+        
+        
+        nameL.text = model.name
+        cnL.text = model.nameCn
+        
+        coverImage.sd_setImageWithURL(NSURL.init(string: model.cover))
+        //创建搜索栏
+        self.createSeachBar()
         //创建八个按钮
         self.createBtn(self.btnArr)
+    }
+    /**创建搜索条-样式*/
+    func createSeachBar(){
+        let btn = UIButton.init(frame: CGRectMake(0, 0, SCREEN_W * 0.64, 35))
+        btn.center = CGPointMake(SCREEN_W / 2, backBtn.center.y + 10)
+        btn.backgroundColor = UIColor.init(red: 14 / 255.0, green: 234 / 255.0, blue: 24 / 255.0, alpha: 0.1)
+        btn.setTitle("搜索国家、城市、景点、酒店等", forState: .Normal)
+        btn.setTitleColor(WHITECOLOR, forState: .Normal)
+        btn.titleLabel!.font = UIFont.systemFontOfSize(15)
+        btn.addTarget(self, action: #selector(self.checkCountryOrCity), forControlEvents: .TouchUpInside)
+        btn.layer.cornerRadius = btn.mj_h / 2
+        btn.clipsToBounds = true
+        btn.layer.borderWidth = 2
+        btn.layer.borderColor = hexColor(hexStr: "14ea24").CGColor
+        self.view.addSubview(btn)
+        
+        //按钮字体所需要的宽度 搜索图片的宽
+        let fontW = widthFor(strLength: btn.currentTitle!, height: 30, font: 15)
+        let imageW:CGFloat = 20
+        //添加搜索图片
+        let image = UIImageView.init(frame: CGRectMake((btn.mj_w - fontW - imageW) / 2, 0, imageW, imageW))
+        image.center.y = btn.center.y - btn.mj_y
+        //设置按钮title(默认为居中)的内容偏移，使整个内容都属于居中
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, imageW, 0, 0)
+        image.image = UIImage.init(named: "search_white")
+        btn.addSubview(image)
+        
+        
+    }
+    func checkCountryOrCity(){
+        let searchAll = SearchAllController()
+        self.navigationController?.pushViewController(searchAll, animated: true)
     }
     
     func loadData(){
@@ -73,7 +108,7 @@ class CityVC: GEBaseVC {
     func createBtn(titleArr: [String]){
         
         var i = 0
-        //判断高 宽屏
+        //判断高 宽屏 -- 手机都是高屏的，还不需要配置mac、ipad等
         if SCREEN_W < SCREEN_H{
             space = 75
             btnW = (SCREEN_W - 2 * leftSpace - 2 * 75) / 3
