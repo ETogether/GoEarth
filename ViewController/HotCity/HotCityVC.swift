@@ -44,7 +44,7 @@ class HotCityVC: GEBaseVC {
         let btn = UIButton.init(frame: CGRectMake(0, 0, SCREEN_W * 0.64, 35))
         
         btn.backgroundColor = UIColor.init(white: 1, alpha: 0.65)
-        btn.setTitle("搜索国家、城市等", forState: .Normal)
+        btn.setTitle("查找国家", forState: .Normal)
         btn.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
         btn.titleLabel!.font = UIFont.systemFontOfSize(18)
         btn.addTarget(self, action: #selector(self.checkCountryOrCity), forControlEvents: .TouchUpInside)

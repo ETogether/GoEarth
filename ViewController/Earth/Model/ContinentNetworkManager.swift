@@ -38,7 +38,7 @@ extension SearchModel{
                     })
                 }else{
                     dispatch_async(dispatch_get_main_queue(), {
-                        callBack(arr: nil, err: nil)
+                        callBack(arr: [AnyObject](), err: nil) //负一个空数组
                     })
                 }
             }else{

@@ -66,7 +66,7 @@ class SearchContryOrCityController: GEBaseVC, UITableViewDelegate, UITableViewDa
         
         searchTF = UITextField.init(frame: CGRectMake(backBtn.mj_x + backBtn.mj_w + 10 , 0, SCREEN_W - backBtn.mj_w * 2 - 4 * 10, 30))//w:屏幕宽 - 两个btn宽 - 四个间隔宽
         searchTF.center.y = navBar.center.y - navBar.mj_y
-        searchTF.placeholder = "请输入国家或城市"
+        searchTF.placeholder = "请输入要搜索的国家"
         searchTF.becomeFirstResponder()
         navBar.addSubview(searchTF)
     }

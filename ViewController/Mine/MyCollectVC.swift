@@ -13,7 +13,8 @@ class MyCollectVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
 
     var dataArr = [Place]()
     lazy var tableViw: UITableView = {
-        let tv = UITableView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64))
+        let tv = UITableView.init(frame: CGRectMake(0, 64 + 40, SCREEN_W, SCREEN_H - 64 - 40))
+        tv.backgroundColor = GRAYCOLOR
         tv.registerNib(UINib.init(nibName: "MyCollectCell", bundle: nil), forCellReuseIdentifier: "MyCollectCell")
         tv.delegate = self
         tv.dataSource = self
@@ -36,11 +37,32 @@ class MyCollectVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
         dataArr = try! context.executeFetchRequest(request) as! [Place]
     }
     func createUI(){
-        
+        let clearBtn = UIButton.init(frame: CGRectMake(0, 64, SCREEN_W, 40))
+        clearBtn.backgroundColor = GRAYCOLOR
+        clearBtn.setTitle("取消所有收藏", forState: .Normal)
+        clearBtn.setTitleColor(hexColor(hexStr: "a124b0"), forState: .Normal)
+        clearBtn.addTarget(self, action: #selector(self.clearCollectData), forControlEvents: .TouchUpInside)
+        self.view.addSubview(clearBtn)
         if dataArr.count == 0{
             AlertTwoSeconds(self, title: "您未收藏，请先收藏了！再查看！")
             
         }
+    }
+    func clearCollectData(){
+        let request = NSFetchRequest.init(entityName: "Place")
+        let arr = try! context.executeFetchRequest(request) as! [Place]
+        for model in arr{
+            context.deleteObject(model)
+        }
+
+        do{
+            try context.save()
+            AlertTwoSeconds(self, title: "清除成功！")
+        }catch{
+            AlertTwoSeconds(self, title: "清除失败！")
+        }
+        self.dataArr.removeAll()
+        self.tableViw.reloadData()
     }
     override func viewWillAppear(animated: Bool) {
         if dataArr.count != 0{

@@ -65,7 +65,8 @@ class CityVC: GEBaseVC {
         btn.backgroundColor = UIColor.init(red: 14 / 255.0, green: 234 / 255.0, blue: 24 / 255.0, alpha: 0.1)
         btn.setTitle("搜索国家、城市、景点、酒店等", forState: .Normal)
         btn.setTitleColor(WHITECOLOR, forState: .Normal)
-        btn.titleLabel!.font = UIFont.systemFontOfSize(15)
+        let btnFont = btn.mj_w / 17 //（左右边距）
+        btn.titleLabel!.font = UIFont.systemFontOfSize(btnFont)
         btn.addTarget(self, action: #selector(self.checkCountryOrCity), forControlEvents: .TouchUpInside)
         btn.layer.cornerRadius = btn.mj_h / 2
         btn.clipsToBounds = true
@@ -74,13 +75,13 @@ class CityVC: GEBaseVC {
         self.view.addSubview(btn)
         
         //按钮字体所需要的宽度 搜索图片的宽
-        let fontW = widthFor(strLength: btn.currentTitle!, height: 30, font: 15)
+        let fontW = widthFor(strLength: btn.currentTitle!, height: 30, font: btnFont)
         let imageW:CGFloat = 20
         //添加搜索图片
-        let image = UIImageView.init(frame: CGRectMake((btn.mj_w - fontW - imageW) / 2, 0, imageW, imageW))
+        let image = UIImageView.init(frame: CGRectMake((btn.mj_w - fontW - imageW) / 2, 0, btnFont + 2, btnFont + 2))
         image.center.y = btn.center.y - btn.mj_y
         //设置按钮title(默认为居中)的内容偏移，使整个内容都属于居中
-        btn.titleEdgeInsets = UIEdgeInsetsMake(0, imageW, 0, 0)
+        btn.titleEdgeInsets = UIEdgeInsetsMake(0, btnFont, 0, 0)
         image.image = UIImage.init(named: "search_white")
         btn.addSubview(image)
         

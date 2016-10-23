@@ -157,6 +157,8 @@
 		BCB2D79B1D917F06005D887C /* GEBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D7991D917F06005D887C /* GEBaseVC.swift */; };
 		BCB2D79D1D917F46005D887C /* GETBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2D79C1D917F46005D887C /* GETBC.swift */; };
 		BCB308871DA5D41C00C7FF2C /* recommendplaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BCB308861DA5D41C00C7FF2C /* recommendplaces.json */; };
+		BCC893701DBC511F008F6B01 /* search_q@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8936E1DBC511F008F6B01 /* search_q@3x.png */; };
+		BCC893711DBC511F008F6B01 /* search_q@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC8936F1DBC511F008F6B01 /* search_q@2x.png */; };
 		BCD3E74E1D98AD7300362016 /* CityGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */; };
 		BCD3E7521D98BA9600362016 /* CityGuideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD3E7501D98BA9600362016 /* CityGuideCell.swift */; };
 		BCD3E7531D98BA9600362016 /* CityGuideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD3E7511D98BA9600362016 /* CityGuideCell.xib */; };
@@ -191,8 +193,6 @@
 		BCF038B21DBB85E6008A58CF /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF038AB1DBB85E6008A58CF /* city.png */; };
 		BCF038B31DBB85E6008A58CF /* country.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF038AC1DBB85E6008A58CF /* country.png */; };
 		BCF038B91DBBA8B9008A58CF /* SearchBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF038B81DBBA8B9008A58CF /* SearchBtnView.swift */; };
-		BCF038BC1DBBB398008A58CF /* search_q@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF038BA1DBBB398008A58CF /* search_q@3x.png */; };
-		BCF038BD1DBBB398008A58CF /* search_q@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF038BB1DBBB398008A58CF /* search_q@2x.png */; };
 		BCFE4F081D940EDA00FAD80D /* 城市指南@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFE4EF41D940EDA00FAD80D /* 城市指南@2x.png */; };
 		BCFE4F091D940EDA00FAD80D /* 城市指南@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFE4EF51D940EDA00FAD80D /* 城市指南@3x.png */; };
 		BCFE4F0A1D940EDA00FAD80D /* 景点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCFE4EF61D940EDA00FAD80D /* 景点@2x.png */; };
@@ -420,6 +420,8 @@
 		BCB2D7991D917F06005D887C /* GEBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GEBaseVC.swift; sourceTree = "<group>"; };
 		BCB2D79C1D917F46005D887C /* GETBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GETBC.swift; sourceTree = "<group>"; };
 		BCB308861DA5D41C00C7FF2C /* recommendplaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendplaces.json; sourceTree = "<group>"; };
+		BCC8936E1DBC511F008F6B01 /* search_q@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_q@3x.png"; sourceTree = "<group>"; };
+		BCC8936F1DBC511F008F6B01 /* search_q@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_q@2x.png"; sourceTree = "<group>"; };
 		BCD3E74C1D98AD7300362016 /* CityGuideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideVC.swift; sourceTree = "<group>"; };
 		BCD3E7501D98BA9600362016 /* CityGuideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityGuideCell.swift; sourceTree = "<group>"; };
 		BCD3E7511D98BA9600362016 /* CityGuideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityGuideCell.xib; sourceTree = "<group>"; };
@@ -457,8 +459,6 @@
 		BCF038AB1DBB85E6008A58CF /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
 		BCF038AC1DBB85E6008A58CF /* country.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = country.png; sourceTree = "<group>"; };
 		BCF038B81DBBA8B9008A58CF /* SearchBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBtnView.swift; sourceTree = "<group>"; };
-		BCF038BA1DBBB398008A58CF /* search_q@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_q@3x.png"; sourceTree = "<group>"; };
-		BCF038BB1DBBB398008A58CF /* search_q@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_q@2x.png"; sourceTree = "<group>"; };
 		BCFE4EF41D940EDA00FAD80D /* 城市指南@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "城市指南@2x.png"; sourceTree = "<group>"; };
 		BCFE4EF51D940EDA00FAD80D /* 城市指南@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "城市指南@3x.png"; sourceTree = "<group>"; };
 		BCFE4EF61D940EDA00FAD80D /* 景点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "景点@2x.png"; sourceTree = "<group>"; };
@@ -851,8 +851,8 @@
 				BCF038AA1DBB85E6008A58CF /* shopping.png */,
 				BCF038AB1DBB85E6008A58CF /* city.png */,
 				BCF038AC1DBB85E6008A58CF /* country.png */,
-				BCF038BA1DBBB398008A58CF /* search_q@3x.png */,
-				BCF038BB1DBBB398008A58CF /* search_q@2x.png */,
+				BCC8936E1DBC511F008F6B01 /* search_q@3x.png */,
+				BCC8936F1DBC511F008F6B01 /* search_q@2x.png */,
 				BC7BB9D31DBB0E5900A136AF /* search_white@2x.png */,
 				BC7BB9D41DBB0E5900A136AF /* search_white@3x.png */,
 				BC7BB9CF1DBAF75300A136AF /* search@2x.png */,
@@ -1120,7 +1120,7 @@
 				BC70028E1DA7887300D435B3 /* MyCollectCell.xib in Resources */,
 				BC552E9B1DA3BCE100CFE302 /* 向下@2x.png in Resources */,
 				BC371B991D913448009E50E2 /* LaunchScreen.storyboard in Resources */,
-				BCF038BC1DBBB398008A58CF /* search_q@3x.png in Resources */,
+				BCC893701DBC511F008F6B01 /* search_q@3x.png in Resources */,
 				BC97D9B51D9AAE1C0081BD35 /* StarsBackground.png in Resources */,
 				BCF038AD1DBB85E6008A58CF /* attraction.png in Resources */,
 				BCDD9B011DA7459200D3B58E /* 我的收藏.png in Resources */,
@@ -1173,7 +1173,7 @@
 				BC647C001D993A1600D62DF4 /* VehiclesCell.xib in Resources */,
 				BC7FACB81D92B8A80036A963 /* CityCell.xib in Resources */,
 				BC03D77E1D9BAA1B009E11B2 /* stars_bgs.png in Resources */,
-				BCF038BD1DBBB398008A58CF /* search_q@2x.png in Resources */,
+				BCC893711DBC511F008F6B01 /* search_q@2x.png in Resources */,
 				BCFE4F091D940EDA00FAD80D /* 城市指南@3x.png in Resources */,
 				BC855B1F1DA65CA500949EE3 /* nav_storeA@3x.png in Resources */,
 				BCFE4F141D940EDA00FAD80D /* 酒店@2x.png in Resources */,

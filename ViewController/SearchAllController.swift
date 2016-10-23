@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchAllController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchAllController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     let btnW:CGFloat = 20
     var searchTF: UITextField!
@@ -19,10 +19,13 @@ class SearchAllController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //headView(按钮)标题
     var headerView:SearchBtnView!
+    var hvH:CGFloat = 0 //记录headerView的高度
+    var lvH:CGFloat = 0 //记录headerView的y坐标
     let btnTitles = ["全部", "国家", "城市", "景点", "餐馆", "酒店", "购物", "活动"]
     
     lazy var listView: UITableView = {
-        let tv = UITableView.init(frame: CGRectMake(0, 64 + self.headerView.mj_h, SCREEN_W, SCREEN_H - 64 - self.headerView.mj_h))
+        let tv = UITableView.init(frame: CGRectMake(0, 64 + self.headerView.mj_h, SCREEN_W, SCREEN_H - 64 - self.hvH))
+        
         tv.backgroundColor = GRAYCOLOR
         //tv.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SearchCell")
         tv.delegate = self
@@ -74,24 +77,63 @@ class SearchAllController: UIViewController, UITableViewDelegate, UITableViewDat
         searchTF.borderStyle = .RoundedRect
         searchTF.placeholder = "请输入国家、城市、景点、酒店等"
         searchTF.becomeFirstResponder()
+        searchTF.delegate = self
+        searchTF.addTarget(self, action: #selector(self.textFieldTextDidChange(_:)), forControlEvents: .EditingChanged)
         navBar.addSubview(searchTF)
         
         //searchBtnView---listView的tableHeaderView
         headerView = SearchBtnView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_W / CGFloat(btnTitles.count) * 0.8), titles: btnTitles)
-        headerView.hidden = true
+        hvH = SCREEN_W / CGFloat(btnTitles.count) * 0.8
+        self.lvH = 64 + hvH
+        //默认不显示。如果设置高宽为零时其子视图还是显示，所以只能隐藏
+        self.headerView.hidden = true
+//        headerView.mj_h = 0
+//        UIView.animateWithDuration(0.25, animations: {
+//            self.headerView.mj_h = 0
+//        })
+        headerView.btnBlock = { module in//点击了头视图按钮
+            self.module = module
+            self.dataArr.removeAllObjects()
+            self.loadData()
+        }
+        
         self.view.addSubview(headerView)
+    }
+    func textFieldTextDidChange(tf:UITextField){//监听textField的值发生改变
+        if tf.text == ""{//当tf.text值为零时收起headerView
+            UIView.animateWithDuration(0.25, animations: {
+                self.headerView.mj_h = 0
+                self.listView.mj_y = self.lvH - self.hvH
+                self.listView.reloadData()
+            })
+            self.dataArr.removeAllObjects()
+            self.listView.reloadData()
+        }
     }
     
     func loadData(){
         HDManager.startLoading()
         SearchModel.requestSearchData(searchTF.text!, page: page, module: module) { (arr, err) in
             if err == nil{
-                if arr == nil{
+                if arr!.count == 0{
                     AlertTwoSeconds(self, title: "暂无更多数据！")
+//                    if self.headerView.mj_h > 0{
+//                        UIView.animateWithDuration(0.25, animations: {
+//                            self.headerView.mj_h = 0
+//                            self.listView.mj_y = self.lvH - self.hvH
+//                            self.listView.reloadData()
+//                        })
+//                    }
                 }else{
-                    self.dataArr.addObjectsFromArray(arr!)
-                    self.listView.reloadData()
+                    UIView.animateWithDuration(0.25, animations: {
+                        self.headerView.mj_h = self.hvH
+                        self.listView.mj_y = self.lvH
+                    })
                 }
+                //就算数据为空时，也重新加载listView
+                self.dataArr.addObjectsFromArray(arr!)
+                self.listView.reloadData()
+                
             }else{
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
@@ -121,6 +163,17 @@ class SearchAllController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
     }
+    
+    //MARK: ---- UITextField 协议方法
+    func textFieldShouldReturn(textField: UITextField) -> Bool {//键盘
+        textField.resignFirstResponder()//收起键盘
+        if self.searchTF.text != ""{
+            self.dataArr.removeAllObjects()
+            self.loadData()
+        }
+        return true
+    }
+
 
     //MARK:----- UITableView 协议方法
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,6 +186,9 @@ class SearchAllController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         let model = dataArr[indexPath.row] as! SearchModel
         cell?.imageView?.image = UIImage.init(named: model.module)
+        if model.nameCn == "" {
+            model.nameCn = model.name//如果没中文名，就用英文名
+        }
         let str = String.init(format: "%@(%@)", model.nameCn, model.parent)
         cell?.textLabel?.attributedText = AttributeText(hexColor(hexStr: "808080"), text: str, rangeStr: "(\(model.parent))", font: 14)
         return cell!
