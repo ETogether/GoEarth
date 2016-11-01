@@ -74,7 +74,7 @@ class SearchContryOrCityController: GEBaseVC, UITableViewDelegate, UITableViewDa
         HDManager.startLoading()
         SearchModel.requestSearchData(self.kw, page: page, module: module) { (arr, err) in
             if err == nil{
-                if arr == nil{
+                if arr == nil || arr?.count == 0{
                     AlertTwoSeconds(self, title: "暂无更多数据！")
                 }else{
                     self.dataArr.addObjectsFromArray(arr!)

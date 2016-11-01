@@ -65,8 +65,9 @@ class CountryVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewD
                 print(error)
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
+            HDManager.stopLoading()
         }
-        HDManager.stopLoading()
+        
         
         
     }

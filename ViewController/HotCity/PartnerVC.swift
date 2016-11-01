@@ -43,10 +43,11 @@ class PartnerVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource, PartnerC
                 //发生网络错误时弹出警告框
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
+            HDManager.stopLoading()
         }
         
         
-        HDManager.stopLoading()
+        
     }
     
 

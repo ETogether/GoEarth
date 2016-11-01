@@ -93,7 +93,7 @@ class CityVC: GEBaseVC {
     }
     
     func loadData(){
-        
+        HDManager.startLoading()
         CityModel.requestCityData(placeId) { (model, err) in
             if err == nil{
                 self.cityModel = model
@@ -103,6 +103,7 @@ class CityVC: GEBaseVC {
                 //发生网络错误时弹出警告框
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
+            HDManager.stopLoading()
         }
     }
     //MARK: - 创建按钮

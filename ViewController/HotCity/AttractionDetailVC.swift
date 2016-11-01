@@ -75,8 +75,9 @@ class AttractionDetailVC: NavBaseVC, UIScrollViewDelegate {
                 print(err)
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
+            HDManager.stopLoading()
         }
-        HDManager.stopLoading()
+        
     }
     //MARK: - 返回按钮
     func createBackButton(){

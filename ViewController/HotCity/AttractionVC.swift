@@ -57,8 +57,9 @@ class AttractionVC: NavBaseVC, UITableViewDelegate, UITableViewDataSource {
                 print(err)
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
+            HDManager.stopLoading()
         }
-        HDManager.stopLoading()
+        
     }
         
 

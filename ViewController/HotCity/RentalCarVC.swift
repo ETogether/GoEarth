@@ -60,10 +60,11 @@ class RentalCarVC: NavBaseVC, UITableViewDataSource, UITableViewDelegate {
                 print(err)
                 AlertTwoSeconds(self, title: "网络连接请求失败！")
             }
+            HDManager.stopLoading()
             
         }
 
-        HDManager.stopLoading()
+        
     }
     
     
