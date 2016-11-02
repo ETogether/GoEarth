@@ -27,7 +27,7 @@ class VersionVC: NavBaseVC {
         
         versionL = UILabel.init(frame: CGRectMake(0, 0, SCREEN_W, 30))
         versionL.center = CGPointMake(SCREEN_W / 2, SCREEN_H / 2)
-        versionL.text = "版本号：" + String(infoDic["CFBundleShortVersionString"]!) + "." + String(infoDic["CFBundleVersion"]!)
+        versionL.text = "版本号：" + String(infoDic["CFBundleShortVersionString"]!)
         versionL.textAlignment = .Center
         versionL.font = UIFont.systemFontOfSize(16)
         self.view.addSubview(versionL)

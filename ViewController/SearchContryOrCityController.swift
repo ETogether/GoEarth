@@ -134,6 +134,7 @@ class SearchContryOrCityController: GEBaseVC, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let model = dataArr[indexPath.row] as! SearchModel
         let country = CountryVC()
+        country.navigationItem.title = model.nameCn
         country.countryId = model.recordId
         self.navigationController?.pushViewController(country, animated: true)
     }

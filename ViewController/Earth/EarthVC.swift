@@ -95,8 +95,6 @@ class EarthVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewDat
             }
             HDManager.stopLoading()
         }
-        
-        
     }
 
 

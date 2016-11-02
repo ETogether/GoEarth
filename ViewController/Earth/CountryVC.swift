@@ -56,20 +56,19 @@ class CountryVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewD
                         //self.dataArr.addObjectsFromArray(CityModel.arrayOfModelsFromDictionaries(placesArr) as [AnyObject])
                         self.dataArr = CityModel.arrayOfModelsFromDictionaries(placesArr)
                         self.countryView.reloadData()
+                        HDManager.stopLoading()
                     })
-                   
                 }
-                
-                
             }else{
-                print(error)
-                AlertTwoSeconds(self, title: "网络连接请求失败！")
+                dispatch_async(dispatch_get_main_queue(), { 
+                    AlertTwoSeconds(self, title: "网络连接请求失败！")
+                    HDManager.stopLoading()
+                })
+                
             }
-            HDManager.stopLoading()
+            
         }
-        
-        
-        
+ 
     }
     
 
