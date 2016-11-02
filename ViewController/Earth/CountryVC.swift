@@ -39,6 +39,7 @@ class CountryVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
+        self.view.backgroundColor = WHITECOLOR
         
         self.loadData()
     }
@@ -48,25 +49,20 @@ class CountryVC: GEBaseVC, UICollectionViewDelegateFlowLayout, UICollectionViewD
         HDManager.startLoading()
         let para = NSMutableDictionary.init(dictionary: ["page":String(page), "rows":"12", "countryId":countryId])
         BaseRequest.getWithURL(HOME_URL + "places", para: para) { (data, error) in
-            if error == nil{
-                let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
-                let placesArr = rootDic["places"] as! [AnyObject]
-                if placesArr.count > 0 {
-                    dispatch_async(dispatch_get_main_queue(), { 
+            dispatch_async(dispatch_get_main_queue(), {
+                if error == nil{
+                    let rootDic = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! NSDictionary
+                    let placesArr = rootDic["places"] as! [AnyObject]
+                    if placesArr.count > 0 {
                         //self.dataArr.addObjectsFromArray(CityModel.arrayOfModelsFromDictionaries(placesArr) as [AnyObject])
                         self.dataArr = CityModel.arrayOfModelsFromDictionaries(placesArr)
                         self.countryView.reloadData()
-                        HDManager.stopLoading()
-                    })
-                }
-            }else{
-                dispatch_async(dispatch_get_main_queue(), { 
+                    }
+                }else{
                     AlertTwoSeconds(self, title: "网络连接请求失败！")
-                    HDManager.stopLoading()
-                })
-                
-            }
-            
+                }
+                HDManager.stopLoading()
+            })
         }
  
     }
